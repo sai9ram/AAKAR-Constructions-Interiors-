@@ -297,148 +297,6 @@
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
         }
 
-        /* Adapted Team Card Styles */
-        .team-card-parent {
-            width: 320px;
-            height: 400px;
-            perspective: 1000px;
-        }
-
-        .team-card {
-            height: 100%;
-            border-radius: 40px;
-            background: linear-gradient(135deg, var(--primary) 0%, #b8962f 100%);
-            transition: all 0.5s ease-in-out;
-            transform-style: preserve-3d;
-            box-shadow: rgba(0,0,0,0) 40px 50px 25px -40px, rgba(0,0,0,0.1) 0px 25px 25px -5px;
-            position: relative;
-        }
-
-        .team-glass {
-            transform-style: preserve-3d;
-            position: absolute;
-            inset: 8px;
-            border-radius: 45px;
-            border-top-right-radius: 100%;
-            background: linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
-            backdrop-filter: blur(5px);
-            transform: translate3d(0px, 0px, 25px);
-            border-left: 1px solid white;
-            border-bottom: 1px solid white;
-            transition: all 0.5s ease-in-out;
-        }
-
-        .team-content {
-            padding: 40px 30px 0px 30px;
-            transform: translate3d(0, 0, 26px);
-            text-align: center;
-        }
-
-        .team-img-wrapper {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            padding: 5px;
-            background: white;
-            transform: translate3d(0, 0, 30px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .team-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .team-content .title {
-            display: block;
-            color: #111;
-            font-weight: 800;
-            font-size: 22px;
-            text-transform: uppercase;
-        }
-
-        .team-content .text {
-            display: block;
-            color: rgba(0, 0, 0, 0.6);
-            font-size: 14px;
-            margin-top: 10px;
-            font-weight: 500;
-        }
-
-        .team-bottom {
-            padding: 10px 12px;
-            transform-style: preserve-3d;
-            position: absolute;
-            bottom: 30px;
-            left: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transform: translate3d(0, 0, 26px);
-        }
-
-        .team-social-container {
-            display: flex;
-            gap: 10px;
-            transform-style: preserve-3d;
-        }
-
-        .team-social-button {
-            width: 35px;
-            aspect-ratio: 1;
-            padding: 5px;
-            background: white;
-            border-radius: 50%;
-            border: none;
-            display: grid;
-            place-content: center;
-            box-shadow: rgba(0,0,0,0.1) 0px 7px 5px -5px;
-            transition: var(--transition);
-        }
-
-        .team-social-button:hover {
-            background: #111;
-            color: white;
-            transform: translate3d(0, 0, 20px);
-        }
-
-        .team-logo-circles {
-            position: absolute;
-            right: 0;
-            top: 0;
-            transform-style: preserve-3d;
-        }
-
-        .team-circle {
-            display: block;
-            position: absolute;
-            aspect-ratio: 1;
-            border-radius: 50%;
-            top: 0;
-            right: 0;
-            background: rgba(212, 175, 55, 0.2);
-            transition: all 0.5s ease-in-out;
-            backdrop-filter: blur(2px);
-        }
-
-        .team-circle1 { width: 150px; transform: translate3d(0, 0, 20px); top: 8px; right: 8px; }
-        .team-circle2 { width: 120px; transform: translate3d(0, 0, 40px); top: 10px; right: 10px; transition-delay: 0.2s; }
-        .team-circle3 { width: 90px; transform: translate3d(0, 0, 60px); top: 15px; right: 15px; transition-delay: 0.4s; }
-        .team-circle4 { width: 60px; transform: translate3d(0, 0, 80px); top: 20px; right: 20px; transition-delay: 0.6s; display: grid; place-content: center; }
-
-        .team-card-parent:hover .team-card {
-            transform: rotate3d(1, 1, 0, 20deg);
-        }
-        
-        .team-card-parent:hover .team-circle2 { transform: translate3d(0, 0, 60px); }
-        .team-card-parent:hover .team-circle3 { transform: translate3d(0, 0, 80px); }
-        .team-card-parent:hover .team-circle4 { transform: translate3d(0, 0, 100px); }
-
         /* Footer */
         footer {
             background-color: #f9f9f9;
@@ -487,7 +345,89 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            text-align: center;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .team-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+
+        .team-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .team-info p {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--dark-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .team-social a:hover {
+            background: var(--primary);
+            color: white;
+            transform: rotate(360deg);
+        }
         @media (max-width: 1024px) {
             .about-grid, .vision-mission-grid {
                 grid-template-columns: 1fr;
@@ -612,103 +552,67 @@
     </section>
 
     <!-- Team Section -->
-    <section class="section-padding" style="background-color: #fff;">
+    <section class="section-padding" style="background-color: #ffffff;">
         <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 5rem;" data-aos="fade-up">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem;">The Experts Behind AAKAR</span>
-                <h2 style="margin-top: 1rem; font-size: 3.5rem;">MEET OUR LEADERSHIP</h2>
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Our Experts</span>
+                <h2 style="margin-top: 1rem; font-size: 3rem;">MEET OUR TEAM</h2>
+                <p style="max-width: 600px; margin: 1rem auto 0; color: var(--gray);">Our dedicated team of professionals brings together decades of expertise in architecture, engineering, and project management.</p>
             </div>
 
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;">
-                <!-- Team Member 1 -->
-                <div class="team-card-parent" data-aos="fade-up">
-                    <div class="team-card">
-                        <div class="team-logo-circles">
-                            <div class="team-circle team-circle1"></div>
-                            <div class="team-circle team-circle2"></div>
-                            <div class="team-circle team-circle3"></div>
-                            <div class="team-circle team-circle4"><i class="fas fa-user-tie" style="color: white; font-size: 1.5rem;"></i></div>
-                        </div>
-                        <div class="team-glass">
-                            <div class="team-content">
-                                <div class="team-img-wrapper">
-                                    <img src="assets/project1.png" alt="Mr. Sairam">
-                                </div>
-                                <span class="title">Mr. Sairam</span>
-                                <span class="text">Managing Director & Founder</span>
-                                <p style="font-size: 0.8rem; margin-top: 15px; color: #555;">Visionary leader with 10+ years of experience in regional construction excellence.</p>
-                            </div>
-                            <div class="team-bottom">
-                                <div class="team-social-container">
-                                    <button class="team-social-button"><i class="fab fa-linkedin-in"></i></button>
-                                    <button class="team-social-button"><i class="fab fa-twitter"></i></button>
-                                    <button class="team-social-button"><i class="fab fa-instagram"></i></button>
-                                </div>
-                            </div>
+            <div class="team-grid">
+                <!-- Member 1 -->
+                <div class="team-card" data-aos="fade-up">
+                    <div class="team-img">
+                        <img src="assets/project1.png" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Sairam Desetti</h4>
+                        <p>CEO & Founder</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Team Member 2 -->
-                <div class="team-card-parent" data-aos="fade-up" data-aos-delay="200">
-                    <div class="team-card">
-                        <div class="team-logo-circles">
-                            <div class="team-circle team-circle1"></div>
-                            <div class="team-circle team-circle2"></div>
-                            <div class="team-circle team-circle3"></div>
-                            <div class="team-circle team-circle4"><i class="fas fa-drafting-compass" style="color: white; font-size: 1.5rem;"></i></div>
-                        </div>
-                        <div class="team-glass">
-                            <div class="team-content">
-                                <div class="team-img-wrapper">
-                                    <img src="assets/commercial.png" alt="Lead Architect">
-                                </div>
-                                <span class="title">Lead Architect</span>
-                                <span class="text">Head of Design & Planning</span>
-                                <p style="font-size: 0.8rem; margin-top: 15px; color: #555;">Expert in modern architectural aesthetics and sustainable urban planning.</p>
-                            </div>
-                            <div class="team-bottom">
-                                <div class="team-social-container">
-                                    <button class="team-social-button"><i class="fab fa-linkedin-in"></i></button>
-                                    <button class="team-social-button"><i class="fab fa-behance"></i></button>
-                                    <button class="team-social-button"><i class="fab fa-instagram"></i></button>
-                                </div>
-                            </div>
+                <!-- Member 2 -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-img">
+                        <img src="assets/residential.png" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>B. Venkat</h4>
+                        <p>Chief Architect</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Team Member 3 -->
-                <div class="team-card-parent" data-aos="fade-up" data-aos-delay="400">
-                    <div class="team-card">
-                        <div class="team-logo-circles">
-                            <div class="team-circle team-circle1"></div>
-                            <div class="team-circle team-circle2"></div>
-                            <div class="team-circle team-circle3"></div>
-                            <div class="team-circle team-circle4"><i class="fas fa-helmet-safety" style="color: white; font-size: 1.5rem;"></i></div>
-                        </div>
-                        <div class="team-glass">
-                            <div class="team-content">
-                                <div class="team-img-wrapper">
-                                    <img src="assets/residential.png" alt="Site Engineer">
-                                </div>
-                                <span class="title">Site Engineer</span>
-                                <span class="text">Execution & Quality Control</span>
-                                <p style="font-size: 0.8rem; margin-top: 15px; color: #555;">Ensuring technical precision and safety standards on every project site.</p>
-                            </div>
-                            <div class="team-bottom">
-                                <div class="team-social-container">
-                                    <button class="team-social-button"><i class="fab fa-linkedin-in"></i></button>
-                                    <button class="team-social-button"><i class="fab fa-whatsapp"></i></button>
-                                    <button class="team-social-button"><i class="fab fa-facebook-f"></i></button>
-                                </div>
-                            </div>
+                <!-- Member 3 -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-img">
+                        <img src="assets/commercial.png" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p>Project Manager</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Final CTA -->
     <section class="section-padding">
         <div class="container">
             <div style="background: linear-gradient(135deg, #111111 0%, #050505 100%); padding: 5rem 3rem; border-radius: 40px; text-align: center; color: white; position: relative; overflow: hidden;" data-aos="zoom-in">
