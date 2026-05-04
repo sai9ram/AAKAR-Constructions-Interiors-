@@ -390,24 +390,48 @@
         }
 
         .team-info h4 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
             color: var(--light);
         }
 
-        .team-info p {
+        .team-info .role {
             color: var(--primary);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .team-info .qual {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .team-info .desc {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.5;
+            padding: 0 2rem;
             margin-bottom: 1.5rem;
+            height: 80px; /* Fixed height for alignment */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
         }
 
         .team-social {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
+            margin-top: 1rem;
         }
 
         .team-social a {
@@ -564,11 +588,13 @@
                 <!-- Member 1 -->
                 <div class="team-card" data-aos="fade-up">
                     <div class="team-img">
-                        <img src="assets/project1.png" alt="Team Member">
+                        <img src="assets/project1.png" alt="Rama kishan komanduri">
                     </div>
                     <div class="team-info">
-                        <h4>Sairam Desetti</h4>
-                        <p>CEO & Founder</p>
+                        <h4>Mr. Rama Kishan Komanduri</h4>
+                        <span class="role">Managing Director</span>
+                        <span class="qual">B.Tech & Construction Management</span>
+                        <p class="desc">Planning and supervising construction projects to ensure they are completed on time, within budget, and with proper quality and safety.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -580,11 +606,13 @@
                 <!-- Member 2 -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="team-img">
-                        <img src="assets/residential.png" alt="Team Member">
+                        <img src="assets/residential.png" alt="Mallikharjun billa">
                     </div>
                     <div class="team-info">
-                        <h4>B. Venkat</h4>
-                        <p>Chief Architect</p>
+                        <h4>Mr. Mallikharjun Billa</h4>
+                        <span class="role">Executive Director</span>
+                        <span class="qual">B.Tech Civil</span>
+                        <p class="desc">Proven excellence in construction management with the ability to translate core skills into successful project execution, backed by 10+ years of experience.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -596,11 +624,13 @@
                 <!-- Member 3 -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="team-img">
-                        <img src="assets/commercial.png" alt="Team Member">
+                        <img src="assets/commercial.png" alt="Sanmukha Rao Kotturu">
                     </div>
                     <div class="team-info">
-                        <h4>Rajesh Kumar</h4>
-                        <p>Project Manager</p>
+                        <h4>Mr. Sanmukha Rao Kotturu</h4>
+                        <span class="role">Vastu Specialist & Civil Engineer</span>
+                        <span class="qual">B.Tech Civil</span>
+                        <p class="desc">Dedicated Civil Engineer and Vastu Specialist with 20+ years of experience in site management, manpower, and machinery coordination.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
