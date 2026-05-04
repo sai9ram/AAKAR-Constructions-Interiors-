@@ -1008,6 +1008,59 @@
                 height: 200px;
             }
 
+            /* Fix Portfolio Section for Mobile (Desktop-like layout) */
+            .portfolio-filters {
+                gap: 0.8rem;
+                margin-bottom: 2rem;
+                padding: 0;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .filter-btn {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2-column layout as requested */
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            .cat-card {
+                height: 280px;
+                border-radius: 16px;
+            }
+
+            .cat-info {
+                padding: 1rem;
+            }
+
+            .cat-info h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .cat-info p {
+                font-size: 0.75rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .project-tag {
+                font-size: 0.6rem;
+                padding: 0.1rem 0.5rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .project-loc {
+                font-size: 0.7rem;
+                gap: 0.2rem;
+            }
+
             /* Fix Warranty Section */
             .warranty-card {
                 padding: 2.5rem 1rem !important;
