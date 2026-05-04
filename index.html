@@ -1112,15 +1112,26 @@
             }
 
             .services-layout {
-                grid-template-columns: 1fr 1fr; /* Keep side-by-side as requested */
-                gap: 1rem;
-                padding: 2rem 1rem;
+                display: flex !important; /* Use flex for more control on mobile */
+                flex-direction: row !important;
+                gap: 10px;
+                padding: 1.5rem 0.5rem;
                 align-items: flex-start;
+                justify-content: space-between;
+                width: 100%;
             }
 
-            .service-left, .service-right {
+            .services-left {
+                width: 48% !important;
+                flex: 0 0 48%;
                 min-width: 0;
-                overflow: hidden;
+            }
+
+            .service-right {
+                width: 48% !important;
+                flex: 0 0 48%;
+                min-width: 0;
+                display: block !important;
             }
 
             .service-item {
@@ -1133,13 +1144,20 @@
                 margin: 0;
             }
 
-            .service-left h2 {
-                font-size: 1.4rem !important;
-                margin-bottom: 1rem !important;
+            .services-left h2 {
+                font-size: 1.1rem !important; /* Drastically smaller */
+                margin-bottom: 0.8rem !important;
+                line-height: 1.2;
             }
 
-            .service-left span {
+            .services-left p {
                 font-size: 0.7rem !important;
+                margin-bottom: 1rem;
+            }
+
+            .services-left span {
+                font-size: 0.6rem !important;
+                letter-spacing: 1px;
             }
 
             .service-item i {
@@ -1583,8 +1601,8 @@
     <!-- Services Section -->
     <section id="services" class="section-padding">
         <div class="services-section container">
-            <div class="services-layout section-padding" style="padding-left: 2rem; padding-right: 2rem;">
-                <div class="services-left" data-aos="fade-right">
+            <div class="services-layout">
+                <div class="services-left">
                     <h2 style="font-size: 3rem; margin-bottom: 1rem;">Comprehensive Construction Solutions</h2>
                     <p style="margin-bottom: 3rem;">Tailored design and construction solutions for every space, from
                         Hyderabad to Rajahmundry.</p>
@@ -1616,7 +1634,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="service-right" data-aos="fade-left">
+                <div class="service-right">
                     <div class="service-featured-img">
                         <img src="assets/project1.png" alt="Best Construction services in Hyderabad">
                     </div>
