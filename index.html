@@ -974,15 +974,24 @@
             }
 
             .accordion-panel span {
-                transform: rotate(-90deg); /* Maintain vertical text */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-90deg); /* Absolute centering with rotation */
                 font-size: 0.75rem;
-                bottom: auto;
-                left: auto;
-                min-width: 15em;
+                min-width: 250px;
+                text-align: center;
+                margin: 0;
             }
 
             .accordion-panel:hover {
-                flex: 10; /* Maximize expansion on tap/hover */
+                flex: 10;
+            }
+
+            .accordion-panel:hover span {
+                transform: translate(-50%, -50%) rotate(0); /* Center without rotation on hover */
+                font-size: 1rem;
+                width: 100%;
             }
 
             /* Fix Locations Scroll */
