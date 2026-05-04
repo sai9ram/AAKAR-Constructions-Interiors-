@@ -1208,6 +1208,53 @@
                 font-size: 0.95rem !important;
             }
 
+            /* Fix Contact Section for Mobile (Restored Side-by-Side) */
+            .contact-grid {
+                grid-template-columns: 1fr 1fr !important; /* Force split layout */
+                border-radius: 25px;
+            }
+
+            .contact-img {
+                height: 100% !important;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.5rem 1rem !important;
+            }
+
+            .contact-form-wrapper h2 {
+                font-size: 1.2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .contact-form-wrapper p {
+                font-size: 0.75rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr !important; /* Stack fields within the column */
+                gap: 0;
+            }
+
+            .form-group label {
+                font-size: 0.7rem;
+            }
+
+            .form-group input, 
+            .form-group select, 
+            .form-group textarea {
+                padding: 0.6rem !important;
+                font-size: 0.8rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .contact-form-wrapper .btn {
+                width: 100% !important;
+                padding: 0.8rem !important;
+                font-size: 0.9rem !important;
+            }
+
             /* Fix Warranty Section */
             .warranty-card {
                 padding: 2.5rem 1rem !important;
