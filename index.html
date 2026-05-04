@@ -1093,6 +1093,53 @@
             .footer-col .logo {
                 justify-content: center;
             }
+
+            /* Fix About Section for Mobile (Desktop-like layout) */
+            .about-section {
+                grid-template-columns: 0.8fr 1.2fr; /* Maintain 2 columns */
+                gap: 2rem;
+                align-items: start;
+            }
+
+            .about-img-wrapper img {
+                border-radius: 15px;
+            }
+
+            .stats-grid {
+                padding: 1rem;
+                bottom: -15px;
+                right: -15px;
+                gap: 1rem;
+            }
+
+            .stat-item h4 {
+                font-size: 1.2rem;
+            }
+
+            .stat-item p {
+                font-size: 0.6rem;
+            }
+
+            .about-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-content p {
+                font-size: 0.9rem;
+            }
+
+            .vision-mission-cards {
+                grid-template-columns: 1fr 1fr !important; /* Force side-by-side */
+                gap: 0.8rem !important;
+            }
+
+            .vision-mission-cards > div {
+                padding: 1rem !important;
+            }
+
+            .vision-mission-cards h4 {
+                font-size: 1.1rem !important;
+            }
         }
     </style>
     <!-- Font Awesome for Icons -->
