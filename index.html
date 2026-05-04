@@ -1118,21 +1118,36 @@
                 align-items: flex-start;
             }
 
+            .service-left, .service-right {
+                min-width: 0;
+                overflow: hidden;
+            }
+
             .service-item {
                 padding: 1rem 0;
             }
 
             .service-item h3 {
-                font-size: 0.85rem; /* Smaller for mobile grid */
-                line-height: 1.3;
+                font-size: 0.75rem; /* Even smaller to fit side-by-side */
+                line-height: 1.2;
+                margin: 0;
+            }
+
+            .service-left h2 {
+                font-size: 1.4rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .service-left span {
+                font-size: 0.7rem !important;
             }
 
             .service-item i {
-                font-size: 0.8rem;
+                font-size: 0.6rem;
             }
 
             .service-item:hover {
-                padding-left: 0.5rem;
+                padding-left: 0.3rem;
             }
 
             .service-featured-img {
