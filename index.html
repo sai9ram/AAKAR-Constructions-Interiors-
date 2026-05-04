@@ -827,21 +827,22 @@
 
         @media (max-width: 1024px) {
             .service-accordion-card {
-                flex-direction: column;
-                height: auto; /* Fluid height for mobile */
-                gap: 1rem;
-            }
-
-            .accordion-panel {
-                height: 150px; /* Shorter panels for mobile */
-                border-radius: 20px;
+                height: 450px; /* Slightly taller for better interaction */
+                gap: 5px;
+                padding: 5px;
             }
 
             .accordion-panel span {
-                transform: rotate(0);
-                font-size: 1.1rem;
-                bottom: 20px;
-                left: 20px;
+                font-size: 0.8rem; /* Smaller text to fit narrow panels */
+                letter-spacing: 0.1em;
+            }
+
+            .accordion-panel:hover {
+                flex: 8; /* Greater expansion on mobile to show content */
+            }
+
+            .accordion-panel:hover span {
+                font-size: 1rem;
             }
         }
 
@@ -953,28 +954,35 @@
                 padding: 1rem;
             }
 
-            /* Fix Service Accordion for Mobile */
+            /* Fix Service Accordion for Mobile (Restored Horizontal Design) */
             .service-accordion-card {
-                height: auto;
-                flex-direction: column;
-                gap: 10px;
+                height: 400px;
+                flex-direction: row; /* Horizontal as requested */
+                gap: 5px;
                 padding: 0;
                 background: none;
                 border: none;
                 box-shadow: none;
+                overflow: hidden;
             }
 
             .accordion-panel {
-                height: 120px;
-                flex: none;
-                width: 100%;
+                height: 100%;
+                flex: 1;
+                width: auto;
+                border-radius: 12px;
             }
 
             .accordion-panel span {
-                transform: rotate(0);
-                bottom: 15px;
-                left: 15px;
-                font-size: 0.95rem;
+                transform: rotate(-90deg); /* Maintain vertical text */
+                font-size: 0.75rem;
+                bottom: auto;
+                left: auto;
+                min-width: 15em;
+            }
+
+            .accordion-panel:hover {
+                flex: 10; /* Maximize expansion on tap/hover */
             }
 
             /* Fix Locations Scroll */
