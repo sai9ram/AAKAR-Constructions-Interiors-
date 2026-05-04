@@ -40,6 +40,11 @@
             overflow-x: hidden;
         }
 
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -370,16 +375,22 @@
             }
 
             header {
-                width: 95%;
-                top: 15px;
+                width: 92%;
+                top: 10px;
+                padding: 0.5rem 1rem;
             }
 
             .section-padding {
-                padding: 60px 0;
+                padding: 40px 0;
             }
 
             .container {
-                padding: 0 1.5rem;
+                padding: 0 1rem;
+                overflow-x: hidden;
+            }
+
+            .page-header {
+                height: 300px;
             }
 
             .page-header h1 {
@@ -392,7 +403,11 @@
             }
 
             .service-card-content {
-                padding: 2rem 1.5rem;
+                padding: 2rem 1.2rem;
+            }
+
+            .service-card-content h3 {
+                font-size: 1.5rem;
             }
 
             .footer-grid {
