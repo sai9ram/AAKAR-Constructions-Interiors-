@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | AAKAR Constructions - Comprehensive Building Solutions</title>
+    <meta name="description"
+        content="Explore the wide range of construction services offered by AAKAR Constructions, from premium residential homes to large-scale commercial and industrial projects.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #D4AF37;
+            --primary-hover: #b8962f;
+            --dark: #ffffff;
+            --dark-accent: #f9f9f9;
+            --light: #111111;
+            --gray: #666666;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(0, 0, 0, 0.05);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* Header Styling (Floating Pill) */
+        header {
+            position: fixed;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            z-index: 1000;
+            padding: 0.6rem 1.5rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+        }
+
+        header.scrolled {
+            top: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 0.5rem 1.5rem;
+        }
+
+        .nav-wrapper nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--light);
+            text-decoration: none;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            opacity: 0.7;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            opacity: 1;
+        }
+
+        /* Hero Styling */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero_bg.png');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 0;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--primary);
+        }
+
+        /* Services Tabs Design */
+        .services-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 40px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+
+        .service-card-img {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .service-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-card-img img {
+            transform: scale(1.1);
+        }
+
+        .service-card-content {
+            padding: 2.5rem;
+            flex-grow: 1;
+        }
+
+        .service-card-content i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .service-card-content p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .service-features li i {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f9f9f9;
+            padding: 80px 0 30px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 4rem;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, header .btn {
+                display: none;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-wrapper">
+            <nav>
+                <a href="index.html" class="logo">AAKAR<span>.</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Services</h1>
+            <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-top: 0.3rem;"></i>
+                <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B Services -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 4rem;" data-aos="fade-up">
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2B Solutions</span>
+                <h2 style="margin-top: 1rem; font-size: 2.5rem;">CORPORATE & COMMERCIAL</h2>
+            </div>
+
+            <div class="services-detail-grid">
+                <!-- B2B Card 1 -->
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-card-img">
+                        <img src="assets/commercial.png" alt="Commercial Projects">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-city"></i>
+                        <h3>Commercial Projects</h3>
+                        <p>Specialized construction for office buildings, retail spaces, and corporate hubs with modern aesthetics and functional layouts.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Office Buildings</li>
+                            <li><i class="fas fa-check-circle"></i> Shopping Complexes</li>
+                            <li><i class="fas fa-check-circle"></i> Factories & Industrial units</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2B Card 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-img">
+                        <img src="assets/project1.png" alt="High-Rise">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-building"></i>
+                        <h3>High-Rise & Institutional</h3>
+                        <p>Large-scale residential apartments and educational infrastructure like schools and hospital buildings.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Residential Apartments</li>
+                            <li><i class="fas fa-check-circle"></i> Hospitals & Healthcare</li>
+                            <li><i class="fas fa-check-circle"></i> Educational Institutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2B Card 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-img">
+                        <img src="assets/about.png" alt="Consultancy">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Management Consultant</h3>
+                        <p>Expert project management and construction consultancy for builders, developers, and corporate entities.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Project Planning</li>
+                            <li><i class="fas fa-check-circle"></i> Quality Audits</li>
+                            <li><i class="fas fa-check-circle"></i> Cost Estimation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2C Services -->
+    <section class="section-padding" style="background-color: var(--dark-accent);">
+        <div class="container">
+            <div class="section-header" style="text-align: right; margin-bottom: 4rem;" data-aos="fade-up">
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2C Solutions</span>
+                <h2 style="margin-top: 1rem; font-size: 2.5rem;">INDIVIDUAL & RESIDENTIAL</h2>
+            </div>
+
+            <div class="services-detail-grid">
+                <!-- B2C Card 1 -->
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-card-img">
+                        <img src="assets/residential.png" alt="Individual Houses">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-home"></i>
+                        <h3>Custom Homes & Villas</h3>
+                        <p>Building your dream home with absolute precision, luxury finish, and Vastu compliance.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Luxury Villas</li>
+                            <li><i class="fas fa-check-circle"></i> Duplex Houses</li>
+                            <li><i class="fas fa-check-circle"></i> Individual Residences</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2C Card 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-img">
+                        <img src="assets/interior_design.png" alt="Interior Design">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-couch"></i>
+                        <h3>Interior Design</h3>
+                        <p>Complete interior execution that blends luxury with comfort, tailored to your personal style.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Modular Kitchens</li>
+                            <li><i class="fas fa-check-circle"></i> False Ceilings</li>
+                            <li><i class="fas fa-check-circle"></i> Custom Woodwork</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2C Card 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-img">
+                        <img src="assets/hero_bg.png" alt="Planning">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <h3>Planning & Design</h3>
+                        <p>End-to-end architectural design and layout planning before the first brick is laid.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> 2D & 3D Planning</li>
+                            <li><i class="fas fa-check-circle"></i> Architectural Layouts</li>
+                            <li><i class="fas fa-check-circle"></i> Statutory Approvals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 1.5rem;">AAKAR<span>.</span></a>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Building high-quality residential and commercial
+                        spaces across Andhra Pradesh and Telangana. Innovation, quality, and excellence in every brick.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Residential Construction</a></li>
+                        <li><a href="#">Commercial Construction</a></li>
+                        <li><a href="#">Interior Design</a></li>
+                        <li><a href="#">Turnkey Solutions</a></li>
+                        <li><a href="#">Renovation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            9-1-34/1, Flat 506, Rank One Towers, Opposite Alankar Theatre, Langar House, Hyderabad -
+                            500008</li>
+                        <li><i class="fas fa-phone" style="color: var(--primary); margin-right: 0.5rem;"></i> +91 888
+                            577 4890</li>
+                        <li><i class="fas fa-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            info@aakarconstructions.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AAKAR Constructions. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#" style="color: var(--gray); text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: var(--gray); text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+</body>
+
+</html>
