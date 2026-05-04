@@ -178,52 +178,100 @@
             display: block;
         }
 
-        .vision-mission-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 4rem;
+        /* Redesigned Vision & Mission */
+        .vision-mission-section {
+            background: linear-gradient(135deg, #111111 0%, #050505 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .v-m-card {
-            background: var(--dark-accent);
-            padding: 3rem;
-            border-radius: 30px;
-            border: 1px solid var(--glass-border);
+        .blueprint-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(var(--primary) 1px, transparent 1px),
+                linear-gradient(90deg, var(--primary) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .vm-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vm-block {
+            padding: 5rem;
+            position: relative;
             transition: var(--transition);
         }
 
-        .v-m-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
+        .vm-block:first-child {
+            border-right: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.02);
         }
 
-        .v-m-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        .vm-block:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .vm-number {
+            font-size: 8rem;
+            font-weight: 800;
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            opacity: 0.05;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .vm-block h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
             display: flex;
             align-items: center;
             gap: 1rem;
         }
 
-        .v-m-card h3 i {
-            color: var(--primary);
+        .vm-block p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
         }
 
-        .mission-list {
-            list-style: none;
-        }
-
-        .mission-list li {
+        .mission-item {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
         }
 
-        .mission-list li i {
+        .mission-item i {
             color: var(--primary);
+            font-size: 1.2rem;
             margin-top: 0.3rem;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .mission-item span {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 1.1rem;
         }
 
         /* Buttons (Identical to index.html) */
@@ -248,6 +296,128 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
         }
+
+        /* Adapted Team Card Styles */
+        .team-card-parent {
+            width: 320px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .team-card {
+            height: 100%;
+            border-radius: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, #b8962f 100%);
+            transition: all 0.5s ease-in-out;
+            transform-style: preserve-3d;
+            box-shadow: rgba(0,0,0,0) 40px 50px 25px -40px, rgba(0,0,0,0.1) 0px 25px 25px -5px;
+            position: relative;
+        }
+
+        .team-glass {
+            transform-style: preserve-3d;
+            position: absolute;
+            inset: 8px;
+            border-radius: 45px;
+            border-top-right-radius: 100%;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+            backdrop-filter: blur(5px);
+            transform: translate3d(0px, 0px, 25px);
+            border-left: 1px solid white;
+            border-bottom: 1px solid white;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .team-content {
+            padding: 100px 30px 0px 30px;
+            transform: translate3d(0, 0, 26px);
+        }
+
+        .team-content .title {
+            display: block;
+            color: #111;
+            font-weight: 800;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+
+        .team-content .text {
+            display: block;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .team-bottom {
+            padding: 10px 12px;
+            transform-style: preserve-3d;
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transform: translate3d(0, 0, 26px);
+        }
+
+        .team-social-container {
+            display: flex;
+            gap: 10px;
+            transform-style: preserve-3d;
+        }
+
+        .team-social-button {
+            width: 35px;
+            aspect-ratio: 1;
+            padding: 5px;
+            background: white;
+            border-radius: 50%;
+            border: none;
+            display: grid;
+            place-content: center;
+            box-shadow: rgba(0,0,0,0.1) 0px 7px 5px -5px;
+            transition: var(--transition);
+        }
+
+        .team-social-button:hover {
+            background: #111;
+            color: white;
+            transform: translate3d(0, 0, 20px);
+        }
+
+        .team-logo-circles {
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform-style: preserve-3d;
+        }
+
+        .team-circle {
+            display: block;
+            position: absolute;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            top: 0;
+            right: 0;
+            background: rgba(212, 175, 55, 0.2);
+            transition: all 0.5s ease-in-out;
+            backdrop-filter: blur(2px);
+        }
+
+        .team-circle1 { width: 150px; transform: translate3d(0, 0, 20px); top: 8px; right: 8px; }
+        .team-circle2 { width: 120px; transform: translate3d(0, 0, 40px); top: 10px; right: 10px; transition-delay: 0.2s; }
+        .team-circle3 { width: 90px; transform: translate3d(0, 0, 60px); top: 15px; right: 15px; transition-delay: 0.4s; }
+        .team-circle4 { width: 60px; transform: translate3d(0, 0, 80px); top: 20px; right: 20px; transition-delay: 0.6s; display: grid; place-content: center; }
+
+        .team-card-parent:hover .team-card {
+            transform: rotate3d(1, 1, 0, 20deg);
+        }
+        
+        .team-card-parent:hover .team-circle2 { transform: translate3d(0, 0, 60px); }
+        .team-card-parent:hover .team-circle3 { transform: translate3d(0, 0, 80px); }
+        .team-card-parent:hover .team-circle4 { transform: translate3d(0, 0, 100px); }
 
         /* Footer */
         footer {
@@ -370,45 +540,146 @@
         </div>
     </section>
 
-    <!-- Vision & Mission -->
-    <section class="section-padding" style="background-color: var(--dark-accent);">
+    <!-- Vision & Mission Redesigned -->
+    <section class="section-padding vision-mission-section">
+        <div class="blueprint-overlay"></div>
         <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Purpose</span>
-                <h2 style="margin-top: 1rem; font-size: 2.8rem;">Our Vision & Mission</h2>
+            <div class="section-header" style="text-align: center; margin-bottom: 5rem;" data-aos="fade-up">
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem;">The Blueprint of Our Success</span>
+                <h2 style="margin-top: 1rem; font-size: 3.5rem; color: #fff;">OUR VISION & MISSION</h2>
             </div>
 
-            <div class="vision-mission-grid">
-                <!-- Vision -->
-                <div class="v-m-card" data-aos="fade-up">
+            <div class="vm-container" data-aos="fade-up">
+                <!-- Vision Block -->
+                <div class="vm-block">
+                    <div class="vm-number">01</div>
                     <h3><i class="fas fa-eye"></i> Our Vision</h3>
-                    <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 1.5rem;">
+                    <p>
                         To become a leading construction company recognized for excellence, innovation, and an unwavering commitment to quality in every project we undertake.
                     </p>
-                    <p style="color: var(--gray); font-size: 1.1rem;">
+                    <p style="border-left: 3px solid var(--primary); padding-left: 1.5rem; font-style: italic;">
                         To be a trusted leader in the construction industry by delivering high-quality, innovative, and sustainable building solutions that consistently exceed client expectations.
                     </p>
                 </div>
 
-                <!-- Mission -->
-                <div class="v-m-card" data-aos="fade-up" data-aos-delay="200">
+                <!-- Mission Block -->
+                <div class="vm-block">
+                    <div class="vm-number">02</div>
                     <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                    <ul class="mission-list">
-                        <li><i class="fas fa-check-circle"></i> To deliver strong, reliable, and modern construction solutions tailored to client needs.</li>
-                        <li><i class="fas fa-check-circle"></i> To maintain the highest standards of quality, safety, and professionalism.</li>
-                        <li><i class="fas fa-check-circle"></i> To ensure timely project completion with complete transparency.</li>
-                        <li><i class="fas fa-check-circle"></i> To adopt innovative and sustainable construction practices.</li>
-                        <li><i class="fas fa-check-circle"></i> To build long-lasting relationships based on trust and integrity.</li>
-                    </ul>
-                    <p style="margin-top: 1.5rem; font-weight: 600; color: var(--light);">
-                        We aim to create structures that not only fulfill present needs but also add lasting value to our clients and the communities we serve.
-                    </p>
+                    <div class="mission-item">
+                        <i class="fas fa-check"></i>
+                        <span>Deliver strong, reliable, and modern construction solutions tailored to client needs.</span>
+                    </div>
+                    <div class="mission-item">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>Maintain the highest standards of quality, safety, and professionalism.</span>
+                    </div>
+                    <div class="mission-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Ensure timely project completion with complete transparency and integrity.</span>
+                    </div>
+                    <div class="mission-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Adopt innovative and sustainable construction practices for a better future.</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 4rem; font-size: 1.2rem; color: rgba(255,255,255,0.6); max-width: 800px; margin-left: auto; margin-right: auto;" data-aos="fade-up">
+                "We aim to create structures that not only fulfill present needs but also add lasting value to our clients and the communities we serve."
+            </p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section-padding" style="background-color: #fff;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 5rem;" data-aos="fade-up">
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem;">The Experts Behind AAKAR</span>
+                <h2 style="margin-top: 1rem; font-size: 3.5rem;">MEET OUR LEADERSHIP</h2>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;">
+                <!-- Team Member 1 -->
+                <div class="team-card-parent" data-aos="fade-up">
+                    <div class="team-card">
+                        <div class="team-logo-circles">
+                            <div class="team-circle team-circle1"></div>
+                            <div class="team-circle team-circle2"></div>
+                            <div class="team-circle team-circle3"></div>
+                            <div class="team-circle team-circle4"><i class="fas fa-user-tie" style="color: white; font-size: 1.5rem;"></i></div>
+                        </div>
+                        <div class="team-glass">
+                            <div class="team-content">
+                                <span class="title">Mr. Sairam</span>
+                                <span class="text">Managing Director & Founder</span>
+                                <p style="font-size: 0.8rem; margin-top: 15px; color: #555;">Visionary leader with 10+ years of experience in regional construction excellence.</p>
+                            </div>
+                            <div class="team-bottom">
+                                <div class="team-social-container">
+                                    <button class="team-social-button"><i class="fab fa-linkedin-in"></i></button>
+                                    <button class="team-social-button"><i class="fab fa-twitter"></i></button>
+                                    <button class="team-social-button"><i class="fab fa-instagram"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card-parent" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-logo-circles">
+                            <div class="team-circle team-circle1"></div>
+                            <div class="team-circle team-circle2"></div>
+                            <div class="team-circle team-circle3"></div>
+                            <div class="team-circle team-circle4"><i class="fas fa-drafting-compass" style="color: white; font-size: 1.5rem;"></i></div>
+                        </div>
+                        <div class="team-glass">
+                            <div class="team-content">
+                                <span class="title">Lead Architect</span>
+                                <span class="text">Head of Design & Planning</span>
+                                <p style="font-size: 0.8rem; margin-top: 15px; color: #555;">Expert in modern architectural aesthetics and sustainable urban planning.</p>
+                            </div>
+                            <div class="team-bottom">
+                                <div class="team-social-container">
+                                    <button class="team-social-button"><i class="fab fa-linkedin-in"></i></button>
+                                    <button class="team-social-button"><i class="fab fa-behance"></i></button>
+                                    <button class="team-social-button"><i class="fab fa-instagram"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card-parent" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-card">
+                        <div class="team-logo-circles">
+                            <div class="team-circle team-circle1"></div>
+                            <div class="team-circle team-circle2"></div>
+                            <div class="team-circle team-circle3"></div>
+                            <div class="team-circle team-circle4"><i class="fas fa-helmet-safety" style="color: white; font-size: 1.5rem;"></i></div>
+                        </div>
+                        <div class="team-glass">
+                            <div class="team-content">
+                                <span class="title">Site Engineer</span>
+                                <span class="text">Execution & Quality Control</span>
+                                <p style="font-size: 0.8rem; margin-top: 15px; color: #555;">Ensuring technical precision and safety standards on every project site.</p>
+                            </div>
+                            <div class="team-bottom">
+                                <div class="team-social-container">
+                                    <button class="team-social-button"><i class="fab fa-linkedin-in"></i></button>
+                                    <button class="team-social-button"><i class="fab fa-whatsapp"></i></button>
+                                    <button class="team-social-button"><i class="fab fa-facebook-f"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Final CTA -->
     <section class="section-padding">
         <div class="container">
             <div style="background: linear-gradient(135deg, #111111 0%, #050505 100%); padding: 5rem 3rem; border-radius: 40px; text-align: center; color: white; position: relative; overflow: hidden;" data-aos="zoom-in">
