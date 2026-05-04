@@ -347,7 +347,61 @@
             font-size: 0.9rem;
         }
 
-        /* Team Section */
+        /* Core Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            background: #fff;
+            padding: 3rem 2rem;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .value-card p {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -674,6 +728,55 @@
                             <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="section-padding" style="background-color: var(--dark-accent);">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Our Foundation</span>
+                <h2 style="margin-top: 1rem; font-size: 3rem;">OUR CORE VALUES</h2>
+                <p style="max-width: 700px; margin: 1rem auto 0; color: var(--gray);">At AAKAR Constructions, our values are the pillars that support every structure we build and every relationship we nurture.</p>
+            </div>
+
+            <div class="values-grid">
+                <!-- Value 1 -->
+                <div class="value-card" data-aos="fade-up">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Unmatched Quality</h3>
+                    <p>We use premium materials and rigorous quality checks to ensure your project stands the test of time.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Embracing the latest construction technologies and sustainable practices to deliver future-ready spaces.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Transparency</h3>
+                    <p>We believe in honest communication, clear contracts, and ethical business practices at every stage.</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Timely Delivery</h3>
+                    <p>Time is precious. Our efficient project management ensures that we hand over your keys exactly as promised.</p>
                 </div>
             </div>
         </div>
