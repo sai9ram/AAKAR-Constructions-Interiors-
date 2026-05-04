@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AAKAR Constructions</title>
+    <meta name="description" content="Learn about AAKAR Constructions - A trusted name in residential and commercial construction across Telangana and Andhra Pradesh.">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Design System Consistency */
+        :root {
+            --primary: #D4AF37;
+            --primary-hover: #b8962f;
+            --dark: #ffffff;
+            --dark-accent: #f9f9f9;
+            --light: #111111;
+            --gray: #666666;
+            --glass: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(0, 0, 0, 0.05);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 8rem 0;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-wrapper nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--light);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            transition: var(--transition);
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            opacity: 1;
+        }
+
+        /* Hero */
+        .page-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/hero_bg.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        /* Story Section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .story-img {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .story-img img {
+            width: 100%;
+            display: block;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Vision & Mission Cards */
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .vm-card {
+            background: var(--dark-accent);
+            padding: 4rem;
+            border-radius: 40px;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+
+        .vm-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .vm-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .vm-card ul {
+            list-style: none;
+        }
+
+        .vm-card ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            color: var(--gray);
+        }
+
+        .vm-card ul li i {
+            font-size: 1rem;
+            margin-bottom: 0;
+            margin-top: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .story-grid, .vm-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-hero h1 {
+                font-size: 3rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-wrapper">
+            <nav>
+                <a href="index.html" class="logo">AAKAR<span>.</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <a href="index.html#contact" class="btn btn-primary">Free Consultation</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container" data-aos="zoom-out">
+            <h1>Our Story</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Building Excellence Across Telangana & Andhra Pradesh</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-img" data-aos="fade-right">
+                    <img src="assets/about.png" alt="AAKAR Constructions Office">
+                </div>
+                <div class="story-content" data-aos="fade-left">
+                    <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">About Us</span>
+                    <h2>A Trusted Name in Modern Construction</h2>
+                    <p>AAKAR Constructions is a trusted name in residential and commercial construction, with a strong presence across Telangana (Hyderabad) and Andhra Pradesh (Rajahmundry and Palakollu). We specialize in delivering end-to-end construction solutions tailored to meet the unique requirements of our clients.</p>
+                    <p>Our services cover every stage of the project—from planning and design to execution and final delivery—ensuring a seamless and hassle-free experience. With a strong focus on quality, timely delivery, and customer satisfaction, we are committed to creating structures that are both functional and durable.</p>
+                    <p>Our team combines technical expertise with modern construction practices to deliver projects that meet the highest standards of strength, efficiency, and reliability.</p>
+                    <p>At AAKAR Constructions, we believe that every project is an opportunity to build lasting relationships and create value. Whether it is a residential home or a commercial development, we ensure attention to detail, transparency, and excellence in every aspect of our work.</p>
+                </div>
+            </div>
+
+            <!-- Vision & Mission -->
+            <div class="vm-grid">
+                <div class="vm-card" data-aos="fade-up">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--gray);">To become a leading construction company recognized for excellence, innovation, and an unwavering commitment to quality in every project we undertake.</p>
+                    <p style="color: var(--gray);">To be a trusted leader in the construction industry by delivering high-quality, innovative, and sustainable building solutions that consistently exceed client expectations.</p>
+                </div>
+                <div class="vm-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <ul>
+                        <li><i class="fas fa-check" style="color: var(--primary);"></i> To deliver strong, reliable, and modern construction solutions tailored to client needs</li>
+                        <li><i class="fas fa-check" style="color: var(--primary);"></i> To maintain the highest standards of quality, safety, and professionalism</li>
+                        <li><i class="fas fa-check" style="color: var(--primary);"></i> To ensure timely project completion with complete transparency</li>
+                        <li><i class="fas fa-check" style="color: var(--primary);"></i> To adopt innovative and sustainable construction practices</li>
+                        <li><i class="fas fa-check" style="color: var(--primary);"></i> To build long-lasting relationships based on trust and integrity</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 6rem;" data-aos="fade-up">
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--gray);">We aim to create structures that not only fulfill present needs but also add lasting value to our clients and the communities we serve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: #fff; margin-bottom: 30px; display: inline-block;">AAKAR<span>.</span></a>
+                    <p style="color: var(--gray);">Excellence in construction and architectural design. Building futures since 2019.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#services">Our Services</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li>Residential Construction</li>
+                        <li>Commercial Construction</li>
+                        <li>Interior Design</li>
+                        <li>Turnkey Solutions</li>
+                        <li>Renovation</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li>9-1-34/1, Flat 506, Rank One Towers, Langar House, Hyderabad</li>
+                        <li>+91 888 577 4890</li>
+                        <li>info@aakarconstruction.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AAKAR Constructions. All rights reserved.</p>
+                <div class="socials">
+                    <a href="#" style="color: var(--gray); margin-left: 1.5rem;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="color: var(--gray); margin-left: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: var(--gray); margin-left: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>
