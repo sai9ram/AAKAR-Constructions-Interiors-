@@ -1137,7 +1137,15 @@
 
             .service-featured-img {
                 height: 250px; /* Smaller height for mobile side-by-side */
+                width: 100%; /* Ensure it takes full column width */
                 border-radius: 15px;
+                display: block !important; /* Force visibility */
+                opacity: 1 !important;
+            }
+
+            .service-right {
+                display: block !important;
+                width: 100%;
             }
 
             /* Fix Warranty Section */
@@ -1882,19 +1890,26 @@
             });
         });
 
-        // Service Image Switcher
+        // Service Image Switcher (Desktop hover + Mobile touch)
         const serviceItems = document.querySelectorAll('.service-item');
         const featuredImg = document.querySelector('.service-featured-img img');
 
+        const switchImage = (item) => {
+            const newSrc = item.getAttribute('data-image');
+            if (featuredImg.src.includes(newSrc)) return;
+            
+            featuredImg.style.opacity = '0';
+            setTimeout(() => {
+                featuredImg.src = newSrc;
+                featuredImg.style.opacity = '1';
+            }, 200);
+        };
+
         serviceItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                const newSrc = item.getAttribute('data-image');
-                featuredImg.style.opacity = '0';
-                setTimeout(() => {
-                    featuredImg.src = newSrc;
-                    featuredImg.style.opacity = '1';
-                }, 200);
-            });
+            // Desktop
+            item.addEventListener('mouseenter', () => switchImage(item));
+            // Mobile/Touch
+            item.addEventListener('click', () => switchImage(item));
         });
 
         // Drag to scroll for Locations
