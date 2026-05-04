@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | AAKAR Constructions - Excellence in Every Build</title>
-    <meta name="description" content="Learn about AAKAR Constructions, our vision, mission, and our commitment to delivering high-quality construction solutions across Telangana and Andhra Pradesh.">
-    
+    <meta name="description"
+        content="Learn about AAKAR Constructions, our vision, mission, and our commitment to delivering high-quality construction solutions across Telangana and Andhra Pradesh.">
+
     <!-- Use same fonts and styles as index.html -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -123,7 +125,7 @@
 
         /* Hero Styling */
         .page-header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/hero_bg.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero_bg.png');
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -170,7 +172,7 @@
             position: relative;
             border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
         }
 
         .about-image img {
@@ -193,7 +195,7 @@
             width: 100%;
             height: 100%;
             opacity: 0.1;
-            background-image: 
+            background-image:
                 linear-gradient(var(--primary) 1px, transparent 1px),
                 linear-gradient(90deg, var(--primary) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -362,11 +364,12 @@
             text-align: center;
             padding-bottom: 2rem;
             position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Subtle initial shadow */
         }
 
         .team-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.1); /* Enhanced hover shadow */
             border-color: var(--primary);
         }
 
@@ -420,7 +423,8 @@
             line-height: 1.5;
             padding: 0 2rem;
             margin-bottom: 1.5rem;
-            height: 80px; /* Fixed height for alignment */
+            height: 80px;
+            /* Fixed height for alignment */
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 4;
@@ -452,25 +456,33 @@
             color: white;
             transform: rotate(360deg);
         }
+
         @media (max-width: 1024px) {
-            .about-grid, .vision-mission-grid {
+
+            .about-grid,
+            .vision-mission-grid {
                 grid-template-columns: 1fr;
             }
+
             .page-header h1 {
                 font-size: 2.5rem;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links, header .btn {
+
+            .nav-links,
+            header .btn {
                 display: none;
             }
+
             .footer-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header (Exact same as index.html) -->
@@ -508,16 +520,27 @@
                     <img src="assets/about.png" alt="AAKAR Constructions Team">
                 </div>
                 <div class="about-content" data-aos="fade-left">
-                    <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Who We Are</span>
+                    <span
+                        style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Who
+                        We Are</span>
                     <h2 style="margin: 1.5rem 0; font-size: 2.5rem;">Trusted Name in Premium Construction</h2>
                     <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 1.5rem;">
-                        AAKAR Constructions is a trusted name in residential and commercial construction, with a strong presence across Telangana (Hyderabad) and Andhra Pradesh (Rajahmundry and Palakollu). We specialize in delivering end-to-end construction solutions tailored to meet the unique requirements of our clients. 
+                        AAKAR Constructions is a trusted name in residential and commercial construction, with a strong
+                        presence across Telangana (Hyderabad) and Andhra Pradesh (Rajahmundry and Palakollu). We
+                        specialize in delivering end-to-end construction solutions tailored to meet the unique
+                        requirements of our clients.
                     </p>
                     <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 1.5rem;">
-                        Our services cover every stage of the project—from planning and design to execution and final delivery—ensuring a seamless and hassle-free experience. With a strong focus on quality, timely delivery, and customer satisfaction, we are committed to creating structures that are both functional and durable.
+                        Our services cover every stage of the project—from planning and design to execution and final
+                        delivery—ensuring a seamless and hassle-free experience. With a strong focus on quality, timely
+                        delivery, and customer satisfaction, we are committed to creating structures that are both
+                        functional and durable.
                     </p>
                     <p style="font-size: 1.1rem; color: var(--gray);">
-                        Our team combines technical expertise with modern construction practices to deliver projects that meet the highest standards of strength, efficiency, and reliability. At AAKAR Constructions, we believe that every project is an opportunity to build lasting relationships and create value.
+                        Our team combines technical expertise with modern construction practices to deliver projects
+                        that meet the highest standards of strength, efficiency, and reliability. At AAKAR
+                        Constructions, we believe that every project is an opportunity to build lasting relationships
+                        and create value.
                     </p>
                 </div>
             </div>
@@ -529,7 +552,9 @@
         <div class="blueprint-overlay"></div>
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 5rem;" data-aos="fade-up">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem;">The Blueprint of Our Success</span>
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem;">The
+                    Blueprint of Our Success</span>
                 <h2 style="margin-top: 1rem; font-size: 3.5rem; color: #fff;">OUR VISION & MISSION</h2>
             </div>
 
@@ -539,10 +564,12 @@
                     <div class="vm-number">01</div>
                     <h3><i class="fas fa-eye"></i> Our Vision</h3>
                     <p>
-                        To become a leading construction company recognized for excellence, innovation, and an unwavering commitment to quality in every project we undertake.
+                        To become a leading construction company recognized for excellence, innovation, and an
+                        unwavering commitment to quality in every project we undertake.
                     </p>
                     <p style="border-left: 3px solid var(--primary); padding-left: 1.5rem; font-style: italic;">
-                        To be a trusted leader in the construction industry by delivering high-quality, innovative, and sustainable building solutions that consistently exceed client expectations.
+                        To be a trusted leader in the construction industry by delivering high-quality, innovative, and
+                        sustainable building solutions that consistently exceed client expectations.
                     </p>
                 </div>
 
@@ -552,7 +579,8 @@
                     <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
                     <div class="mission-item">
                         <i class="fas fa-check"></i>
-                        <span>Deliver strong, reliable, and modern construction solutions tailored to client needs.</span>
+                        <span>Deliver strong, reliable, and modern construction solutions tailored to client
+                            needs.</span>
                     </div>
                     <div class="mission-item">
                         <i class="fas fa-shield-halved"></i>
@@ -569,8 +597,10 @@
                 </div>
             </div>
 
-            <p style="text-align: center; margin-top: 4rem; font-size: 1.2rem; color: rgba(255,255,255,0.6); max-width: 800px; margin-left: auto; margin-right: auto;" data-aos="fade-up">
-                "We aim to create structures that not only fulfill present needs but also add lasting value to our clients and the communities we serve."
+            <p style="text-align: center; margin-top: 4rem; font-size: 1.2rem; color: rgba(255,255,255,0.6); max-width: 800px; margin-left: auto; margin-right: auto;"
+                data-aos="fade-up">
+                "We aim to create structures that not only fulfill present needs but also add lasting value to our
+                clients and the communities we serve."
             </p>
         </div>
     </section>
@@ -579,22 +609,27 @@
     <section class="section-padding" style="background-color: #ffffff;">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Our Experts</span>
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Our
+                    Experts</span>
                 <h2 style="margin-top: 1rem; font-size: 3rem;">MEET OUR TEAM</h2>
-                <p style="max-width: 600px; margin: 1rem auto 0; color: var(--gray);">Our dedicated team of professionals brings together decades of expertise in architecture, engineering, and project management.</p>
+                <p style="max-width: 600px; margin: 1rem auto 0; color: var(--gray);">Our dedicated team of
+                    professionals brings together decades of expertise in architecture, engineering, and project
+                    management.</p>
             </div>
 
             <div class="team-grid">
                 <!-- Member 1 -->
                 <div class="team-card" data-aos="fade-up">
                     <div class="team-img">
-                        <img src="assets/project1.png" alt="Rama kishan komanduri">
+                        <img src="Team1.png" alt="Rama kishan komanduri">
                     </div>
                     <div class="team-info">
                         <h4>Mr. Rama Kishan Komanduri</h4>
                         <span class="role">Managing Director</span>
                         <span class="qual">B.Tech & Construction Management</span>
-                        <p class="desc">Planning and supervising construction projects to ensure they are completed on time, within budget, and with proper quality and safety.</p>
+                        <p class="desc">Planning and supervising construction projects to ensure they are completed on
+                            time, within budget, and with proper quality and safety.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -606,13 +641,14 @@
                 <!-- Member 2 -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="team-img">
-                        <img src="assets/residential.png" alt="Mallikharjun billa">
+                        <img src="Team2.jpeg" alt="Mallikharjun billa">
                     </div>
                     <div class="team-info">
                         <h4>Mr. Mallikharjun Billa</h4>
                         <span class="role">Executive Director</span>
                         <span class="qual">B.Tech Civil</span>
-                        <p class="desc">Proven excellence in construction management with the ability to translate core skills into successful project execution, backed by 10+ years of experience.</p>
+                        <p class="desc">Proven excellence in construction management with the ability to translate core
+                            skills into successful project execution, backed by 10+ years of experience.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -624,13 +660,14 @@
                 <!-- Member 3 -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="team-img">
-                        <img src="assets/commercial.png" alt="Sanmukha Rao Kotturu">
+                        <img src="Team3.png" alt="Sanmukha Rao Kotturu">
                     </div>
                     <div class="team-info">
                         <h4>Mr. Sanmukha Rao Kotturu</h4>
                         <span class="role">Vastu Specialist & Civil Engineer</span>
                         <span class="qual">B.Tech Civil</span>
-                        <p class="desc">Dedicated Civil Engineer and Vastu Specialist with 20+ years of experience in site management, manpower, and machinery coordination.</p>
+                        <p class="desc">Dedicated Civil Engineer and Vastu Specialist with 20+ years of experience in
+                            site management, manpower, and machinery coordination.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -645,10 +682,13 @@
     <!-- Final CTA -->
     <section class="section-padding">
         <div class="container">
-            <div style="background: linear-gradient(135deg, #111111 0%, #050505 100%); padding: 5rem 3rem; border-radius: 40px; text-align: center; color: white; position: relative; overflow: hidden;" data-aos="zoom-in">
+            <div style="background: linear-gradient(135deg, #111111 0%, #050505 100%); padding: 5rem 3rem; border-radius: 40px; text-align: center; color: white; position: relative; overflow: hidden;"
+                data-aos="zoom-in">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Let’s Build Something Exceptional Together</h2>
-                <p style="color: rgba(255,255,255,0.7); font-size: 1.2rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    Whether it is a residential home or a commercial development, we ensure attention to detail, transparency, and excellence in every aspect.
+                <p
+                    style="color: rgba(255,255,255,0.7); font-size: 1.2rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Whether it is a residential home or a commercial development, we ensure attention to detail,
+                    transparency, and excellence in every aspect.
                 </p>
                 <a href="index.html#contact" class="btn btn-primary">Start Your Project Journey</a>
             </div>
@@ -722,4 +762,5 @@
         });
     </script>
 </body>
+
 </html>
