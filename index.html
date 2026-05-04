@@ -1105,30 +1105,39 @@
                 padding: 1.5rem !important;
             }
 
-            /* Fix Services Section for Mobile */
+            /* Fix Services Section for Mobile (Restored Side-by-Side Design) */
             .services-section {
                 border-radius: 30px;
                 margin: 0 0.5rem;
             }
 
             .services-layout {
-                grid-template-columns: 1fr;
-                padding: 40px 1.5rem;
-                gap: 2rem;
-            }
-
-            .service-featured-img {
-                height: 300px;
-                border-radius: 20px;
-                order: -1; /* Place image at top */
+                grid-template-columns: 1fr 1fr; /* Keep side-by-side as requested */
+                gap: 1rem;
+                padding: 2rem 1rem;
+                align-items: flex-start;
             }
 
             .service-item {
-                padding: 1.2rem 0;
+                padding: 1rem 0;
             }
 
             .service-item h3 {
-                font-size: 1.2rem;
+                font-size: 0.85rem; /* Smaller for mobile grid */
+                line-height: 1.3;
+            }
+
+            .service-item i {
+                font-size: 0.8rem;
+            }
+
+            .service-item:hover {
+                padding-left: 0.5rem;
+            }
+
+            .service-featured-img {
+                height: 250px; /* Smaller height for mobile side-by-side */
+                border-radius: 15px;
             }
 
             /* Fix Warranty Section */
