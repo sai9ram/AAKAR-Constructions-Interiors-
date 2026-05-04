@@ -1061,34 +1061,48 @@
                 gap: 0.2rem;
             }
 
-            /* Restore About Section Desktop Layout on Mobile */
+            /* Fix About Section for Mobile */
             .about-section {
-                grid-template-columns: 1fr 1fr; /* Maintain 2 columns */
-                gap: 1.5rem; /* Reduced gap for mobile */
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+                text-align: center;
+            }
+
+            .about-img-wrapper img {
+                border-radius: 20px;
             }
 
             .stats-grid {
-                padding: 1rem;
-                bottom: -15px;
-                right: -15px;
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin: -40px auto 0;
+                width: 85%;
                 gap: 1rem;
+                padding: 1.5rem;
+                box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
             }
 
             .stat-item h4 {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
 
-            .vision-mission-cards {
-                grid-template-columns: 1fr 1fr !important; /* Force 2 columns */
-                gap: 0.8rem !important;
+            .about-content h2 {
+                font-size: 2.2rem;
             }
 
-            .vision-mission-cards div {
-                padding: 1rem !important;
+            .about-content p {
+                font-size: 1rem;
             }
 
-            .vision-mission-cards h4 {
-                font-size: 1rem !important;
+            /* Why Choose Us Grid */
+            .why-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            .why-item {
+                padding: 1.5rem !important;
             }
 
             /* Fix Warranty Section */
