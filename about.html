@@ -53,20 +53,31 @@
         /* Header Styling */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
             z-index: 1000;
-            padding: 2rem 0;
+            padding: 0.6rem 1.5rem;
             transition: var(--transition);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
         }
 
         header.scrolled {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            padding: 1.2rem 0;
+            top: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(212, 175, 55, 0.2);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border-bottom: 1px solid var(--glass-border);
+            padding: 0.5rem 1.5rem;
+        }
+
+        .nav-wrapper {
+            padding: 0 !important;
         }
 
         .nav-wrapper nav {
