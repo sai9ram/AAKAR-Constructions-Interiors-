@@ -139,7 +139,7 @@
 
         /* Page Header */
         .page-header {
-            height: 450px;
+            height: 400px;
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero_bg.png');
             background-size: cover;
             background-position: center;
@@ -179,12 +179,12 @@
         }
 
         .form-group {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-weight: 700;
             color: var(--light);
             font-size: 0.9rem;
@@ -193,6 +193,9 @@
         }
 
         input[type="number"],
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
         select {
             width: 100%;
             padding: 1.2rem 1.5rem;
@@ -256,19 +259,37 @@
         }
 
         .total-price {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             color: var(--primary);
             margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #00ff88;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .breakdown-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             font-size: 1rem;
             border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
         }
 
         .breakdown-item span:first-child {
@@ -529,19 +550,41 @@
 
                 <div class="result-card" data-aos="fade-up">
                     <span style="color: var(--gray); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Estimated Total Cost</span>
-                    <div class="total-price" id="totalCost">₹ 0</div>
+                    <div class="total-price" id="totalCost">₹ 0 <span class="live-dot"></span></div>
                     <p id="areaDisplay" style="color: var(--gray); margin-bottom: 2rem; font-weight: 500;">1,000 Sq. Ft Built-up Area</p>
                     
-                    <div id="breakdown-list" style="color: var(--light)">
+                    <div id="breakdown-list" style="color: var(--light); margin-bottom: 2rem;">
                         <!-- Breakdown items -->
                     </div>
 
-                    <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 2rem; border-radius: 15px;">Confirm Details & Get Consultation</a>
-                    <p style="text-align: center; font-size: 0.7rem; color: var(--gray); margin-top: 1rem;">* Values are approximate. Final quote depends on specific site conditions.</p>
+                    <div style="border-top: 1px solid #f0f0f0; padding-top: 2rem;">
+                        <h4 style="margin-bottom: 1.5rem; color: var(--light);">Get Official Quote on WhatsApp</h4>
+                        <form id="quoteForm">
+                            <div class="form-group" style="margin-bottom: 1rem;">
+                                <input type="text" id="userName" placeholder="Your Name" required style="padding: 0.8rem 1.2rem; font-size: 1rem;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 1rem;">
+                                <input type="tel" id="userPhone" placeholder="WhatsApp Number" required style="padding: 0.8rem 1.2rem; font-size: 1rem;">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 12px; padding: 1rem;">
+                                Confirm & Send Details <i class="fab fa-whatsapp" style="margin-left: 0.5rem;"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <p style="text-align: center; font-size: 0.7rem; color: var(--gray); margin-top: 1rem;">* By clicking, you agree to receive a copy on your WhatsApp.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Hidden Form for Email via FormSubmit -->
+    <form id="hiddenEmailForm" action="https://formsubmit.co/info@aakarconstruction.in" method="POST" style="display:none;">
+        <input type="hidden" name="name" id="h_name">
+        <input type="hidden" name="phone" id="h_phone">
+        <input type="hidden" name="estimate_details" id="h_details">
+        <input type="hidden" name="_subject" value="New Construction Estimate Inquiry">
+        <input type="hidden" name="_template" value="table">
+    </form>
 
     <!-- Footer -->
     <footer>
@@ -659,7 +702,7 @@
             const totalArea = area * floors;
             const total = totalArea * qualityRates[currentQuality];
 
-            document.getElementById('totalCost').innerText = '₹ ' + total.toLocaleString('en-IN');
+            document.getElementById('totalCost').innerHTML = '₹ ' + total.toLocaleString('en-IN') + ' <span class="live-dot"></span>';
             document.getElementById('areaDisplay').innerText = totalArea.toLocaleString() + ' Sq. Ft Built-up Area';
 
             const breakdown = [
@@ -677,6 +720,48 @@
         }
 
         calculate();
+
+        // Handle Form Submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('userName').value;
+            const phone = document.getElementById('userPhone').value;
+            const area = document.getElementById('plotArea').value;
+            const floors = document.getElementById('floors').value;
+            const totalCost = document.getElementById('totalCost').innerText;
+            const quality = currentQuality.charAt(0).toUpperCase() + currentQuality.slice(1);
+
+            const details = `Project Details:
+- Name: ${name}
+- Phone: ${phone}
+- Area: ${area * floors} Sq. Ft
+- Quality: ${quality}
+- Estimated Total: ${totalCost}`;
+
+            // 1. Send to WhatsApp
+            const waMessage = `Hello AAKAR Constructions, I am ${name}. I just calculated an estimate for my project on your website:
+            
+*Project Summary:*
+📍 Total Area: ${area * floors} Sq. Ft
+🏗️ Quality: ${quality} Package
+💰 Estimated Cost: ${totalCost}
+
+I would like to discuss this project further. Please contact me.`;
+            
+            const waUrl = `https://wa.me/918885774890?text=${encodeURIComponent(waMessage)}`;
+            
+            // 2. Prepare and send hidden email form (Background)
+            document.getElementById('h_name').value = name;
+            document.getElementById('h_phone').value = phone;
+            document.getElementById('h_details').value = details;
+            
+            // Note: In a real static site, we'd submit the form in the background or use an API
+            // For now, we'll open WhatsApp in a new tab and submit the form in the current one
+            
+            window.open(waUrl, '_blank');
+            document.getElementById('hiddenEmailForm').submit();
+        });
 
         // Header Scroll
         window.addEventListener('scroll', () => {
