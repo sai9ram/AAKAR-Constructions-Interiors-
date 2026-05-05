@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refer & Earn | AAKAR Constructions</title>
+    <meta name="description"
+        content="Refer your friends, relatives, or colleagues and earn up to ₹1,00,000 when they build with AAKAR Constructions.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #D4AF37;
+            --primary-hover: #b8962f;
+            --dark: #ffffff;
+            --dark-accent: #f9f9f9;
+            --light: #111111;
+            --gray: #666666;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(0, 0, 0, 0.05);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* Header Styling (Floating Pill) */
+        header {
+            position: fixed;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            z-index: 1000;
+            padding: 0.6rem 1.5rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+        }
+
+        header.scrolled {
+            top: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 0.5rem 1.5rem;
+        }
+
+        .nav-wrapper nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--light);
+            text-decoration: none;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            opacity: 0.7;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            opacity: 1;
+        }
+
+        /* Hero Styling */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/hero_bg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 180px 0 100px;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .page-header h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtext {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--light);
+            transform: translateY(-5px);
+        }
+        
+        /* Tagline */
+        .tagline {
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Steps Section */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .step-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Rewards Structure */
+        .rewards-section {
+            background: var(--dark-accent);
+        }
+
+        .rewards-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 3rem auto 0;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+
+        .rewards-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 2.5rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .rewards-header {
+            background: var(--light);
+            color: white;
+            font-weight: 700;
+        }
+
+        .rewards-row:not(.rewards-header):hover {
+            background: #fdfbf5;
+        }
+
+        .rewards-val {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .rewards-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-weight: 600;
+            color: var(--light);
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid sections (Why / Who) */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .list-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--glass-border);
+        }
+
+        .list-box h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .list-box ul {
+            list-style: none;
+        }
+
+        .list-box li {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .list-box li i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Form Styling */
+        .form-section {
+            background: var(--dark-accent);
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 40px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--light);
+            font-size: 0.95rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: var(--dark-accent);
+            border: 1px solid transparent;
+            border-radius: 15px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.05);
+        }
+        
+        /* Tracker & Social Sharing */
+        .tracker-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .tracker-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--primary);
+        }
+        
+        .tracker-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-sharing {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-btn { background: #25D366; }
+        .facebook-btn { background: #1877F2; }
+        .copy-btn { background: var(--gray); }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        /* Terms */
+        .terms-box {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            background: var(--dark-accent);
+            padding: 2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .terms-box h4 {
+            color: var(--light);
+            margin-bottom: 1rem;
+        }
+        
+        .terms-box ul {
+            padding-left: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f9f9f9;
+            padding: 80px 0 30px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 4rem;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .page-header h1 {
+                font-size: 3rem;
+            }
+            .two-col-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links,
+            header .btn {
+                display: none;
+            }
+
+            header {
+                width: 92%;
+                top: 10px;
+                padding: 0.5rem 1rem;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .page-header {
+                padding: 150px 1rem 80px;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .form-row, .tracker-input-group {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .social-sharing {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .rewards-row {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-wrapper">
+            <nav>
+                <a href="index.html" class="logo">AAKAR<span>.</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="refer-earn.html" style="color: var(--primary); font-weight: 700;"><i class="fas fa-gift" style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container" data-aos="fade-up">
+            <h1>Help Your Friends Build Their Dream Home & <span>Earn Up to ₹1,00,000</span></h1>
+            <p class="hero-subtext">Refer your friends, relatives, or colleagues and earn exciting rewards when they build with us.</p>
+            
+            <div class="trust-badges">
+                <div class="trust-badge"><i class="fas fa-check-circle"></i> Quality Construction</div>
+                <div class="trust-badge"><i class="fas fa-check-circle"></i> On-Time Delivery</div>
+                <div class="trust-badge"><i class="fas fa-check-circle"></i> 100% Transparency</div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#referral-form" class="btn btn-primary">👉 Refer Now & Earn</a>
+                <a href="contact.html" class="btn btn-outline">👉 Talk to Our Team</a>
+            </div>
+            
+            <p class="tagline">“Refer Smart. Earn Big. Your Network = Your Income”</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem; color: var(--light);">How It Works</h2>
+                <p style="color: var(--gray);">Four simple steps to claim your reward.</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-number">1</div>
+                    <h3>Refer</h3>
+                    <p>Share your friend’s details through our website or WhatsApp.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <h3>We Connect</h3>
+                    <p>Our expert team will contact them and guide them through planning & pricing.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <h3>Project Confirmation</h3>
+                    <p>Once they finalize and start construction with us.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <h3>Earn Rewards</h3>
+                    <p>You receive your referral bonus after project agreement/start.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Structure -->
+    <section class="section-padding rewards-section">
+        <div class="container">
+            <div style="text-align: center;" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem; color: var(--light);">💰 Referral Rewards Structure</h2>
+            </div>
+            
+            <div class="rewards-table" data-aos="fade-up" data-aos-delay="100">
+                <div class="rewards-row rewards-header">
+                    <div>Project Value</div>
+                    <div>Your Reward</div>
+                </div>
+                <div class="rewards-row">
+                    <div>₹10 Lakhs – ₹25 Lakhs</div>
+                    <div class="rewards-val">₹10,000 – ₹25,000</div>
+                </div>
+                <div class="rewards-row">
+                    <div>₹25 Lakhs – ₹50 Lakhs</div>
+                    <div class="rewards-val">₹25,000 – ₹50,000</div>
+                </div>
+                <div class="rewards-row">
+                    <div>₹50 Lakhs and Above</div>
+                    <div class="rewards-val">Up to ₹1,00,000</div>
+                </div>
+            </div>
+            
+            <p class="rewards-note" data-aos="fade-up" data-aos-delay="200">
+                👉 No limit on the number of referrals – Earn more by referring more!
+            </p>
+        </div>
+    </section>
+
+    <!-- Why & Who -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="two-col-grid">
+                <div class="list-box" data-aos="fade-right">
+                    <h3>🎯 Why Refer Us?</h3>
+                    <ul>
+                        <li><i class="fas fa-building"></i> Trusted Construction Company</li>
+                        <li><i class="fas fa-hard-hat"></i> Experienced Engineers & Designers</li>
+                        <li><i class="fas fa-file-invoice-dollar"></i> Transparent Pricing (No Hidden Costs)</li>
+                        <li><i class="fas fa-cubes"></i> Premium Quality Materials</li>
+                        <li><i class="fas fa-clock"></i> On-Time Project Delivery</li>
+                        <li><i class="fas fa-user-tie"></i> Dedicated Site Engineer Support</li>
+                    </ul>
+                </div>
+                
+                <div class="list-box" data-aos="fade-left">
+                    <h3>📋 Who Can Refer?</h3>
+                    <ul>
+                        <li><i class="fas fa-user-check"></i> Existing customers</li>
+                        <li><i class="fas fa-users"></i> Friends & family</li>
+                        <li><i class="fas fa-handshake"></i> Real estate agents</li>
+                        <li><i class="fas fa-pencil-ruler"></i> Architects / engineers</li>
+                        <li><i class="fas fa-address-book"></i> Anyone with contacts planning construction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Form Section -->
+    <section id="referral-form" class="section-padding form-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem; color: var(--light);">Submit a Referral</h2>
+                <p style="color: var(--gray);">Fill out the details below to start earning.</p>
+            </div>
+            
+            <div class="contact-form-container" data-aos="fade-up" data-aos-delay="100">
+                <form action="https://formsubmit.co/srikakatiya227@gmail.com" method="POST">
+                    <!-- Config for FormSubmit -->
+                    <input type="hidden" name="_subject" value="New Referral from Website!">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Your Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" name="referrer_name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Phone Number</label>
+                            <input type="tel" name="referrer_phone" placeholder="+91 00000 00000" required>
+                        </div>
+                    </div>
+                    
+                    <hr style="border: none; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+                    
+                    <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Friend's Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Friend’s Name</label>
+                            <input type="text" name="friend_name" placeholder="Enter friend's full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Friend’s Phone Number</label>
+                            <input type="tel" name="friend_phone" placeholder="+91 00000 00000" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Plot Location / City</label>
+                            <input type="text" name="plot_location" placeholder="E.g., Hyderabad, Vizag" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Type of Construction</label>
+                            <select name="construction_type" required>
+                                <option value="" disabled selected>Select type</option>
+                                <option value="House">Independent House / Villa</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Commercial">Commercial Building</option>
+                                <option value="Interior">Interior Design</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">👉 Submit Referral</button>
+                </form>
+            </div>
+            
+            <!-- Terms & Conditions -->
+            <div class="terms-box" data-aos="fade-up">
+                <h4>⚠ Terms & Conditions</h4>
+                <ul>
+                    <li>Referral reward is applicable only after project confirmation.</li>
+                    <li>Reward is paid after the project agreement is signed or initial payment is made.</li>
+                    <li>Duplicate referrals will not be considered (first-come, first-served basis).</li>
+                    <li>AAKAR Constructions' management decision will be final regarding reward payouts.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tracker & Sharing -->
+    <section class="tracker-section">
+        <div class="container">
+            <div class="tracker-box" data-aos="fade-up">
+                <h3 style="font-size: 2rem; color: var(--light); margin-bottom: 1rem;">👉 Referral Tracker</h3>
+                <p style="color: var(--gray);">Check your referral status: <b>Pending / Contacted / Confirmed / Paid</b></p>
+                
+                <div class="tracker-input-group">
+                    <input type="tel" placeholder="Enter your registered phone number" style="border: 1px solid var(--glass-border);">
+                    <button class="btn btn-primary" onclick="alert('Feature coming soon! Our team will update you via WhatsApp.')" style="width: auto;">Check Status</button>
+                </div>
+                
+                <hr style="border: none; border-top: 1px solid var(--glass-border); margin: 3rem 0;">
+                
+                <h4 style="margin-bottom: 1rem;">⭐ Share with your network</h4>
+                <div class="social-sharing">
+                    <a href="#" class="social-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
+                    <a href="#" class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i> Share on Facebook</a>
+                    <a href="#" class="social-btn copy-btn" onclick="alert('Link copied to clipboard!')"><i class="fas fa-link"></i> Copy Link</a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 4rem;" data-aos="fade-up">
+                <h3>📞 Need help? Talk to us</h3>
+                <p style="font-size: 1.2rem; margin-top: 1rem;">
+                    📱 Call / WhatsApp: <a href="tel:+918885774890" style="color: var(--primary); text-decoration: none; font-weight: 700;">+91 888 577 4890</a>
+                </p>
+                <p style="font-size: 1.1rem;">📍 Office Location: Hyderabad, Telangana</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 1.5rem;">AAKAR<span>.</span></a>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Building high-quality residential and commercial
+                        spaces across Andhra Pradesh and Telangana. Innovation, quality, and excellence in every brick.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Residential Construction</a></li>
+                        <li><a href="services.html">Commercial Construction</a></li>
+                        <li><a href="services.html">Interior Design</a></li>
+                        <li><a href="services.html">Turnkey Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            9-1-34/1, Flat 506, Rank One Towers, Opposite Alankar Theatre, Langar House, Hyderabad -
+                            500008</li>
+                        <li><i class="fas fa-phone" style="color: var(--primary); margin-right: 0.5rem;"></i> +91 888
+                            577 4890</li>
+                        <li><i class="fas fa-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            info@aakarconstructions.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AAKAR Constructions. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#" style="color: var(--gray); text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: var(--gray); text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="services.html" class="nav-item">
+            <i class="fas fa-tools"></i>
+            <span>Services</span>
+        </a>
+        <a href="projects.html" class="nav-item">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+        </a>
+        <a href="refer-earn.html" class="nav-item">
+            <i class="fas fa-gift"></i>
+            <span>Refer</span>
+        </a>
+    </nav>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+</body>
+
+</html>
