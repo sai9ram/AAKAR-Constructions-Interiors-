@@ -525,7 +525,7 @@
 
             <div class="projects-grid">
                 <!-- Project 1: V-Banquets -->
-                <div class="project-card" data-aos="fade-up">
+                <div class="project-card" data-category="commercial" data-aos="fade-up">
                     <img src="assets/commercial_service_1777888901688.png" alt="V-Banquets Madhapur Commercial Project">
                     <div class="project-overlay">
                         <span class="project-tag">Commercial</span>
@@ -539,7 +539,7 @@
                 </div>
 
                 <!-- Project 2: Home Tree Project -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="100">
                     <img src="assets/residential_service_1777888816618.png" alt="Home Tree Project Osman Nagar Residential">
                     <div class="project-overlay">
                         <span class="project-tag">Residential</span>
@@ -553,7 +553,7 @@
                 </div>
 
                 <!-- Project 3: Simhapuri Colony -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
                     <img src="assets/residential.png" alt="Simhapuri Colony Residential Project">
                     <div class="project-overlay">
                         <span class="project-tag">Residential</span>
@@ -567,7 +567,7 @@
                 </div>
 
                 <!-- Project 4: Hitech City Commercial -->
-                <div class="project-card" data-aos="fade-up">
+                <div class="project-card" data-category="commercial" data-aos="fade-up">
                     <img src="assets/commercial.png" alt="Hitech City Commercial Project">
                     <div class="project-overlay">
                         <span class="project-tag">Commercial</span>
@@ -581,7 +581,7 @@
                 </div>
 
                 <!-- Project 5: Rajahmundry Residential -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="100">
                     <img src="assets/project1.png" alt="Rajahmundry Residential Project">
                     <div class="project-overlay">
                         <span class="project-tag">Residential</span>
@@ -595,7 +595,7 @@
                 </div>
 
                 <!-- Project 6: Palakollu Project -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
                     <img src="assets/about.png" alt="Palakollu Material Contract Project">
                     <div class="project-overlay">
                         <span class="project-tag">Material Contract</span>
@@ -617,7 +617,7 @@
 
             <div class="projects-grid">
                 <!-- Ongoing 1: Nanakramguda -->
-                <div class="project-card" data-aos="fade-up">
+                <div class="project-card" data-category="commercial" data-aos="fade-up">
                     <img src="assets/construction_site_wide_1777889025405.png" alt="Nanakramguda Commercial Project Ongoing">
                     <div class="project-overlay">
                         <span class="project-tag ongoing">Ongoing</span>
@@ -631,7 +631,7 @@
                 </div>
 
                 <!-- Ongoing 2: Palakollu Residential 1 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="100">
                     <img src="assets/Individual_Houses_202605041733.jpeg" alt="Palakollu Residential Project Ongoing">
                     <div class="project-overlay">
                         <span class="project-tag ongoing">Ongoing</span>
@@ -645,7 +645,7 @@
                 </div>
 
                 <!-- Ongoing 3: Palakollu Residential 2 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
                     <img src="assets/Architectural_Design_202605041735.jpeg" alt="Palakollu Residential Project Ongoing">
                     <div class="project-overlay">
                         <span class="project-tag ongoing">Ongoing</span>
@@ -659,7 +659,7 @@
                 </div>
 
                 <!-- Ongoing 4: Palakollu Residential 3 -->
-                <div class="project-card" data-aos="fade-up">
+                <div class="project-card" data-category="residential" data-aos="fade-up">
                     <img src="assets/residential.png" alt="Palakollu Residential Project Ongoing">
                     <div class="project-overlay">
                         <span class="project-tag ongoing">Ongoing</span>
@@ -668,6 +668,28 @@
                         <div class="project-meta">
                             <span><i class="fas fa-tools"></i> Material Contract</span>
                             <span><i class="fas fa-map-marker-alt"></i> Palakollu | 95L</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interior Projects Section -->
+            <div class="section-header" style="text-align: center; margin-top: 6rem; margin-bottom: 3rem;" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem; color: var(--primary);">Interior Projects</h2>
+                <p>Premium execution and creative design for luxury spaces.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Interior 1: Stay Hotel -->
+                <div class="project-card" data-category="interiors" data-aos="fade-up">
+                    <img src="assets/interior_design_1777888938561.png" alt="Stay Hotel Interior Project">
+                    <div class="project-overlay">
+                        <span class="project-tag">Interiors</span>
+                        <h3>Stay Hotel & Arrival Hotel</h3>
+                        <p>High-end interior execution for a premium hospitality project.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-couch"></i> Hospitality Interior</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Hitech City | 2Cr</span>
                         </div>
                     </div>
                 </div>
@@ -755,6 +777,44 @@
             const header = document.getElementById('header');
             if (window.scrollY > 50) header.classList.add('scrolled');
             else header.classList.remove('scrolled');
+        });
+
+        // Portfolio Filtering Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const sectionHeaders = document.querySelectorAll('.section-header'); // completed, ongoing, interior headers
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filterValue = btn.textContent.toLowerCase().trim();
+                    
+                    projectCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filterValue === 'all projects' || (category && category === filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // Hide section headers if a specific filter is applied, to make it look like one list
+                    sectionHeaders.forEach(header => {
+                        if (filterValue === 'all projects') {
+                            header.style.display = 'block';
+                        } else {
+                            header.style.display = 'none';
+                        }
+                    });
+                    
+                    // Refresh AOS animations after layout changes
+                    setTimeout(() => AOS.refresh(), 100);
+                });
+            });
         });
     </script>
 </body>
