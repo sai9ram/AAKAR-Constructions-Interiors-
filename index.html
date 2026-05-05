@@ -12,6 +12,14 @@
 
     <link rel="icon" type="image/jpeg" href="Original Logo.jpeg">
 
+    <!-- Performance Optimization: Preconnect & Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <link rel="preload" as="image" href="assets/AAKAR Banner.jpeg" fetchpriority="high">
+
     <!-- Internal CSS -->
     <style>
         /* index.css - AAKAR Constructions Design System */
@@ -1652,7 +1660,7 @@
     <header id="header">
         <div class="container nav-wrapper">
             <nav>
-                <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
+                <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo" decoding="async" fetchpriority="high"></a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -1840,7 +1848,7 @@
 
                 <!-- Project 2: Home Tree Project -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/Osman nagar.jpeg" alt="Home Tree Project Osman Nagar Residential">
+                    <img src="assets/Osman nagar.jpeg" alt="Home Tree Project Osman Nagar Residential" loading="lazy" decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Home Tree Project</h3>
@@ -1853,7 +1861,7 @@
 
                 <!-- Project 3: Simhapuri Colony -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/Simhapuri colony.jpeg" alt="Simhapuri Colony Residential Project">
+                    <img src="assets/Simhapuri colony.jpeg" alt="Simhapuri Colony Residential Project" loading="lazy" decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Simhapuri Colony</h3>
@@ -1866,7 +1874,7 @@
 
                 <!-- Project 4: Hitech City Commercial -->
                 <div class="cat-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/High-tech City.jpeg" alt="Hitech City Commercial Project">
+                    <img src="assets/High-tech City.jpeg" alt="Hitech City Commercial Project" loading="lazy" decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Commercial</span>
                         <h3>Hitech City Commercial</h3>
@@ -1879,7 +1887,7 @@
 
                 <!-- Project 5: Rajahmundry Residential -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/Rajahmundry Residential Project.png" alt="Rajahmundry Residential Project">
+                    <img src="assets/Rajahmundry Residential Project.png" alt="Rajahmundry Residential Project" loading="lazy" decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Rajahmundry Residential</h3>
@@ -1892,7 +1900,7 @@
 
                 <!-- Project 6: Palakollu Project -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Material Contract Project">
+                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Material Contract Project" loading="lazy" decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Material Contract</span>
                         <h3>Palakollu Project</h3>
@@ -1911,7 +1919,7 @@
         <div class="container">
             <div class="about-section">
                 <div class="about-img-wrapper" data-aos="fade-right">
-                    <img src="assets/about.png" alt="Trusted Construction Experts in Andhra Pradesh">
+                    <img src="assets/about.png" alt="Trusted Construction Experts in Andhra Pradesh" loading="lazy" decoding="async">
                     <div class="stats-grid">
                         <div class="stat-item">
                             <h4>20+</h4>
