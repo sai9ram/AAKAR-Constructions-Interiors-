@@ -7,7 +7,7 @@
     <title>Get a Quote | Cost Estimator | AAKAR Constructions</title>
     <meta name="description"
         content="Get an instant construction cost estimate for your dream project. Live market pricing for cement, steel, and raw materials in Hyderabad and Andhra Pradesh.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -43,7 +43,7 @@
             padding: 0 2rem;
         }
 
-        /* Header Styles (Synced) */
+        /* Header Styles (Synced with Index) */
         header {
             position: fixed;
             top: 20px;
@@ -81,7 +81,8 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -98,10 +99,24 @@
             opacity: 1;
         }
 
-        /* Hero Section */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--light);
+            transition: var(--transition);
+        }
+
+        /* Page Header (Synced with About/Services) */
         .page-header {
-            height: 500px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/hero_bg.png');
+            height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('assets/hero_bg.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -112,18 +127,16 @@
         }
 
         .page-header h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, #ffffff, #D4AF37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
         }
 
         /* Estimator Section */
         .estimator-section {
             padding: 100px 0;
-            background: var(--dark-accent);
+            background: var(--dark);
         }
 
         .estimator-grid {
@@ -134,80 +147,52 @@
         }
 
         .estimator-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--dark-accent);
             border: 1px solid var(--glass-border);
-            padding: 3.5rem;
-            border-radius: 40px;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+            padding: 3rem;
+            border-radius: 30px;
         }
 
         .form-group {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
             color: var(--primary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .input-wrapper {
-            position: relative;
-        }
-
-        .input-wrapper i {
-            position: absolute;
-            left: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary);
-            opacity: 0.6;
         }
 
         input[type="number"],
         select {
             width: 100%;
-            padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+            padding: 1.2rem 1.5rem;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
-            border-radius: 15px;
+            border-radius: 12px;
             color: white;
-            font-size: 1.1rem;
+            font-size: 1rem;
             outline: none;
             transition: var(--transition);
-        }
-
-        input:focus,
-        select:focus {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.08);
         }
 
         .quality-options {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .quality-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--glass-border);
-            padding: 1.5rem;
-            border-radius: 20px;
+            padding: 1.2rem;
+            border-radius: 16px;
             text-align: center;
             cursor: pointer;
             transition: var(--transition);
-        }
-
-        .quality-card i {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: block;
-            color: var(--gray);
         }
 
         .quality-card.active {
@@ -215,58 +200,39 @@
             background: rgba(212, 175, 55, 0.1);
         }
 
-        .quality-card.active i {
-            color: var(--primary);
-        }
-
         /* Result Display */
         .result-card {
-            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            background: var(--dark-accent);
             padding: 3rem;
-            border-radius: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
             position: sticky;
             top: 120px;
-        }
-
-        .result-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 2rem;
         }
 
         .total-price {
             font-size: 3rem;
             font-weight: 800;
             color: var(--primary);
-            margin: 0.5rem 0;
-        }
-
-        .breakdown-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .breakdown-item span:first-child {
-            color: var(--gray);
+            margin: 1rem 0;
         }
 
         /* Live Pricing Ticker */
         .live-pricing {
             background: #000;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             border-bottom: 1px solid var(--glass-border);
             overflow: hidden;
+            position: relative;
+            z-index: 1001;
         }
 
         .ticker-wrapper {
             display: flex;
             gap: 4rem;
-            animation: ticker 30s linear infinite;
+            animation: ticker 40s linear infinite;
             white-space: nowrap;
+            width: max-content;
         }
 
         @keyframes ticker {
@@ -274,50 +240,9 @@
             100% { transform: translateX(-50%); }
         }
 
-        .ticker-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .price-up { color: #00ff88; }
-        .price-down { color: #ff4444; }
-
-        /* Market Rates Table */
-        .market-rates {
-            margin-top: 50px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 30px;
-            padding: 2.5rem;
-            border: 1px solid var(--glass-border);
-        }
-
-        .rates-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-
-        .rates-table th {
-            text-align: left;
-            padding: 1rem;
-            border-bottom: 2px solid var(--glass-border);
-            color: var(--primary);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
-
-        .rates-table td {
-            padding: 1.2rem 1rem;
-            border-bottom: 1px solid var(--glass-border);
-            font-weight: 500;
-        }
-
         /* Footer (Synced) */
         footer {
-            background: #050505;
+            background-color: #050505;
             padding: 80px 0 30px;
             border-top: 1px solid var(--glass-border);
         }
@@ -330,17 +255,13 @@
         }
 
         .footer-col h4 {
-            color: var(--primary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-size: 1.2rem;
+            color: var(--primary);
         }
 
         .footer-links {
             list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 1rem;
         }
 
         .footer-links a {
@@ -353,25 +274,14 @@
             color: var(--primary);
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 992px) {
-            .estimator-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .quality-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .estimator-card {
-                padding: 2rem;
-            }
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.9rem;
         }
 
         /* Floating Buttons */
@@ -395,7 +305,6 @@
             color: white;
             font-size: 1.5rem;
             text-decoration: none;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: var(--transition);
         }
 
@@ -430,10 +339,39 @@
 
         .nav-item.active { color: var(--primary); }
 
+        /* Mobile Menu */
         @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--dark-accent);
+                flex-direction: column;
+                justify-content: center;
+                padding: 2rem;
+                transition: 0.5s;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
             .mobile-bottom-nav { display: flex; }
             .floating-btns { bottom: 100px; }
             body { padding-bottom: 70px; }
+            
+            .estimator-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -442,7 +380,7 @@
 
     <div class="live-pricing">
         <div class="ticker-wrapper" id="ticker">
-            <!-- Ticker items will be populated by JS -->
+            <!-- Populated by JS -->
         </div>
     </div>
 
@@ -451,120 +389,80 @@
         <div class="container nav-wrapper">
             <nav>
                 <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="refer-earn.html" style="color: #fff;"><i class="fas fa-gift" style="font-size:0.8rem; margin-right: 4px; color: var(--primary);"></i>Refer & Earn</a></li>
                 </ul>
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <a href="get-a-quote.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; background-color: var(--primary); color: white; border-radius: 50px; text-decoration: none; font-weight: 600;">Get a Quote</a>
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
 
     <section class="page-header">
         <div class="container" data-aos="fade-up">
-            <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">Instant Estimation</span>
-            <h1>Get a Construction Quote</h1>
-            <p style="color: var(--gray); font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Calculate your construction cost based on real-time market rates and premium quality standards.</p>
+            <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">Precision Estimation</span>
+            <h1>Cost Estimator</h1>
         </div>
     </section>
 
     <section class="estimator-section">
         <div class="container">
             <div class="estimator-grid">
-                <div class="estimator-card" data-aos="fade-right">
+                <div class="estimator-card" data-aos="fade-up">
                     <div class="form-group">
-                        <label>Total Plot Area (Sq. Ft)</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-expand-arrows-alt"></i>
-                            <input type="number" id="plotArea" placeholder="e.g. 1500" value="1000" oninput="calculate()">
-                        </div>
+                        <label>Plot Area (Sq. Ft)</label>
+                        <input type="number" id="plotArea" placeholder="e.g. 1000" value="1000" oninput="calculate()">
                     </div>
 
                     <div class="form-group">
                         <label>Number of Floors</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-building"></i>
-                            <input type="number" id="floors" placeholder="e.g. 1" value="1" oninput="calculate()">
-                        </div>
+                        <input type="number" id="floors" placeholder="e.g. 1" value="1" oninput="calculate()">
                     </div>
 
                     <div class="form-group">
-                        <label>Construction Quality / Package</label>
+                        <label>Package Quality</label>
                         <div class="quality-options">
                             <div class="quality-card active" onclick="setQuality('basic', this)">
-                                <i class="fas fa-shield-alt"></i>
                                 <strong>Basic</strong>
-                                <p style="font-size: 0.75rem; color: var(--gray); margin-top: 5px;">₹1,700 / sqft</p>
                             </div>
                             <div class="quality-card" onclick="setQuality('premium', this)">
-                                <i class="fas fa-crown"></i>
                                 <strong>Premium</strong>
-                                <p style="font-size: 0.75rem; color: var(--gray); margin-top: 5px;">₹2,100 / sqft</p>
                             </div>
                             <div class="quality-card" onclick="setQuality('luxury', this)">
-                                <i class="fas fa-gem"></i>
                                 <strong>Luxury</strong>
-                                <p style="font-size: 0.75rem; color: var(--gray); margin-top: 5px;">₹2,600 / sqft</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="market-rates">
-                        <h4 style="color: #fff; margin-bottom: 1rem;">Current Market Rates (Telangana & AP)</h4>
-                        <table class="rates-table">
-                            <thead>
-                                <tr>
-                                    <th>Material</th>
-                                    <th>Unit</th>
-                                    <th>Price (L)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="rates-body">
-                                <!-- Populated by JS -->
-                            </tbody>
+                    <div style="margin-top: 3rem;">
+                        <h4 style="color: #fff; margin-bottom: 1.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">Market Rates (Live-Inspired)</h4>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tbody id="rates-body"></tbody>
                         </table>
-                        <p style="font-size: 0.7rem; color: var(--gray); margin-top: 1rem;">* Prices are indicative and updated based on local market trends.</p>
                     </div>
                 </div>
 
-                <div class="result-card" data-aos="fade-left">
-                    <div class="result-header">
-                        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray);">Estimated Total Cost</span>
-                        <div class="total-price" id="totalCost">₹ 0</div>
-                        <p style="font-size: 0.9rem; color: var(--gray);" id="areaDisplay">1000 Sq. Ft Built-up</p>
+                <div class="result-card" data-aos="fade-up">
+                    <span style="color: var(--gray); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Estimated Construction Cost</span>
+                    <div class="total-price" id="totalCost">₹ 0</div>
+                    <p id="areaDisplay" style="color: var(--gray); margin-bottom: 2rem;">1,000 Sq. Ft Built-up</p>
+                    
+                    <div id="breakdown-list">
+                        <!-- Breakdown items -->
                     </div>
 
-                    <div class="breakdown">
-                        <div class="breakdown-item">
-                            <span>Cement (15%)</span>
-                            <span id="cost-cement">₹ 0</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span>Steel (20%)</span>
-                            <span id="cost-steel">₹ 0</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span>Sand & Aggregate (12%)</span>
-                            <span id="cost-sand">₹ 0</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span>Bricks (10%)</span>
-                            <span id="cost-bricks">₹ 0</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span>Finishing & Interiors (18%)</span>
-                            <span id="cost-finishing">₹ 0</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span>Labor & Supervision (25%)</span>
-                            <span id="cost-labor">₹ 0</span>
-                        </div>
-                    </div>
-
-                    <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 2rem;">Confirm Details & Get Final Quote</a>
-                    <p style="text-align: center; font-size: 0.75rem; color: var(--gray); margin-top: 1rem;">This is an approximate estimate. Final pricing may vary based on site conditions and customizations.</p>
+                    <a href="contact.html" style="display: block; width: 100%; padding: 1.2rem; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 2rem; transition: var(--transition);">Confirm Details & Consult</a>
                 </div>
             </div>
         </div>
@@ -576,44 +474,36 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
-                    <p style="color: var(--gray); font-size: 0.9rem;">Building high-quality residential and commercial spaces across Andhra Pradesh and Telangana.</p>
+                    <p>Building excellence across AP & Telangana. Quality you can trust.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h4>Quick Links</h4>
                     <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
-                        <li><a href="refer-earn.html">Refer & Earn</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Cost Estimator</a></li>
-                        <li><a href="#">Market Rates</a></li>
-                        <li><a href="contact.html">Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="footer-links">
-                        <li>info@aakarconstruction.in</li>
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links" style="color: var(--gray); font-size: 0.9rem;">
                         <li>+91 888 577 4890</li>
-                        <li>Hyderabad, TS</li>
+                        <li>info@aakarconstruction.in</li>
+                        <li>Hyderabad, India</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 AAKAR Constructions. All rights reserved. | Reg No: 236/2019</p>
+                <p>&copy; 2026 AAKAR Constructions. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Action Buttons -->
+    <!-- Floating Buttons -->
     <div class="floating-btns">
-        <a href="tel:8885774890" class="float-btn float-call" title="Call Us"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://wa.me/918885774890" target="_blank" class="float-btn float-whatsapp" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:8885774890" class="float-btn float-call"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/918885774890" target="_blank" class="float-btn float-whatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- Mobile Bottom Nav -->
@@ -628,50 +518,35 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Live Market Rates Data
+        // Ticker & Rates
         const marketRates = [
-            { material: "Cement (OPC 53)", unit: "Per Bag (50kg)", price: 420, change: "+5" },
-            { material: "Steel (TMT Bars)", unit: "Per Ton", price: 68500, change: "-200" },
-            { material: "River Sand", unit: "Per Tractor", price: 4500, change: "0" },
-            { material: "Red Bricks", unit: "Per 1000 Pcs", price: 7800, change: "+100" },
-            { material: "Aggregate (20mm)", unit: "Per Unit", price: 2800, change: "+50" },
-            { material: "Plumbing Pipes", unit: "Per Length", price: 1250, change: "-10" }
+            { material: "Cement (OPC)", price: 420, unit: "Bag", change: "+2" },
+            { material: "Steel (TMT)", price: 68500, unit: "Ton", change: "-150" },
+            { material: "Bricks", price: 7800, unit: "1k Pcs", change: "+50" },
+            { material: "Sand", price: 4500, unit: "Unit", change: "0" }
         ];
 
-        // Populate Ticker
-        const ticker = document.getElementById('ticker');
-        const tickerContent = marketRates.map(rate => `
-            <div class="ticker-item">
-                <span>${rate.material}</span>
-                <span class="${rate.change.includes('+') ? 'price-up' : 'price-down'}">
-                    ₹${rate.price.toLocaleString()} 
-                    (${rate.change})
-                </span>
+        document.getElementById('ticker').innerHTML = marketRates.concat(marketRates).map(r => `
+            <div style="display:flex; gap:10px; align-items:center; font-weight:600; font-size:0.9rem;">
+                <span>${r.material}</span>
+                <span style="color:${r.change.includes('+') ? '#00ff88' : '#ff4444'}">₹${r.price.toLocaleString()}</span>
             </div>
-        `).join('');
-        ticker.innerHTML = tickerContent + tickerContent; // Double for seamless loop
+        `).join('') + document.getElementById('ticker').innerHTML;
 
-        // Populate Table
-        const ratesBody = document.getElementById('rates-body');
-        ratesBody.innerHTML = marketRates.map(rate => `
-            <tr>
-                <td>${rate.material}</td>
-                <td>${rate.unit}</td>
-                <td style="color: var(--primary)">₹${rate.price.toLocaleString()}</td>
+        document.getElementById('rates-body').innerHTML = marketRates.map(r => `
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+                <td style="padding:1rem 0">${r.material}</td>
+                <td style="text-align:right; color:var(--primary); font-weight:600">₹${r.price.toLocaleString()} / ${r.unit}</td>
             </tr>
         `).join('');
 
-        let selectedQuality = 'basic';
-        const rates = {
-            basic: 1750,
-            premium: 2150,
-            luxury: 2650
-        };
+        let currentQuality = 'basic';
+        const qualityRates = { basic: 1750, premium: 2200, luxury: 2700 };
 
-        function setQuality(quality, element) {
-            selectedQuality = quality;
-            document.querySelectorAll('.quality-card').forEach(card => card.classList.remove('active'));
-            element.classList.add('active');
+        function setQuality(q, el) {
+            currentQuality = q;
+            document.querySelectorAll('.quality-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
             calculate();
         }
 
@@ -679,36 +554,41 @@
             const area = parseFloat(document.getElementById('plotArea').value) || 0;
             const floors = parseFloat(document.getElementById('floors').value) || 1;
             const totalArea = area * floors;
-            
-            const baseRate = rates[selectedQuality];
-            const totalCost = totalArea * baseRate;
+            const total = totalArea * qualityRates[currentQuality];
 
-            document.getElementById('totalCost').innerText = '₹ ' + totalCost.toLocaleString('en-IN');
+            document.getElementById('totalCost').innerText = '₹ ' + total.toLocaleString('en-IN');
             document.getElementById('areaDisplay').innerText = totalArea.toLocaleString() + ' Sq. Ft Built-up Area';
 
-            // Detailed Breakdown
-            const breakdown = {
-                cement: 0.15,
-                steel: 0.20,
-                sand: 0.12,
-                bricks: 0.10,
-                finishing: 0.18,
-                labor: 0.25
-            };
+            const breakdown = [
+                { name: "Civil Works (Cement/Steel/Bricks)", pct: 0.55 },
+                { name: "Finishing (Tiles/Paint/Electrical)", pct: 0.25 },
+                { name: "Labor & Supervision", pct: 0.20 }
+            ];
 
-            for (let key in breakdown) {
-                const cost = totalCost * breakdown[key];
-                document.getElementById('cost-' + key).innerText = '₹ ' + Math.round(cost).toLocaleString('en-IN');
-            }
+            document.getElementById('breakdown-list').innerHTML = breakdown.map(b => `
+                <div style="display:flex; justify-content:space-between; margin-bottom:0.8rem; font-size:0.9rem;">
+                    <span style="color:var(--gray)">${b.name}</span>
+                    <span style="font-weight:600">₹${Math.round(total * b.pct).toLocaleString('en-IN')}</span>
+                </div>
+            `).join('');
         }
 
-        calculate(); // Initial run
+        calculate();
 
+        // Header Scroll
         window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
+            const h = document.getElementById('header');
+            if (window.scrollY > 50) h.classList.add('scrolled');
+            else h.classList.remove('scrolled');
         });
+
+        // Mobile Menu
+        const mt = document.getElementById('mobileToggle');
+        const nl = document.getElementById('navLinks');
+        mt.onclick = () => {
+            nl.classList.toggle('active');
+            mt.classList.toggle('open');
+        }
     </script>
 </body>
 
