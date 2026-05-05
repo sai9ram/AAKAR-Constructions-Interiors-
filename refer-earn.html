@@ -309,7 +309,9 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-        }        /* Redesigned Why & Who Section */
+        }
+
+        /* Redesigned Why & Who Section */
         .why-who-section {
             background: #ffffff;
             position: relative;
@@ -386,7 +388,7 @@
         .feature-item-modern:hover {
             border-color: var(--primary);
             background: #fff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
         }
 
         .feature-icon-wrapper {
@@ -475,63 +477,152 @@
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.05);
         }
 
-        /* Tracker & Social Sharing */
+        /* Redesigned Tracker & Sharing */
         .tracker-section {
-            padding: 60px 0;
+            background-color: #fdfdfd;
+            padding: 100px 0;
+        }
+
+        .redesigned-tracker {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 50px;
+            padding: 5rem;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f0f0;
             text-align: center;
         }
 
-        .tracker-box {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--primary);
-        }
-
-        .tracker-input-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-sharing {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
+        .tracker-header-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary);
             border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .tracker-tool {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 25px;
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            border: 1px solid #eee;
             transition: var(--transition);
         }
 
-        .whatsapp-btn {
+        .tracker-tool:focus-within {
+            background: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.05);
+        }
+
+        .tracker-tool input {
+            background: transparent;
+            border: none;
+            flex: 1;
+            padding: 0 1rem;
+            font-size: 1.1rem;
+            color: #111;
+        }
+
+        .tracker-tool input:focus {
+            box-shadow: none;
+        }
+
+        .tracker-tool .btn {
+            padding: 1rem 2.5rem !important;
+            border-radius: 15px !important;
+            white-space: nowrap;
+            width: auto !important;
+        }
+
+        .status-labels {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .status-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .status-tag.active {
+            color: var(--primary);
+        }
+
+        .share-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .modern-share-btn {
+            padding: 1.2rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .modern-share-btn i {
+            font-size: 1.8rem;
+        }
+
+        .share-wa {
+            background: #e7f9ee;
+            color: #25D366;
+        }
+
+        .share-wa:hover {
             background: #25D366;
+            color: white;
         }
 
-        .facebook-btn {
+        .share-fb {
+            background: #e7f1ff;
+            color: #1877F2;
+        }
+
+        .share-fb:hover {
             background: #1877F2;
+            color: white;
         }
 
-        .copy-btn {
-            background: var(--gray);
+        .share-link {
+            background: #f0f0f0;
+            color: #333;
         }
 
-        .social-btn:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
+        .share-link:hover {
+            background: #333;
+            color: white;
         }
+
 
         /* Terms */
         .terms-box {
@@ -933,40 +1024,48 @@
         </div>
     </section>
 
-    <!-- Tracker & Sharing -->
+    <!-- Tracker & Sharing Redesigned -->
     <section class="tracker-section">
         <div class="container">
-            <div class="tracker-box" data-aos="fade-up">
-                <h3 style="font-size: 2rem; color: var(--light); margin-bottom: 1rem;">👉 Referral Tracker</h3>
-                <p style="color: var(--gray);">Check your referral status: <b>Pending / Contacted / Confirmed / Paid</b>
-                </p>
+            <div class="redesigned-tracker" data-aos="fade-up">
+                <span class="tracker-header-badge">Real-Time Tracking</span>
+                <h2 style="font-size: 2.5rem; color: #111; margin-bottom: 1rem;">Track Your Referral</h2>
+                <p style="color: #666; max-width: 500px; margin: 0 auto;">Enter your registered phone number to see the current status of your rewards.</p>
 
-                <div class="tracker-input-group">
-                    <input type="tel" placeholder="Enter your registered phone number"
-                        style="border: 1px solid var(--glass-border);">
-                    <button class="btn btn-primary"
-                        onclick="alert('Feature coming soon! Our team will update you via WhatsApp.')"
-                        style="width: auto;">Check Status</button>
+                <div class="tracker-tool">
+                    <input type="tel" placeholder="Enter phone number (e.g., 9988776655)">
+                    <button class="btn btn-primary" onclick="alert('Feature coming soon! Our team will update you via WhatsApp.')">Check Status</button>
                 </div>
 
-                <hr style="border: none; border-top: 1px solid var(--glass-border); margin: 3rem 0;">
+                <div class="status-labels">
+                    <span class="status-tag active"><i class="fas fa-circle" style="font-size: 0.5rem;"></i> Pending</span>
+                    <span class="status-tag"><i class="fas fa-circle" style="font-size: 0.5rem;"></i> Contacted</span>
+                    <span class="status-tag"><i class="fas fa-circle" style="font-size: 0.5rem;"></i> Confirmed</span>
+                    <span class="status-tag"><i class="fas fa-circle" style="font-size: 0.5rem;"></i> Paid</span>
+                </div>
 
-                <h4 style="margin-bottom: 1rem;">⭐ Share with your network</h4>
-                <div class="social-sharing">
-                    <a href="#" class="social-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
-                    <a href="#" class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i> Share on Facebook</a>
-                    <a href="#" class="social-btn copy-btn" onclick="alert('Link copied to clipboard!')"><i
-                            class="fas fa-link"></i> Copy Link</a>
+                <div class="share-grid">
+                    <a href="#" class="modern-share-btn share-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="#" class="modern-share-btn share-fb">
+                        <i class="fab fa-facebook-f"></i>
+                        Facebook
+                    </a>
+                    <a href="#" class="modern-share-btn share-link" onclick="alert('Link copied to clipboard!')">
+                        <i class="fas fa-link"></i>
+                        Copy Link
+                    </a>
                 </div>
             </div>
 
-            <div style="margin-top: 4rem;" data-aos="fade-up">
-                <h3>📞 Need help? Talk to us</h3>
+            <div style="text-align: center; margin-top: 5rem;" data-aos="fade-up">
+                <h3 style="color: #111; font-size: 2rem;">📞 Need help? Talk to us</h3>
                 <p style="font-size: 1.2rem; margin-top: 1rem;">
-                    📱 Call / WhatsApp: <a href="tel:+918885774890"
-                        style="color: var(--primary); text-decoration: none; font-weight: 700;">+91 888 577 4890</a>
+                    If you have any questions about the referral program, call us at:
+                    <a href="tel:8885774890" style="color: var(--primary); font-weight: 700; text-decoration: none;">+91 88857 74890</a>
                 </p>
-                <p style="font-size: 1.1rem;">📍 Office Location: Hyderabad, Telangana</p>
             </div>
         </div>
     </section>
