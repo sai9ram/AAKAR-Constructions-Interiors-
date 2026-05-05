@@ -1567,55 +1567,40 @@
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
         }
 
-        @media (max-width: 768px) {
-            .lead-modal-content {
-                padding: 2rem;
-                border-radius: 20px;
-            }
-            .lead-modal-header h2 {
-                font-size: 1.5rem;
-            }
-        }
-
         /* Stats Section */
-        .stats-container {
-            margin-top: -60px;
-            position: relative;
-            z-index: 100;
-        }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            background: white;
-            padding: 3rem;
-            border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .stat-card {
+            gap: 2rem;
             text-align: center;
-            border-right: 1px solid #eee;
         }
 
-        .stat-card:last-child {
-            border-right: none;
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(212, 175, 55, 0.05);
+            border-color: var(--primary);
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 3.5rem;
             color: var(--primary);
-            display: block;
+            font-weight: 800;
             margin-bottom: 0.5rem;
+            line-height: 1;
         }
 
         .stat-label {
-            font-size: 0.85rem;
             color: var(--gray);
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -1623,34 +1608,15 @@
         @media (max-width: 992px) {
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 3rem;
-                padding: 2.5rem;
-            }
-            .stat-card:nth-child(2) {
-                border-right: none;
             }
         }
 
         @media (max-width: 576px) {
-            .stats-container {
-                margin-top: -30px;
-            }
             .stats-grid {
                 grid-template-columns: 1fr;
-                padding: 2rem;
-                gap: 2rem;
-            }
-            .stat-card {
-                border-right: none;
-                border-bottom: 1px solid #eee;
-                padding-bottom: 1.5rem;
-            }
-            .stat-card:last-child {
-                border-bottom: none;
-                padding-bottom: 0;
             }
             .stat-number {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
         }
     </style>
@@ -1698,30 +1664,6 @@
                 <div class="hero-btns">
                     <a href="get-a-quote.html" class="btn btn-primary">Get a Quote & Consultation</a>
                     <a href="projects.html" class="btn btn-outline">View Our Projects</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-container">
-        <div class="container">
-            <div class="stats-grid" data-aos="zoom-in">
-                <div class="stat-card">
-                    <span class="stat-number" data-target="100">0</span>
-                    <span class="stat-label">Projects Delivered</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" data-target="20">0</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" data-target="100">0</span>
-                    <span class="stat-label">Quality Checks</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" data-target="100">0</span>
-                    <span class="stat-label">Client Satisfaction</span>
                 </div>
             </div>
         </div>
@@ -1815,6 +1757,30 @@
                     class="view-all-link">
                     View All B2B Services <i class="fas fa-arrow-right-long"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" style="background-color: var(--dark-accent); padding: 5rem 0; border-top: 1px solid var(--glass-border);">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up">
+                    <h2 class="stat-number"><span class="counter" data-target="100">0</span>+</h2>
+                    <p class="stat-label">Projects Delivered</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="stat-number"><span class="counter" data-target="20">0</span>+</h2>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="stat-number"><span class="counter" data-target="100">0</span>+</h2>
+                    <p class="stat-label">Quality Checks</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="stat-number"><span class="counter" data-target="100">0</span>%</h2>
+                    <p class="stat-label">Client Satisfaction</p>
+                </div>
             </div>
         </div>
     </section>
@@ -2724,44 +2690,6 @@
             slider.scrollLeft = scrollLeft - walk;
         });
 
-        // Counter Animation Logic
-        const counters = document.querySelectorAll('.stat-number');
-        const speed = 100;
-
-        const startCounters = () => {
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const label = counter.nextElementSibling.innerText;
-                    const currentText = counter.innerText;
-                    let count = parseFloat(currentText.replace(/[+%]/g, '')) || 0;
-                    
-                    const inc = target / speed;
-
-                    if (count < target) {
-                        count += inc;
-                        let suffix = (target === 100 && label.includes('SATISFACTION')) ? '%' : '+';
-                        counter.innerText = Math.ceil(count) + suffix;
-                        setTimeout(updateCount, 20);
-                    } else {
-                        let suffix = (target === 100 && label.includes('SATISFACTION')) ? '%' : '+';
-                        counter.innerText = target + suffix;
-                    }
-                };
-                updateCount();
-            });
-        };
-
-        const statsSection = document.querySelector('.stats-grid');
-        const statsObserver = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                startCounters();
-                statsObserver.unobserve(statsSection);
-            }
-        }, { threshold: 0.5 });
-
-        statsObserver.observe(statsSection);
-
         // Lead Capture Modal Logic
         const leadModal = document.getElementById('leadModal');
         const closeLeadModal = document.getElementById('closeLeadModal');
@@ -2800,6 +2728,41 @@ Phone: ${phone}`;
             window.open(waUrl, '_blank');
             leadModal.classList.remove('active');
         };
+
+        // Counter Animation Logic
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            observer.observe(statsSection);
+        }
     </script>
 </body>
 
