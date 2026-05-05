@@ -1572,10 +1572,12 @@
                 padding: 2rem;
                 border-radius: 20px;
             }
+
             .lead-modal-header h2 {
                 font-size: 1.5rem;
             }
         }
+
         /* Stats Banner Section */
         .stats-banner {
             background-color: var(--dark-accent);
@@ -1785,22 +1787,22 @@
             <div class="stats-banner-grid">
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-building"></i>
-                    <h3 id="count1">150+</h3>
+                    <h3 id="count1">100</h3>
                     <p>Projects Completed</p>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-users"></i>
-                    <h3 id="count2">500+</h3>
+                    <h3 id="count2">100%</h3>
                     <p>Happy Clients</p>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-ruler-combined"></i>
-                    <h3 id="count3">2.5M+</h3>
-                    <p>Sq. Ft. Built</p>
+                    <h3 id="count3">100+</h3>
+                    <p>Quality Checks</p>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
                     <i class="fas fa-award"></i>
-                    <h3 id="count4">15+</h3>
+                    <h3 id="count4">20</h3>
                     <p>Years Experience</p>
                 </div>
             </div>
@@ -2416,7 +2418,8 @@
                     style="color: rgba(255, 255, 255, 0.95); font-size: 1.25rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
                     Ready to start your next construction journey? Our experts are here to guide you from concept to
                     completion with precision and trust.</p>
-                <a href="get-a-quote.html" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.1rem;">Request a
+                <a href="get-a-quote.html" class="btn btn-primary"
+                    style="padding: 1.2rem 3rem; font-size: 1.1rem;">Request a
                     Free Quote <i class="fas fa-arrow-right" style="margin-left: 0.8rem;"></i></a>
             </div>
         </div>
@@ -2568,7 +2571,8 @@
                         <option value="Renovation">Renovation</option>
                     </select>
                 </div>
-                <button type="submit" class="lead-modal-btn">Send Details to WhatsApp <i class="fab fa-whatsapp" style="margin-left: 0.5rem;"></i></button>
+                <button type="submit" class="lead-modal-btn">Send Details to WhatsApp <i class="fab fa-whatsapp"
+                        style="margin-left: 0.5rem;"></i></button>
             </form>
         </div>
     </div>
@@ -2743,9 +2747,9 @@
             const message = `Hello AAKAR Constructions, I am interested in ${type} project.
 Name: ${name}
 Phone: ${phone}`;
-            
+
             const waUrl = `https://wa.me/918885774890?text=${encodeURIComponent(message)}`;
-            
+
             localStorage.setItem('leadCaptured', 'true');
             window.open(waUrl, '_blank');
             leadModal.classList.remove('active');
