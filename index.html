@@ -149,14 +149,10 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--light);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
         }
 
         .logo span {
@@ -581,8 +577,15 @@
         }
 
         @keyframes scroll-loop {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-412px * 10)); } /* 380px width + 32px gap * 10 cards */
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-412px * 10));
+            }
+
+            /* 380px width + 32px gap * 10 cards */
         }
 
         @media (max-width: 768px) {
@@ -590,9 +593,15 @@
                 width: 300px;
                 padding: 1.5rem;
             }
+
             @keyframes scroll-loop {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-332px * 10)); }
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-332px * 10));
+                }
             }
         }
 
@@ -1416,14 +1425,15 @@
     <header id="header">
         <div class="container nav-wrapper">
             <nav>
-                <a href="#" class="logo">AAKAR<span>.</span></a>
+                <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift" style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
+                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift"
+                                style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
                 </ul>
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
                     <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
@@ -1560,7 +1570,7 @@
             <div class="categories-grid">
                 <!-- Project 1: V-Banquets -->
                 <div class="cat-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/commercial_service_1777888901688.png" alt="V-Banquets Madhapur Commercial Project">
+                    <img src="assets/V Banquet Hall.jpeg" alt="V-Banquets Madhapur Commercial Project">
                     <div class="cat-info">
                         <span class="project-tag">Commercial</span>
                         <h3>V-Banquets</h3>
@@ -1573,7 +1583,7 @@
 
                 <!-- Project 2: Home Tree Project -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/residential_service_1777888816618.png" alt="Home Tree Project Osman Nagar Residential">
+                    <img src="assets/Osman nagar.jpeg" alt="Home Tree Project Osman Nagar Residential">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Home Tree Project</h3>
@@ -1586,7 +1596,7 @@
 
                 <!-- Project 3: Simhapuri Colony -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/residential.png" alt="Simhapuri Colony Residential Project">
+                    <img src="assets/Simhapuri colony.jpeg" alt="Simhapuri Colony Residential Project">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Simhapuri Colony</h3>
@@ -1599,7 +1609,7 @@
 
                 <!-- Project 4: Hitech City Commercial -->
                 <div class="cat-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/commercial.png" alt="Hitech City Commercial Project">
+                    <img src="assets/High-tech City.jpeg" alt="Hitech City Commercial Project">
                     <div class="cat-info">
                         <span class="project-tag">Commercial</span>
                         <h3>Hitech City Commercial</h3>
@@ -1612,7 +1622,7 @@
 
                 <!-- Project 5: Rajahmundry Residential -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/project1.png" alt="Rajahmundry Residential Project">
+                    <img src="assets/Rajahmundry Residential Project.png" alt="Rajahmundry Residential Project">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Rajahmundry Residential</h3>
@@ -1625,7 +1635,7 @@
 
                 <!-- Project 6: Palakollu Project -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/about.png" alt="Palakollu Material Contract Project">
+                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Material Contract Project">
                     <div class="cat-info">
                         <span class="project-tag">Material Contract</span>
                         <h3>Palakollu Project</h3>
@@ -1647,11 +1657,11 @@
                     <img src="assets/about.png" alt="Trusted Construction Experts in Andhra Pradesh">
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <h4>15+</h4>
+                            <h4>20+</h4>
                             <p>Years of Experience</p>
                         </div>
                         <div class="stat-item">
-                            <h4>500+</h4>
+                            <h4>100</h4>
                             <p>Projects Completed</p>
                         </div>
                     </div>
@@ -1909,7 +1919,9 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of schedule. Their <strong>residential construction</strong> quality is simply the best in the industry."
+                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of
+                            schedule. Their <strong>residential construction</strong> quality is simply the best in the
+                            industry."
                         </p>
                         <div class="client-info">
                             <div class="client-img">RV</div>
@@ -1924,7 +1936,9 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "I highly recommend <strong>AAKAR</strong> for <strong>interior design services</strong>. They transformed our space with premium materials and smart <strong>turnkey solutions</strong>."
+                            "I highly recommend <strong>AAKAR</strong> for <strong>interior design services</strong>.
+                            They transformed our space with premium materials and smart <strong>turnkey
+                                solutions</strong>."
                         </p>
                         <div class="client-info">
                             <div class="client-img">SS</div>
@@ -1939,7 +1953,9 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Expert team at <strong>AAKAR</strong> handled our <strong>commercial project</strong> with absolute professionalism. Their <strong>modern architecture</strong> expertise is evident in the final result."
+                            "Expert team at <strong>AAKAR</strong> handled our <strong>commercial project</strong> with
+                            absolute professionalism. Their <strong>modern architecture</strong> expertise is evident in
+                            the final result."
                         </p>
                         <div class="client-info">
                             <div class="client-img">VR</div>
@@ -1954,7 +1970,9 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "The transparency shown by <strong>AAKAR</strong> during our <strong>residential construction</strong> journey was refreshing. Truly the most reliable <strong>construction company</strong>."
+                            "The transparency shown by <strong>AAKAR</strong> during our <strong>residential
+                                construction</strong> journey was refreshing. Truly the most reliable
+                            <strong>construction company</strong>."
                         </p>
                         <div class="client-info">
                             <div class="client-img">AR</div>
@@ -1969,7 +1987,8 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Strongly recommend <strong>AAKAR</strong> for their <strong>turnkey construction</strong>. They managed everything from planning to execution with zero hassles."
+                            "Strongly recommend <strong>AAKAR</strong> for their <strong>turnkey construction</strong>.
+                            They managed everything from planning to execution with zero hassles."
                         </p>
                         <div class="client-info">
                             <div class="client-img">KI</div>
@@ -1984,7 +2003,8 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Working with <strong>AAKAR</strong> was a delight. Their <strong>luxury interior design</strong> team has a great eye for detail and aesthetics."
+                            "Working with <strong>AAKAR</strong> was a delight. Their <strong>luxury interior
+                                design</strong> team has a great eye for detail and aesthetics."
                         </p>
                         <div class="client-info">
                             <div class="client-img">MN</div>
@@ -1999,7 +2019,8 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Precision and trust are what <strong>AAKAR</strong> stands for. Their <strong>commercial construction</strong> services helped us scale our factory operations quickly."
+                            "Precision and trust are what <strong>AAKAR</strong> stands for. Their <strong>commercial
+                                construction</strong> services helped us scale our factory operations quickly."
                         </p>
                         <div class="client-info">
                             <div class="client-img">SG</div>
@@ -2014,7 +2035,8 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "The smart home features integrated by <strong>AAKAR</strong> in our new <strong>luxury apartment</strong> are top-notch. Best in class technology."
+                            "The smart home features integrated by <strong>AAKAR</strong> in our new <strong>luxury
+                                apartment</strong> are top-notch. Best in class technology."
                         </p>
                         <div class="client-info">
                             <div class="client-img">PD</div>
@@ -2029,7 +2051,8 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "I am impressed by the structural integrity and finish of <strong>AAKAR's</strong> <strong>residential projects</strong>. Definitely the gold standard."
+                            "I am impressed by the structural integrity and finish of <strong>AAKAR's</strong>
+                            <strong>residential projects</strong>. Definitely the gold standard."
                         </p>
                         <div class="client-info">
                             <div class="client-img">AM</div>
@@ -2044,7 +2067,8 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Reliable, honest, and professional—that's <strong>AAKAR</strong>. Their <strong>modern architecture</strong> planning made our dream home possible."
+                            "Reliable, honest, and professional—that's <strong>AAKAR</strong>. Their <strong>modern
+                                architecture</strong> planning made our dream home possible."
                         </p>
                         <div class="client-info">
                             <div class="client-img">DR</div>
@@ -2059,7 +2083,9 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of schedule. Their <strong>residential construction</strong> quality is simply the best in the industry."
+                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of
+                            schedule. Their <strong>residential construction</strong> quality is simply the best in the
+                            industry."
                         </p>
                         <div class="client-info">
                             <div class="client-img">RV</div>
@@ -2146,7 +2172,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 1.5rem;">AAKAR<span>.</span></a>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
                     <p style="color: var(--gray); font-size: 0.9rem;">Building high-quality residential and commercial
                         spaces across Andhra Pradesh and Telangana. Innovation, quality, and excellence in every brick.
                     </p>
