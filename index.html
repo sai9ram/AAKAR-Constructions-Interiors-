@@ -700,21 +700,33 @@
 
         /* Locations Section */
         .locations-scroll {
-            display: flex;
-            gap: 2rem;
-            overflow-x: auto;
+            width: 100%;
+            overflow: hidden;
             padding: 2rem 0;
-            scrollbar-width: none;
-            /* Firefox */
-            -ms-overflow-style: none;
-            /* IE and Edge */
-            cursor: grab;
-            scroll-snap-type: x mandatory;
+            position: relative;
         }
 
-        .locations-scroll::-webkit-scrollbar {
-            display: none;
-            /* Chrome, Safari, Opera */
+        .locations-track {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: scroll-locations 40s linear infinite;
+        }
+
+        .locations-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-locations {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-312px * 8));
+            }
+
+            /* 280px width + 32px gap * 8 cards */
         }
 
         .location-card {
@@ -1110,12 +1122,25 @@
 
             /* Fix Locations Scroll */
             .locations-scroll {
-                gap: 1rem;
                 padding: 1rem 0;
                 margin: 0 -1rem;
-                /* Full width bleed */
-                padding-left: 1rem;
-                padding-right: 1rem;
+            }
+
+            .locations-track {
+                gap: 1rem;
+                animation: scroll-locations-mobile 25s linear infinite;
+            }
+
+            @keyframes scroll-locations-mobile {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-256px * 8));
+                }
+
+                /* 240px width + 16px gap * 8 cards */
             }
 
             .location-card {
@@ -1812,11 +1837,13 @@
                         Hyderabad to Rajahmundry.</p>
 
                     <ul class="service-list">
-                        <li class="service-item" data-image="assets/residential.png">
+                        <li class="service-item"
+                            data-image="assets/Projects_for_Builders_Developers…_202605051605.jpeg">
                             <h3>Residential Construction</h3>
                             <i class="fas fa-chevron-right"></i>
                         </li>
-                        <li class="service-item" data-image="assets/commercial.png">
+                        <li class="service-item"
+                            data-image="assets/Commercial_Projects_South_Indian…_202605051557.jpeg">
                             <h3>Commercial Construction</h3>
                             <i class="fas fa-chevron-right"></i>
                         </li>
@@ -1824,15 +1851,14 @@
                             <h3>Interior Design & Execution</h3>
                             <i class="fas fa-chevron-right"></i>
                         </li>
-                        <li class="service-item" data-image="assets/project1.png">
-                            <h3>Turnkey Project Management</h3>
-                            <i class="fas fa-chevron-right"></i>
-                        </li>
-                        <li class="service-item" data-image="assets/about.png">
+
+                        <li class="service-item"
+                            data-image="assets/Project_Planning_Architectural_D…_202605051615.jpeg">
                             <h3>Architectural Planning</h3>
                             <i class="fas fa-chevron-right"></i>
                         </li>
-                        <li class="service-item" data-image="assets/hero_bg.png">
+                        <li class="service-item"
+                            data-image="assets/Luxury_Villa_Duplex_Construction…_202605051617.jpeg">
                             <h3>Renovation & Remodeling</h3>
                             <i class="fas fa-chevron-right"></i>
                         </li>
@@ -1840,7 +1866,8 @@
                 </div>
                 <div class="service-right">
                     <div class="service-featured-img">
-                        <img src="assets/project1.png" alt="Best Construction services in Hyderabad">
+                        <img src="assets/Projects_for_Builders_Developers…_202605051605.jpeg"
+                            alt="Best Construction services in Hyderabad">
                     </div>
                 </div>
             </div>
@@ -1858,46 +1885,89 @@
             </div>
 
             <div class="locations-scroll" data-aos="fade-up">
-                <div class="location-card"
-                    style="background-image: url('assets/Vishakapatnam_image_202605041636.jpeg');">
-                    <i class="fas fa-city"></i>
-                    <h4>Vishakapatnam</h4>
-                    <p>Coastal Hub</p>
-                </div>
-                <div class="location-card" style="background-image: url('assets/Vijayawada_image._202605041640.jpeg');">
-                    <i class="fas fa-landmark"></i>
-                    <h4>Vijayawada</h4>
-                    <p>Commercial Capital</p>
-                </div>
-                <div class="location-card" style="background-image: url('assets/Amaravathi.jpeg');">
-                    <i class="fas fa-building"></i>
-                    <h4>Amaravati</h4>
-                    <p>The Future City</p>
-                </div>
-                <div class="location-card" style="background-image: url('assets/Kakinada.jpg');">
-                    <i class="fas fa-ship"></i>
-                    <h4>Kakinada</h4>
-                    <p>Port City</p>
-                </div>
-                <div class="location-card" style="background-image: url('assets/Rajamandry.jpeg');">
-                    <i class="fas fa-bridge"></i>
-                    <h4>Rajamandury</h4>
-                    <p>Cultural Hub</p>
-                </div>
-                <div class="location-card" style="background-image: url('assets/Bhimavaram.avif');">
-                    <i class="fas fa-water"></i>
-                    <h4>Bhimavaram</h4>
-                    <p>Coastal Center</p>
-                </div>
-                <div class="location-card" style="background-image: url('assets/pallakollu.jpg');">
-                    <i class="fas fa-church"></i>
-                    <h4>Palakollu</h4>
-                    <p>Heritage Town</p>
-                </div>
-                <div class="location-card" style="background-image: url('assets/Hyderabad.jpg');">
-                    <i class="fas fa-mosque"></i>
-                    <h4>Hyderabad</h4>
-                    <p>Global IT Hub</p>
+                <div class="locations-track">
+                    <!-- Original 8 Cards -->
+                    <div class="location-card" style="background-image: url('assets/Vishakapatnam_image_202605041636.jpeg');">
+                        <i class="fas fa-city"></i>
+                        <h4>Vishakapatnam</h4>
+                        <p>Coastal Hub</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Vijayawada_image._202605041640.jpeg');">
+                        <i class="fas fa-landmark"></i>
+                        <h4>Vijayawada</h4>
+                        <p>Commercial Capital</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Amaravathi.jpeg');">
+                        <i class="fas fa-building"></i>
+                        <h4>Amaravati</h4>
+                        <p>The Future City</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Kakinada.jpg');">
+                        <i class="fas fa-ship"></i>
+                        <h4>Kakinada</h4>
+                        <p>Port City</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Rajamandry.jpeg');">
+                        <i class="fas fa-bridge"></i>
+                        <h4>Rajamandury</h4>
+                        <p>Cultural Hub</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Bhimavaram.avif');">
+                        <i class="fas fa-water"></i>
+                        <h4>Bhimavaram</h4>
+                        <p>Coastal Center</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/pallakollu.jpg');">
+                        <i class="fas fa-church"></i>
+                        <h4>Palakollu</h4>
+                        <p>Heritage Town</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Hyderabad.jpg');">
+                        <i class="fas fa-mosque"></i>
+                        <h4>Hyderabad</h4>
+                        <p>Global IT Hub</p>
+                    </div>
+                    <!-- Duplicated Cards for Loop -->
+                    <div class="location-card" style="background-image: url('assets/Vishakapatnam_image_202605041636.jpeg');">
+                        <i class="fas fa-city"></i>
+                        <h4>Vishakapatnam</h4>
+                        <p>Coastal Hub</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Vijayawada_image._202605041640.jpeg');">
+                        <i class="fas fa-landmark"></i>
+                        <h4>Vijayawada</h4>
+                        <p>Commercial Capital</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Amaravathi.jpeg');">
+                        <i class="fas fa-building"></i>
+                        <h4>Amaravati</h4>
+                        <p>The Future City</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Kakinada.jpg');">
+                        <i class="fas fa-ship"></i>
+                        <h4>Kakinada</h4>
+                        <p>Port City</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Rajamandry.jpeg');">
+                        <i class="fas fa-bridge"></i>
+                        <h4>Rajamandury</h4>
+                        <p>Cultural Hub</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Bhimavaram.avif');">
+                        <i class="fas fa-water"></i>
+                        <h4>Bhimavaram</h4>
+                        <p>Coastal Center</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/pallakollu.jpg');">
+                        <i class="fas fa-church"></i>
+                        <h4>Palakollu</h4>
+                        <p>Heritage Town</p>
+                    </div>
+                    <div class="location-card" style="background-image: url('assets/Hyderabad.jpg');">
+                        <i class="fas fa-mosque"></i>
+                        <h4>Hyderabad</h4>
+                        <p>Global IT Hub</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2172,7 +2242,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg"
+                            alt="AAKAR Logo"></a>
                     <p style="color: var(--gray); font-size: 0.9rem;">Building high-quality residential and commercial
                         spaces across Andhra Pradesh and Telangana. Innovation, quality, and excellence in every brick.
                     </p>
