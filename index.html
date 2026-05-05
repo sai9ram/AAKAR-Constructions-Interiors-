@@ -1567,37 +1567,6 @@
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
         }
 
-        /* Stats Section */
-        .stats-section {
-            background: #ffffff;
-            padding: 60px 0;
-            border-bottom: 1px solid var(--glass-border);
-            position: relative;
-            z-index: 10;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3.5rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
-
-        .stat-item p {
-            color: var(--gray);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-        }
-
         @media (max-width: 768px) {
             .lead-modal-content {
                 padding: 2rem;
@@ -1606,8 +1575,83 @@
             .lead-modal-header h2 {
                 font-size: 1.5rem;
             }
-            .stat-item h3 {
-                font-size: 2rem;
+        /* Stats Section */
+        .stats-section {
+            padding: 0;
+            margin-top: -60px;
+            position: relative;
+            z-index: 100;
+        }
+
+        .stats-grid {
+            background: #ffffff;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 3.5rem;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 992px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 2.5rem;
+                gap: 3rem;
+            }
+            .stat-item:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-section {
+                margin-top: -40px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #f0f0f0;
+                padding-bottom: 1.5rem;
+            }
+            .stat-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            .stat-number-wrapper {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -1659,26 +1703,38 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid" data-aos="fade-up">
                 <div class="stat-item">
-                    <h3>100+</h3>
-                    <p>Projects Delivered</p>
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span>+</span>
+                    </div>
+                    <div class="stat-label">Projects Delivered</div>
                 </div>
                 <div class="stat-item">
-                    <h3>20+</h3>
-                    <p>Years Experience</p>
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="20">0</span>
+                        <span>+</span>
+                    </div>
+                    <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-item">
-                    <h3>100+</h3>
-                    <p>Quality Checks</p>
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span>+</span>
+                    </div>
+                    <div class="stat-label">Quality Checks</div>
                 </div>
                 <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Client Satisfaction</p>
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span>%</span>
+                    </div>
+                    <div class="stat-label">Client Satisfaction</div>
                 </div>
             </div>
         </div>
@@ -2680,6 +2736,38 @@
             const walk = (x - startX) * 2;
             slider.scrollLeft = scrollLeft - walk;
         });
+
+        // Stats Count-up Animation
+        const stats = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const statObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+
+        stats.forEach(stat => statObserver.observe(stat));
 
         // Lead Capture Modal Logic
         const leadModal = document.getElementById('leadModal');
