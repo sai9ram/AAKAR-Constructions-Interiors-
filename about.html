@@ -604,11 +604,15 @@
             }
 
             .about-grid,
-            .vision-mission-grid,
             .values-grid,
             .team-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
+            }
+
+            .vision-mission-grid {
+                grid-template-columns: 1fr 1fr; /* Keep side-by-side */
+                gap: 0.8rem;
             }
 
             .about-image {
@@ -620,12 +624,34 @@
             }
 
             .vm-block {
-                padding: 2rem 1.2rem;
-                border-radius: 20px;
+                padding: 1.2rem 0.8rem;
+                border-radius: 15px;
+            }
+
+            .vm-number {
+                font-size: 1.5rem;
+                opacity: 0.1;
             }
 
             .vm-block h3 {
-                font-size: 1.5rem;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .mission-item {
+                gap: 0.5rem;
+                margin-bottom: 0.8rem;
+                align-items: flex-start;
+            }
+
+            .mission-item i {
+                font-size: 0.7rem;
+                margin-top: 0.2rem;
+            }
+
+            .mission-item span {
+                font-size: 0.65rem;
+                line-height: 1.3;
             }
 
             .footer-grid {
