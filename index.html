@@ -501,73 +501,98 @@
             height: 100%;
         }
 
-        /* Testimonials Section */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Testimonials Slider */
+        .testimonials-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .testimonials-track {
+            display: flex;
             gap: 2rem;
+            width: max-content;
+            animation: scroll-loop 60s linear infinite;
+        }
+
+        .testimonials-track:hover {
+            animation-play-state: paused;
         }
 
         .testimonial-card {
-            background: var(--dark-accent);
-            padding: 3rem 2rem;
-            border-radius: 30px;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            width: 380px;
+            flex-shrink: 0;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             transition: var(--transition);
+            position: relative;
         }
 
         .testimonial-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: var(--primary);
-            background: linear-gradient(145deg, var(--dark-accent), #1a1a1a);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
         }
 
         .quote-icon {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 3rem;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
             color: var(--primary);
-            opacity: 0.2;
+            opacity: 0.15;
         }
 
         .client-info {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 1.5rem;
         }
 
         .client-img {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             background: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            color: var(--dark);
+            color: #ffffff;
+            font-size: 0.9rem;
         }
 
         .client-details h5 {
-            color: var(--light);
-            font-size: 1.1rem;
+            color: var(--dark);
+            font-size: 1rem;
+            margin-bottom: 2px;
         }
 
         .client-details span {
-            color: var(--primary);
-            font-size: 0.85rem;
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        @keyframes scroll-loop {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-412px * 10)); } /* 380px width + 32px gap * 10 cards */
         }
 
         @media (max-width: 768px) {
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
             .testimonial-card {
-                padding: 2rem 1.5rem;
+                width: 300px;
+                padding: 1.5rem;
+            }
+            @keyframes scroll-loop {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-332px * 10)); }
             }
         }
 
@@ -1877,54 +1902,170 @@
                 <p>Hear from the families and businesses we've helped build for.</p>
             </div>
 
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: rgba(255,255,255,0.9);">
-                        "AAKAR transformed our vision into a reality with their exceptional <strong>residential
-                            construction</strong> in Hyderabad. Their <strong>luxury villa</strong> designs are
-                        world-class and the attention to detail is unmatched."
-                    </p>
-                    <div class="client-info">
-                        <div class="client-img">RV</div>
-                        <div class="client-details">
-                            <h5>Rajesh Verma</h5>
-                            <span>Homeowner, Gachibowli</span>
+            <div class="testimonials-wrapper">
+                <div class="testimonials-track">
+                    <!-- Review 1 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of schedule. Their <strong>residential construction</strong> quality is simply the best in the industry."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">RV</div>
+                            <div class="client-details">
+                                <h5>Rajesh Verma</h5>
+                                <span>Homeowner, Hyderabad</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: rgba(255,255,255,0.9);">
-                        "Best <strong>interior design services</strong> I've experienced. <strong>AAKAR</strong> managed
-                        every detail of our apartment renovation with incredible taste and provided seamless
-                        <strong>turnkey solutions</strong> from start to finish."
-                    </p>
-                    <div class="client-info">
-                        <div class="client-img">SS</div>
-                        <div class="client-details">
-                            <h5>Sowmya Sharma</h5>
-                            <span>Interior Client, Vizag</span>
+                    <!-- Review 2 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "I highly recommend <strong>AAKAR</strong> for <strong>interior design services</strong>. They transformed our space with premium materials and smart <strong>turnkey solutions</strong>."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">SS</div>
+                            <div class="client-details">
+                                <h5>Sowmya Sharma</h5>
+                                <span>Villa Owner, Vizag</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: rgba(255,255,255,0.9);">
-                        "When it comes to <strong>commercial projects</strong>, <strong>AAKAR</strong> is the gold
-                        standard. Their <strong>modern architecture</strong> and commitment to strict timelines saved us
-                        valuable months on our new corporate complex."
-                    </p>
-                    <div class="client-info">
-                        <div class="client-img">VR</div>
-                        <div class="client-details">
-                            <h5>Vikram Reddy</h5>
-                            <span>CEO, Tech Hub South</span>
+                    <!-- Review 3 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Expert team at <strong>AAKAR</strong> handled our <strong>commercial project</strong> with absolute professionalism. Their <strong>modern architecture</strong> expertise is evident in the final result."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">VR</div>
+                            <div class="client-details">
+                                <h5>Vikram Reddy</h5>
+                                <span>Business Head, Amaravati</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "The transparency shown by <strong>AAKAR</strong> during our <strong>residential construction</strong> journey was refreshing. Truly the most reliable <strong>construction company</strong>."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">AR</div>
+                            <div class="client-details">
+                                <h5>Anjali Rao</h5>
+                                <span>Client, Vijayawada</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Strongly recommend <strong>AAKAR</strong> for their <strong>turnkey construction</strong>. They managed everything from planning to execution with zero hassles."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">KI</div>
+                            <div class="client-details">
+                                <h5>Karthik Iyer</h5>
+                                <span>Industrialist, Kakinada</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Working with <strong>AAKAR</strong> was a delight. Their <strong>luxury interior design</strong> team has a great eye for detail and aesthetics."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">MN</div>
+                            <div class="client-details">
+                                <h5>Meera Nair</h5>
+                                <span>Boutique Owner, Rajahmundry</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 7 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Precision and trust are what <strong>AAKAR</strong> stands for. Their <strong>commercial construction</strong> services helped us scale our factory operations quickly."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">SG</div>
+                            <div class="client-details">
+                                <h5>Suresh Goud</h5>
+                                <span>Entrepreneur, Bhimavaram</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 8 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "The smart home features integrated by <strong>AAKAR</strong> in our new <strong>luxury apartment</strong> are top-notch. Best in class technology."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">PD</div>
+                            <div class="client-details">
+                                <h5>Pooja Deshmukh</h5>
+                                <span>IT Professional, Hyderabad</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 9 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "I am impressed by the structural integrity and finish of <strong>AAKAR's</strong> <strong>residential projects</strong>. Definitely the gold standard."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">AM</div>
+                            <div class="client-details">
+                                <h5>Arjun Malhotra</h5>
+                                <span>Real Estate Expert, Vizag</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 10 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Reliable, honest, and professional—that's <strong>AAKAR</strong>. Their <strong>modern architecture</strong> planning made our dream home possible."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">DR</div>
+                            <div class="client-details">
+                                <h5>Divya Reddy</h5>
+                                <span>Client, Amaravati</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate for infinite loop -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of schedule. Their <strong>residential construction</strong> quality is simply the best in the industry."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">RV</div>
+                            <div class="client-details">
+                                <h5>Rajesh Verma</h5>
+                                <span>Homeowner, Hyderabad</span>
+                            </div>
                         </div>
                     </div>
                 </div>
