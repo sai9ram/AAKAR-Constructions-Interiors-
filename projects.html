@@ -212,7 +212,7 @@
             border-radius: 30px;
             overflow: hidden;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .project-card img {
@@ -254,7 +254,8 @@
         }
 
         .project-tag.ongoing {
-            background: #2ecc71; /* Green for ongoing */
+            background: #2ecc71;
+            /* Green for ongoing */
         }
 
         .project-overlay h3 {
@@ -389,7 +390,54 @@
             color: var(--primary);
         }
 
+        /* Floating Buttons */
+        .floating-btns {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 10000;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .float-whatsapp {
+            background-color: #25D366;
+        }
+
+        .float-call {
+            background-color: var(--primary);
+        }
+
         @media (max-width: 768px) {
+            .floating-btns {
+                bottom: 100px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
             .mobile-bottom-nav {
                 display: flex;
             }
@@ -490,7 +538,8 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift" style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
+                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift"
+                                style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
                 </ul>
                 <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
             </nav>
@@ -515,7 +564,7 @@
             <div class="section-header" style="text-align: center; margin-bottom: 3rem;" data-aos="fade-up">
                 <h2 style="font-size: 2.5rem; color: var(--primary);">Completed Projects</h2>
             </div>
-            
+
             <ul class="portfolio-filters" data-aos="fade-up">
                 <li class="filter-btn active">All Projects</li>
                 <li class="filter-btn">Residential</li>
@@ -527,7 +576,7 @@
             <div class="projects-grid">
                 <!-- Project 1: V-Banquets -->
                 <div class="project-card" data-category="commercial" data-aos="fade-up">
-                    <img src="assets/commercial_service_1777888901688.png" alt="V-Banquets Madhapur Commercial Project">
+                    <img src="assets/V Banquet Hall.jpeg" alt="V-Banquets Madhapur Commercial Project">
                     <div class="project-overlay">
                         <span class="project-tag">Commercial</span>
                         <h3>V-Banquets</h3>
@@ -541,7 +590,7 @@
 
                 <!-- Project 2: Home Tree Project -->
                 <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/residential_service_1777888816618.png" alt="Home Tree Project Osman Nagar Residential">
+                    <img src="assets/Osman nagar.jpeg" alt="Home Tree Project Osman Nagar Residential">
                     <div class="project-overlay">
                         <span class="project-tag">Residential</span>
                         <h3>Home Tree Project</h3>
@@ -555,7 +604,7 @@
 
                 <!-- Project 3: Simhapuri Colony -->
                 <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/residential.png" alt="Simhapuri Colony Residential Project">
+                    <img src="assets/Simhapuri colony.jpeg" alt="Simhapuri Colony Residential Project">
                     <div class="project-overlay">
                         <span class="project-tag">Residential</span>
                         <h3>Simhapuri Colony</h3>
@@ -569,7 +618,7 @@
 
                 <!-- Project 4: Hitech City Commercial -->
                 <div class="project-card" data-category="commercial" data-aos="fade-up">
-                    <img src="assets/commercial.png" alt="Hitech City Commercial Project">
+                    <img src="assets/High-tech City.jpeg" alt="Hitech City Commercial Project">
                     <div class="project-overlay">
                         <span class="project-tag">Commercial</span>
                         <h3>Hitech City Commercial</h3>
@@ -583,7 +632,7 @@
 
                 <!-- Project 5: Rajahmundry Residential -->
                 <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/project1.png" alt="Rajahmundry Residential Project">
+                    <img src="assets/Rajahmundry Residential Project.png" alt="Rajahmundry Residential Project">
                     <div class="project-overlay">
                         <span class="project-tag">Residential</span>
                         <h3>Rajahmundry Project</h3>
@@ -597,7 +646,7 @@
 
                 <!-- Project 6: Palakollu Project -->
                 <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/about.png" alt="Palakollu Material Contract Project">
+                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Material Contract Project">
                     <div class="project-overlay">
                         <span class="project-tag">Material Contract</span>
                         <h3>Palakollu Project</h3>
@@ -611,7 +660,8 @@
             </div>
 
             <!-- Ongoing Projects Section -->
-            <div class="section-header" style="text-align: center; margin-top: 6rem; margin-bottom: 3rem;" data-aos="fade-up">
+            <div class="section-header" style="text-align: center; margin-top: 6rem; margin-bottom: 3rem;"
+                data-aos="fade-up">
                 <h2 style="font-size: 2.5rem; color: var(--primary);">Ongoing Projects</h2>
                 <p>Current developments and active construction sites.</p>
             </div>
@@ -619,7 +669,7 @@
             <div class="projects-grid">
                 <!-- Ongoing 1: Nanakramguda -->
                 <div class="project-card" data-category="commercial" data-aos="fade-up">
-                    <img src="assets/construction_site_wide_1777889025405.png" alt="Nanakramguda Commercial Project Ongoing">
+                    <img src="assets/Nanakramguda, Fincial Distrcit.png" alt="Nanakramguda Commercial Project Ongoing">
                     <div class="project-overlay">
                         <span class="project-tag ongoing">Ongoing</span>
                         <h3>Financial District Hub</h3>
@@ -633,7 +683,7 @@
 
                 <!-- Ongoing 2: Palakollu Residential 1 -->
                 <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/Individual_Houses_202605041733.jpeg" alt="Palakollu Residential Project Ongoing">
+                    <img src="assets/PalakolluResidentialhouse2.png" alt="Palakollu Residential Project Ongoing">
                     <div class="project-overlay">
                         <span class="project-tag ongoing">Ongoing</span>
                         <h3>Palakollu Residence I</h3>
@@ -647,7 +697,7 @@
 
                 <!-- Ongoing 3: Palakollu Residential 2 -->
                 <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/Architectural_Design_202605041735.jpeg" alt="Palakollu Residential Project Ongoing">
+                    <img src="assets/PalakolluResidential3.png" alt="Palakollu Residential Project Ongoing">
                     <div class="project-overlay">
                         <span class="project-tag ongoing">Ongoing</span>
                         <h3>Palakollu Residence II</h3>
@@ -661,7 +711,7 @@
 
                 <!-- Ongoing 4: Palakollu Residential 3 -->
                 <div class="project-card" data-category="residential" data-aos="fade-up">
-                    <img src="assets/residential.png" alt="Palakollu Residential Project Ongoing">
+                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Residential Project Ongoing">
                     <div class="project-overlay">
                         <span class="project-tag ongoing">Ongoing</span>
                         <h3>Palakollu Residence III</h3>
@@ -675,7 +725,8 @@
             </div>
 
             <!-- Interior Projects Section -->
-            <div class="section-header" style="text-align: center; margin-top: 6rem; margin-bottom: 3rem;" data-aos="fade-up">
+            <div class="section-header" style="text-align: center; margin-top: 6rem; margin-bottom: 3rem;"
+                data-aos="fade-up">
                 <h2 style="font-size: 2.5rem; color: var(--primary);">Interior Projects</h2>
                 <p>Premium execution and creative design for luxury spaces.</p>
             </div>
@@ -683,7 +734,7 @@
             <div class="projects-grid">
                 <!-- Interior 1: Stay Hotel -->
                 <div class="project-card" data-category="interiors" data-aos="fade-up">
-                    <img src="assets/interior_design_1777888938561.png" alt="Stay Hotel Interior Project">
+                    <img src="assets/Interiorsdesign.png" alt="Stay Hotel Interior Project">
                     <div class="project-overlay">
                         <span class="project-tag">Interiors</span>
                         <h3>Stay Hotel & Arrival Hotel</h3>
@@ -751,6 +802,16 @@
         </div>
     </footer>
 
+    <!-- Floating Action Buttons -->
+    <div class="floating-btns">
+        <a href="tel:8885774890" class="float-btn float-call" title="Call Us">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/918885774890" target="_blank" class="float-btn float-whatsapp" title="WhatsApp Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
     <!-- Mobile Bottom Nav -->
     <nav class="mobile-bottom-nav">
         <a href="index.html" class="nav-item">
@@ -791,9 +852,9 @@
                     // Remove active class from all buttons
                     filterBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    
+
                     const filterValue = btn.textContent.toLowerCase().trim();
-                    
+
                     projectCards.forEach(card => {
                         const category = card.getAttribute('data-category');
                         if (filterValue === 'all projects' || (category && category === filterValue)) {
@@ -811,7 +872,7 @@
                             header.style.display = 'none';
                         }
                     });
-                    
+
                     // Refresh AOS animations after layout changes
                     setTimeout(() => AOS.refresh(), 100);
                 });

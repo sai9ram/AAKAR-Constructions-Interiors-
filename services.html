@@ -360,7 +360,54 @@
             color: var(--primary);
         }
 
+        /* Floating Buttons */
+        .floating-btns {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 10000;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .float-whatsapp {
+            background-color: #25D366;
+        }
+
+        .float-call {
+            background-color: var(--primary);
+        }
+
         @media (max-width: 768px) {
+            .floating-btns {
+                bottom: 100px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
             .mobile-bottom-nav {
                 display: flex;
             }
@@ -438,7 +485,8 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift" style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
+                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift"
+                                style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
                 </ul>
                 <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
             </nav>
@@ -461,7 +509,9 @@
     <section class="section-padding">
         <div class="container">
             <div class="section-header" style="margin-bottom: 4rem;" data-aos="fade-up">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2B Solutions</span>
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2B
+                    Solutions</span>
                 <h2 style="margin-top: 1rem; font-size: 2.5rem;">CORPORATE & COMMERCIAL</h2>
             </div>
 
@@ -469,12 +519,13 @@
                 <!-- B2B Card 1 -->
                 <div class="service-card" data-aos="fade-up">
                     <div class="service-card-img">
-                        <img src="assets/commercial.png" alt="Commercial Projects">
+                        <img src="assets/Commercial_Projects_South_Indian…_202605051557.jpeg" alt="Commercial Projects">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-city"></i>
                         <h3>Commercial Projects</h3>
-                        <p>Specialized construction for retail spaces, shopping complexes, and modern corporate hubs.</p>
+                        <p>Specialized construction for retail spaces, shopping complexes, and modern corporate hubs.
+                        </p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Shopping Complexes</li>
                             <li><i class="fas fa-check-circle"></i> Retail Spaces</li>
@@ -486,12 +537,14 @@
                 <!-- B2B Card 2 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card-img">
-                        <img src="assets/about.png" alt="Management Consultant">
+                        <img src="assets/Construction_Management_Consulta…_202605051549.jpeg"
+                            alt="Management Consultant">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-clipboard-check"></i>
                         <h3>Construction Management Consultant</h3>
-                        <p>Expert project management to ensure smooth execution, strict quality control, and timely delivery.</p>
+                        <p>Expert project management to ensure smooth execution, strict quality control, and timely
+                            delivery.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Project Planning</li>
                             <li><i class="fas fa-check-circle"></i> Quality Audits</li>
@@ -503,12 +556,13 @@
                 <!-- B2B Card 3 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card-img">
-                        <img src="assets/project1.png" alt="Hospital and School">
+                        <img src="assets/Hospital_school_building_constru…_202605051603.jpeg" alt="Hospital and School">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-hospital"></i>
                         <h3>Hospital & School Building Construction</h3>
-                        <p>Large-scale educational and healthcare infrastructure built with uncompromising safety and quality.</p>
+                        <p>Large-scale educational and healthcare infrastructure built with uncompromising safety and
+                            quality.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Educational Institutions</li>
                             <li><i class="fas fa-check-circle"></i> Healthcare Facilities</li>
@@ -516,16 +570,18 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <!-- B2B Card 4 -->
                 <div class="service-card" data-aos="fade-up">
                     <div class="service-card-img">
-                        <img src="assets/commercial_service_1777888901688.png" alt="Projects for Builders">
+                        <img src="assets/Projects_for_Builders_Developers…_202605051605.jpeg"
+                            alt="Projects for Builders">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-hard-hat"></i>
                         <h3>Projects for Builders & Developers</h3>
-                        <p>Turnkey construction services tailored for large-scale real estate developers and property groups.</p>
+                        <p>Turnkey construction services tailored for large-scale real estate developers and property
+                            groups.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Turnkey Solutions</li>
                             <li><i class="fas fa-check-circle"></i> Fast-Track Execution</li>
@@ -537,12 +593,14 @@
                 <!-- B2B Card 5 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card-img">
-                        <img src="assets/construction_site_wide_1777889025405.png" alt="Office Buildings and Factories">
+                        <img src="assets/Office_buildings_factories_const…_202605051607.jpeg"
+                            alt="Office Buildings and Factories">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-industry"></i>
                         <h3>Office Buildings, Factories Construction</h3>
-                        <p>Heavy-duty industrial and modern corporate construction optimized for productivity and scale.</p>
+                        <p>Heavy-duty industrial and modern corporate construction optimized for productivity and scale.
+                        </p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Corporate Offices</li>
                             <li><i class="fas fa-check-circle"></i> Industrial Units</li>
@@ -554,12 +612,14 @@
                 <!-- B2B Card 6 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card-img">
-                        <img src="assets/Architectural_Design_202605041735.jpeg" alt="High-Rise Residential">
+                        <img src="assets/High-Rise_Apartment_Construction…_202605051608.jpeg"
+                            alt="High-Rise Residential">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-building"></i>
                         <h3>High-Rise Residential Apartment Construction</h3>
-                        <p>High-rise apartment complexes featuring premium amenities and robust structural engineering.</p>
+                        <p>High-rise apartment complexes featuring premium amenities and robust structural engineering.
+                        </p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Luxury Apartments</li>
                             <li><i class="fas fa-check-circle"></i> Structural Engineering</li>
@@ -575,7 +635,9 @@
     <section class="section-padding" style="background-color: var(--dark-accent);">
         <div class="container">
             <div class="section-header" style="text-align: right; margin-bottom: 4rem;" data-aos="fade-up">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2C Solutions</span>
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2C
+                    Solutions</span>
                 <h2 style="margin-top: 1rem; font-size: 2.5rem;">INDIVIDUAL & RESIDENTIAL</h2>
             </div>
 
@@ -583,12 +645,14 @@
                 <!-- B2C Card 1 -->
                 <div class="service-card" data-aos="fade-up">
                     <div class="service-card-img">
-                        <img src="assets/about.png" alt="Construction Management">
+                        <img src="assets/Construction_Management_Consulta…_202605051601.jpeg"
+                            alt="Construction Management">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-clipboard-check"></i>
                         <h3>Construction Management Consultant</h3>
-                        <p>Expert oversight for your residential project to ensure seamless execution, cost control, and high-quality finishes.</p>
+                        <p>Expert oversight for your residential project to ensure seamless execution, cost control, and
+                            high-quality finishes.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Quality Control</li>
                             <li><i class="fas fa-check-circle"></i> Budget Management</li>
@@ -600,12 +664,13 @@
                 <!-- B2C Card 2 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card-img">
-                        <img src="assets/hero_bg.png" alt="Planning & Design">
+                        <img src="assets/Project_Planning_Architectural_D…_202605051615.jpeg" alt="Planning & Design">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-pencil-ruler"></i>
                         <h3>Project Planning & Architectural Design</h3>
-                        <p>End-to-end architectural design, 3D modeling, and layout planning before the first brick is laid.</p>
+                        <p>End-to-end architectural design, 3D modeling, and layout planning before the first brick is
+                            laid.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> 2D & 3D Planning</li>
                             <li><i class="fas fa-check-circle"></i> Vastu Compliance</li>
@@ -617,12 +682,13 @@
                 <!-- B2C Card 3 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card-img">
-                        <img src="assets/residential.png" alt="Individual House Construction">
+                        <img src="assets/Individual_Houses_202605041733.jpeg" alt="Individual House Construction">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-home"></i>
                         <h3>Individual House Construction</h3>
-                        <p>Building your dream independent house with robust structural engineering and personalized touches.</p>
+                        <p>Building your dream independent house with robust structural engineering and personalized
+                            touches.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Custom Layouts</li>
                             <li><i class="fas fa-check-circle"></i> Premium Materials</li>
@@ -634,12 +700,14 @@
                 <!-- B2C Card 4 -->
                 <div class="service-card" data-aos="fade-up">
                     <div class="service-card-img">
-                        <img src="assets/residential_service_1777888816618.png" alt="Luxury Villa Construction">
+                        <img src="assets/Luxury_Villa_Duplex_Construction…_202605051617.jpeg"
+                            alt="Luxury Villa Construction">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-gem"></i>
                         <h3>Luxury Villa & Duplex Construction</h3>
-                        <p>High-end residential construction featuring opulent amenities, smart home integration, and grand facades.</p>
+                        <p>High-end residential construction featuring opulent amenities, smart home integration, and
+                            grand facades.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Premium Amenities</li>
                             <li><i class="fas fa-check-circle"></i> Modern Elevations</li>
@@ -651,12 +719,13 @@
                 <!-- B2C Card 5 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card-img">
-                        <img src="assets/interior_design.png" alt="Interior Design">
+                        <img src="assets/Indian_apartment_interiors_design_202605051622.jpeg" alt="Interior Design">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-couch"></i>
                         <h3>Interior Design & Execution</h3>
-                        <p>Complete interior execution that blends luxury with comfort, tailored entirely to your personal style.</p>
+                        <p>Complete interior execution that blends luxury with comfort, tailored entirely to your
+                            personal style.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check-circle"></i> Modular Kitchens</li>
                             <li><i class="fas fa-check-circle"></i> False Ceilings</li>
@@ -720,6 +789,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-btns">
+        <a href="tel:8885774890" class="float-btn float-call" title="Call Us">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/918885774890" target="_blank" class="float-btn float-whatsapp" title="WhatsApp Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- Mobile Bottom Nav -->
     <nav class="mobile-bottom-nav">
