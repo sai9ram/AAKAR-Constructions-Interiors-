@@ -1437,6 +1437,134 @@
                 justify-content: center;
             }
         }
+
+        /* Lead Capture Modal Styles */
+        .lead-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 10001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .lead-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lead-modal-content {
+            background: #ffffff;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 30px;
+            position: relative;
+            padding: 3rem;
+            transform: translateY(50px);
+            transition: transform 0.5s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            color: #111111;
+        }
+
+        .lead-modal-overlay.active .lead-modal-content {
+            transform: translateY(0);
+        }
+
+        .lead-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #888;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lead-modal-close:hover {
+            color: var(--primary);
+        }
+
+        .lead-modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .lead-modal-header h2 {
+            font-size: 2rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .lead-modal-header p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .lead-modal-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .lead-modal-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #333;
+        }
+
+        .lead-modal-form input,
+        .lead-modal-form select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            background: #fdfdfd;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .lead-modal-form input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+
+        .lead-modal-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .lead-modal-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .lead-modal-content {
+                padding: 2rem;
+                border-radius: 20px;
+            }
+            .lead-modal-header h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -2313,6 +2441,37 @@
         </div>
     </footer>
 
+    <!-- Lead Capture Modal -->
+    <div class="lead-modal-overlay" id="leadModal">
+        <div class="lead-modal-content">
+            <span class="lead-modal-close" id="closeLeadModal">&times;</span>
+            <div class="lead-modal-header">
+                <h2 style="color: #111; margin-bottom: 0.5rem;">Build Your Dream Home</h2>
+                <p>Get a free consultation and estimate from our experts today.</p>
+            </div>
+            <form class="lead-modal-form" id="leadCaptureForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="leadName" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number (WhatsApp)</label>
+                    <input type="tel" id="leadPhone" placeholder="Enter phone number" required>
+                </div>
+                <div class="form-group">
+                    <label>Project Type</label>
+                    <select id="leadProjectType">
+                        <option value="Residential">Residential Construction</option>
+                        <option value="Commercial">Commercial Construction</option>
+                        <option value="Interior">Interior Design</option>
+                        <option value="Renovation">Renovation</option>
+                    </select>
+                </div>
+                <button type="submit" class="lead-modal-btn">Send Details to WhatsApp <i class="fab fa-whatsapp" style="margin-left: 0.5rem;"></i></button>
+            </form>
+        </div>
+    </div>
+
     <!-- Floating Action Buttons -->
     <div class="floating-btns">
         <a href="tel:8885774890" class="float-btn float-call" title="Call Us">
@@ -2451,6 +2610,45 @@
             const walk = (x - startX) * 2;
             slider.scrollLeft = scrollLeft - walk;
         });
+
+        // Lead Capture Modal Logic
+        const leadModal = document.getElementById('leadModal');
+        const closeLeadModal = document.getElementById('closeLeadModal');
+        const leadCaptureForm = document.getElementById('leadCaptureForm');
+
+        // Show modal after 5 seconds
+        setTimeout(() => {
+            if (!localStorage.getItem('leadCaptured')) {
+                leadModal.classList.add('active');
+            }
+        }, 5000);
+
+        closeLeadModal.onclick = () => {
+            leadModal.classList.remove('active');
+        };
+
+        window.onclick = (event) => {
+            if (event.target == leadModal) {
+                leadModal.classList.remove('active');
+            }
+        };
+
+        leadCaptureForm.onsubmit = (e) => {
+            e.preventDefault();
+            const name = document.getElementById('leadName').value;
+            const phone = document.getElementById('leadPhone').value;
+            const type = document.getElementById('leadProjectType').value;
+
+            const message = `Hello AAKAR Constructions, I am interested in ${type} project.
+Name: ${name}
+Phone: ${phone}`;
+            
+            const waUrl = `https://wa.me/918885774890?text=${encodeURIComponent(message)}`;
+            
+            localStorage.setItem('leadCaptured', 'true');
+            window.open(waUrl, '_blank');
+            leadModal.classList.remove('active');
+        };
     </script>
 </body>
 
