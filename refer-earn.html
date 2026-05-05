@@ -121,7 +121,7 @@
 
         /* Hero Styling */
         .page-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/hero_bg.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/Men_interacting_with_smartphone_202605052100.jpeg');
             background-size: cover;
             background-position: center;
             padding: 180px 0 100px;
@@ -134,7 +134,7 @@
             margin-bottom: 1rem;
             line-height: 1.1;
         }
-        
+
         .page-header h1 span {
             color: var(--primary);
         }
@@ -203,7 +203,7 @@
             color: var(--light);
             transform: translateY(-5px);
         }
-        
+
         /* Tagline */
         .tagline {
             margin-top: 3rem;
@@ -224,13 +224,13 @@
             background: var(--white);
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--glass-border);
             text-align: center;
             position: relative;
             transition: var(--transition);
         }
-        
+
         .step-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
@@ -254,7 +254,7 @@
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
-        
+
         .step-card p {
             color: var(--gray);
             font-size: 0.95rem;
@@ -272,7 +272,7 @@
             background: var(--white);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
         }
 
         .rewards-row {
@@ -297,7 +297,7 @@
             color: var(--primary);
             font-size: 1.2rem;
         }
-        
+
         .rewards-note {
             text-align: center;
             margin-top: 2rem;
@@ -311,42 +311,101 @@
             margin-right: auto;
         }
 
-        /* Grid sections (Why / Who) */
-        .two-col-grid {
+        /* New Redesigned Why & Who Section */
+        .why-who-section {
+            background: #f9f9f9;
+            padding: 100px 0;
+        }
+
+        .benefit-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .list-box {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid var(--glass-border);
+            gap: 3rem;
+            align-items: stretch;
         }
 
-        .list-box h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+        .benefit-card {
+            background: #fff;
+            padding: 4rem 3rem;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card.gold-theme {
+            background: var(--dark-accent);
+            color: #fff;
+            border: none;
+        }
+
+        .benefit-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card.gold-theme h3 {
             color: var(--primary);
         }
 
-        .list-box ul {
+        .benefit-list {
             list-style: none;
+            position: relative;
+            z-index: 2;
         }
 
-        .list-box li {
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
+        .benefit-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
-        .list-box li i {
+        .benefit-item i {
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 175, 55, 0.1);
             color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .gold-theme .benefit-item i {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--primary);
+        }
+
+        .benefit-card::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            opacity: 0.03;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .gold-theme::after {
+            background: #fff;
+            opacity: 0.05;
         }
 
         /* Form Styling */
@@ -359,7 +418,7 @@
             padding: 4rem;
             border-radius: 40px;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
             max-width: 900px;
             margin: 0 auto;
         }
@@ -383,7 +442,9 @@
             font-size: 0.95rem;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 1.2rem 1.5rem;
             background: var(--dark-accent);
@@ -395,41 +456,43 @@
             outline: none;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             border-color: var(--primary);
             background: #fff;
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.05);
         }
-        
+
         /* Tracker & Social Sharing */
         .tracker-section {
             padding: 60px 0;
             text-align: center;
         }
-        
+
         .tracker-box {
             max-width: 600px;
             margin: 0 auto;
             background: var(--white);
             padding: 3rem;
             border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--primary);
         }
-        
+
         .tracker-input-group {
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
         }
-        
+
         .social-sharing {
             display: flex;
             justify-content: center;
             gap: 1rem;
             margin-top: 2rem;
         }
-        
+
         .social-btn {
             display: inline-flex;
             align-items: center;
@@ -441,11 +504,19 @@
             color: white;
             transition: var(--transition);
         }
-        
-        .whatsapp-btn { background: #25D366; }
-        .facebook-btn { background: #1877F2; }
-        .copy-btn { background: var(--gray); }
-        
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .facebook-btn {
+            background: #1877F2;
+        }
+
+        .copy-btn {
+            background: var(--gray);
+        }
+
         .social-btn:hover {
             transform: translateY(-3px);
             opacity: 0.9;
@@ -461,12 +532,12 @@
             font-size: 0.9rem;
             color: var(--gray);
         }
-        
+
         .terms-box h4 {
             color: var(--light);
             margin-bottom: 1rem;
         }
-        
+
         .terms-box ul {
             padding-left: 1.5rem;
         }
@@ -524,6 +595,7 @@
             .page-header h1 {
                 font-size: 3rem;
             }
+
             .two-col-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -578,6 +650,7 @@
                 height: 50px;
                 font-size: 1.2rem;
             }
+
             .nav-links,
             header .btn {
                 display: none;
@@ -592,7 +665,7 @@
             .section-padding {
                 padding: 60px 0;
             }
-            
+
             .page-header {
                 padding: 150px 1rem 80px;
             }
@@ -600,23 +673,24 @@
             .page-header h1 {
                 font-size: 2.2rem;
             }
-            
+
             .trust-badges {
                 flex-direction: column;
                 gap: 1rem;
                 align-items: center;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
             }
 
-            .form-row, .tracker-input-group {
+            .form-row,
+            .tracker-input-group {
                 grid-template-columns: 1fr;
                 flex-direction: column;
                 gap: 0;
             }
-            
+
             .social-sharing {
                 flex-direction: column;
             }
@@ -632,7 +706,7 @@
                 gap: 1rem;
                 text-align: center;
             }
-            
+
             .rewards-row {
                 padding: 1rem;
                 flex-direction: column;
@@ -656,7 +730,8 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift" style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
+                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift"
+                                style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
                 </ul>
                 <a href="get-a-quote.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
             </nav>
@@ -667,19 +742,20 @@
     <section class="page-header">
         <div class="container" data-aos="fade-up">
             <h1>Help Your Friends Build Their Dream Home & <span>Earn Up to ₹1,00,000</span></h1>
-            <p class="hero-subtext">Refer your friends, relatives, or colleagues and earn exciting rewards when they build with us.</p>
-            
+            <p class="hero-subtext">Refer your friends, relatives, or colleagues and earn exciting rewards when they
+                build with us.</p>
+
             <div class="trust-badges">
                 <div class="trust-badge"><i class="fas fa-check-circle"></i> Quality Construction</div>
                 <div class="trust-badge"><i class="fas fa-check-circle"></i> On-Time Delivery</div>
                 <div class="trust-badge"><i class="fas fa-check-circle"></i> 100% Transparency</div>
             </div>
-            
+
             <div class="hero-buttons">
                 <a href="#referral-form" class="btn btn-primary">👉 Refer Now & Earn</a>
                 <a href="contact.html" class="btn btn-outline">👉 Talk to Our Team</a>
             </div>
-            
+
             <p class="tagline">“Refer Smart. Earn Big. Your Network = Your Income”</p>
         </div>
     </section>
@@ -723,7 +799,7 @@
             <div style="text-align: center;" data-aos="fade-up">
                 <h2 style="font-size: 2.5rem; color: var(--light);">💰 Referral Rewards Structure</h2>
             </div>
-            
+
             <div class="rewards-table" data-aos="fade-up" data-aos-delay="100">
                 <div class="rewards-row rewards-header">
                     <div>Project Value</div>
@@ -742,38 +818,69 @@
                     <div class="rewards-val">Up to ₹1,00,000</div>
                 </div>
             </div>
-            
+
             <p class="rewards-note" data-aos="fade-up" data-aos-delay="200">
                 👉 No limit on the number of referrals – Earn more by referring more!
             </p>
         </div>
     </section>
 
-    <!-- Why & Who -->
-    <section class="section-padding">
+    <!-- Redesigned Why & Who Section -->
+    <section class="why-who-section">
         <div class="container">
-            <div class="two-col-grid">
-                <div class="list-box" data-aos="fade-right">
-                    <h3>🎯 Why Refer Us?</h3>
-                    <ul>
-                        <li><i class="fas fa-building"></i> Trusted Construction Company</li>
-                        <li><i class="fas fa-hard-hat"></i> Experienced Engineers & Designers</li>
-                        <li><i class="fas fa-file-invoice-dollar"></i> Transparent Pricing (No Hidden Costs)</li>
-                        <li><i class="fas fa-cubes"></i> Premium Quality Materials</li>
-                        <li><i class="fas fa-clock"></i> On-Time Project Delivery</li>
-                        <li><i class="fas fa-user-tie"></i> Dedicated Site Engineer Support</li>
-                    </ul>
+            <div class="benefit-container">
+                <!-- Why Refer Us? -->
+                <div class="benefit-card gold-theme" data-aos="fade-right">
+                    <h3>🎯 Why Refer AAKAR?</h3>
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-building"></i>
+                            <span>Trusted name in high-quality construction across AP & Telangana.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-hard-hat"></i>
+                            <span>Team of elite engineers and premium architectural designers.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>100% transparent pricing with zero hidden costs or surprises.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-cubes"></i>
+                            <span>Uncompromising use of premium materials for lifelong durability.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Proven track record of delivering every project on or before time.</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="list-box" data-aos="fade-left">
-                    <h3>📋 Who Can Refer?</h3>
-                    <ul>
-                        <li><i class="fas fa-user-check"></i> Existing customers</li>
-                        <li><i class="fas fa-users"></i> Friends & family</li>
-                        <li><i class="fas fa-handshake"></i> Real estate agents</li>
-                        <li><i class="fas fa-pencil-ruler"></i> Architects / engineers</li>
-                        <li><i class="fas fa-address-book"></i> Anyone with contacts planning construction</li>
-                    </ul>
+
+                <!-- Who Can Refer? -->
+                <div class="benefit-card" data-aos="fade-left">
+                    <h3>📋 Who Can Join Us?</h3>
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-user-check"></i>
+                            <span><b>Existing Customers:</b> Share your experience and earn rewards.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-users"></i>
+                            <span><b>Networkers:</b> Friends, family, and colleagues are all welcome.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-handshake"></i>
+                            <span><b>Agents:</b> Professional real estate consultants & property dealers.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <span><b>Professionals:</b> Independent architects and structural engineers.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-globe"></i>
+                            <span><b>Visionaries:</b> Anyone with a strong network in construction.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -786,13 +893,13 @@
                 <h2 style="font-size: 2.5rem; color: var(--light);">Submit a Referral</h2>
                 <p style="color: var(--gray);">Fill out the details below to start earning.</p>
             </div>
-            
+
             <div class="contact-form-container" data-aos="fade-up" data-aos-delay="100">
                 <form action="https://formsubmit.co/srikakatiya227@gmail.com" method="POST">
                     <!-- Config for FormSubmit -->
                     <input type="hidden" name="_subject" value="New Referral from Website!">
                     <input type="hidden" name="_captcha" value="false">
-                    
+
                     <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Your Details</h4>
                     <div class="form-row">
                         <div class="form-group">
@@ -804,9 +911,9 @@
                             <input type="tel" name="referrer_phone" placeholder="+91 00000 00000" required>
                         </div>
                     </div>
-                    
+
                     <hr style="border: none; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
-                    
+
                     <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Friend's Details</h4>
                     <div class="form-row">
                         <div class="form-group">
@@ -818,7 +925,7 @@
                             <input type="tel" name="friend_phone" placeholder="+91 00000 00000" required>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label>Plot Location / City</label>
@@ -839,7 +946,7 @@
                     <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">👉 Submit Referral</button>
                 </form>
             </div>
-            
+
             <!-- Terms & Conditions -->
             <div class="terms-box" data-aos="fade-up">
                 <h4>⚠ Terms & Conditions</h4>
@@ -852,33 +959,39 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Tracker & Sharing -->
     <section class="tracker-section">
         <div class="container">
             <div class="tracker-box" data-aos="fade-up">
                 <h3 style="font-size: 2rem; color: var(--light); margin-bottom: 1rem;">👉 Referral Tracker</h3>
-                <p style="color: var(--gray);">Check your referral status: <b>Pending / Contacted / Confirmed / Paid</b></p>
-                
+                <p style="color: var(--gray);">Check your referral status: <b>Pending / Contacted / Confirmed / Paid</b>
+                </p>
+
                 <div class="tracker-input-group">
-                    <input type="tel" placeholder="Enter your registered phone number" style="border: 1px solid var(--glass-border);">
-                    <button class="btn btn-primary" onclick="alert('Feature coming soon! Our team will update you via WhatsApp.')" style="width: auto;">Check Status</button>
+                    <input type="tel" placeholder="Enter your registered phone number"
+                        style="border: 1px solid var(--glass-border);">
+                    <button class="btn btn-primary"
+                        onclick="alert('Feature coming soon! Our team will update you via WhatsApp.')"
+                        style="width: auto;">Check Status</button>
                 </div>
-                
+
                 <hr style="border: none; border-top: 1px solid var(--glass-border); margin: 3rem 0;">
-                
+
                 <h4 style="margin-bottom: 1rem;">⭐ Share with your network</h4>
                 <div class="social-sharing">
                     <a href="#" class="social-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
                     <a href="#" class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i> Share on Facebook</a>
-                    <a href="#" class="social-btn copy-btn" onclick="alert('Link copied to clipboard!')"><i class="fas fa-link"></i> Copy Link</a>
+                    <a href="#" class="social-btn copy-btn" onclick="alert('Link copied to clipboard!')"><i
+                            class="fas fa-link"></i> Copy Link</a>
                 </div>
             </div>
-            
+
             <div style="margin-top: 4rem;" data-aos="fade-up">
                 <h3>📞 Need help? Talk to us</h3>
                 <p style="font-size: 1.2rem; margin-top: 1rem;">
-                    📱 Call / WhatsApp: <a href="tel:+918885774890" style="color: var(--primary); text-decoration: none; font-weight: 700;">+91 888 577 4890</a>
+                    📱 Call / WhatsApp: <a href="tel:+918885774890"
+                        style="color: var(--primary); text-decoration: none; font-weight: 700;">+91 888 577 4890</a>
                 </p>
                 <p style="font-size: 1.1rem;">📍 Office Location: Hyderabad, Telangana</p>
             </div>
@@ -890,7 +1003,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg"
+                            alt="AAKAR Logo"></a>
                     <p style="color: var(--gray); font-size: 0.9rem;">Building high-quality residential and commercial
                         spaces across Andhra Pradesh and Telangana. Innovation, quality, and excellence in every brick.
                     </p>
