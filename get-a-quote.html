@@ -10,8 +10,29 @@
     <link rel="icon" type="image/jpeg" href="Original Logo.jpeg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4AF37',
+                        secondary: '#111111',
+                        accent: '#D4AF37',
+                        snowWhite: '#ffffff',
+                        lightBlue: '#f0f7ff',
+                        bodyGray: '#666666'
+                    },
+                    borderRadius: {
+                        'button': '50px'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         :root {
             --primary: #D4AF37;
@@ -265,7 +286,7 @@
             border-radius: 30px;
             position: sticky;
             top: 100px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             color: white;
         }
 
@@ -297,9 +318,20 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.5; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .breakdown-item {
@@ -307,12 +339,12 @@
             justify-content: space-between;
             margin-bottom: 0.8rem;
             font-size: 0.95rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding-bottom: 0.6rem;
         }
 
         .breakdown-item span:first-child {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         /* Footer (Synced with Index) */
@@ -388,8 +420,13 @@
             transition: var(--transition);
         }
 
-        .float-whatsapp { background-color: #25D366; }
-        .float-call { background-color: var(--primary); }
+        .float-whatsapp {
+            background-color: #25D366;
+        }
+
+        .float-call {
+            background-color: var(--primary);
+        }
 
         .mobile-bottom-nav {
             position: fixed;
@@ -449,20 +486,31 @@
             .estimator-grid {
                 grid-template-columns: 1fr;
             }
+
             .result-card {
                 position: static;
                 margin-top: 2rem;
             }
+
             .form-row {
                 grid-template-columns: 1fr;
                 gap: 0;
             }
-            .page-header h1 { font-size: 2.8rem; }
+
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .mobile-bottom-nav { display: flex; }
-            .mobile-toggle { display: flex; }
+            .mobile-bottom-nav {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -519,12 +567,29 @@
                 transform: translateX(0);
             }
 
-            .nav-links.active li:nth-child(1) { transition-delay: 0.2s; }
-            .nav-links.active li:nth-child(2) { transition-delay: 0.25s; }
-            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
-            .nav-links.active li:nth-child(4) { transition-delay: 0.35s; }
-            .nav-links.active li:nth-child(5) { transition-delay: 0.4s; }
-            .nav-links.active li:nth-child(6) { transition-delay: 0.45s; }
+            .nav-links.active li:nth-child(1) {
+                transition-delay: 0.2s;
+            }
+
+            .nav-links.active li:nth-child(2) {
+                transition-delay: 0.25s;
+            }
+
+            .nav-links.active li:nth-child(3) {
+                transition-delay: 0.3s;
+            }
+
+            .nav-links.active li:nth-child(4) {
+                transition-delay: 0.35s;
+            }
+
+            .nav-links.active li:nth-child(5) {
+                transition-delay: 0.4s;
+            }
+
+            .nav-links.active li:nth-child(6) {
+                transition-delay: 0.45s;
+            }
 
             .nav-links a {
                 font-size: 1.1rem;
@@ -544,11 +609,27 @@
                 color: var(--primary) !important;
                 transform: translateX(5px);
             }
-            .floating-btns { bottom: 100px; }
-            body { padding-bottom: 100px; }
-            .quality-options { grid-template-columns: 1fr; }
-            .estimator-card { padding: 2rem; }
-            header { width: 92%; top: 15px; }
+
+            .floating-btns {
+                bottom: 100px;
+            }
+
+            body {
+                padding-bottom: 100px;
+            }
+
+            .quality-options {
+                grid-template-columns: 1fr;
+            }
+
+            .estimator-card {
+                padding: 2rem;
+            }
+
+            header {
+                width: 92%;
+                top: 15px;
+            }
         }
     </style>
 </head>
@@ -571,7 +652,8 @@
                     <li><a href="refer-earn.html" style="color: #fff;"><i class="fas fa-gift"></i>Refer & Earn</a></li>
                 </ul>
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
-                    <a href="get-a-quote.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; border-radius: 50px;">Get a Quote</a>
+                    <a href="get-a-quote.html" class="btn btn-primary"
+                        style="padding: 0.6rem 1.5rem; border-radius: 50px;">Get a Quote</a>
                     <div class="mobile-toggle" id="mobileToggle">
                         <span></span>
                         <span></span>
@@ -584,173 +666,220 @@
 
     <section class="page-header">
         <div class="container" data-aos="fade-up">
-            <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">Instant Estimation</span>
+            <span
+                style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">Instant
+                Estimation</span>
             <h1 style="color: white; -webkit-text-fill-color: white;">Cost Estimator</h1>
-            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 700px; margin: 0.5rem auto;">Calculate your dream project cost with live market data.</p>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 700px; margin: 0.5rem auto;">Calculate
+                your dream project cost with live market data.</p>
         </div>
     </section>
 
-    <section class="estimator-section">
-        <div class="container">
-            <div class="estimator-grid">
-                <!-- Main Form Card -->
-                <div class="estimator-card" data-aos="fade-up">
-                    <h3><i class="fas fa-calculator"></i> Construction Cost Estimator</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Total Land Area (sq ft)</label>
-                            <input type="number" id="plotArea" placeholder="e.g. 1200" value="" oninput="calculate()">
+    <!-- Construction Cost Estimator — Premium with Brand Logos (small icons) -->
+    <section class="relative py-10 bg-gradient-to-br from-snowWhite to-lightBlue overflow-hidden">
+        <!-- blueprint subtle background -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="w-full h-full">
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M40 0H0V40" fill="none" stroke="#09203F" stroke-width="0.5" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+        <div class="relative max-w-6xl mx-auto px-6">
+
+            <h2 class="text-4xl font-bold text-center text-primary mb-12">
+                Construction Cost Estimator
+            </h2>
+
+            <div class="bg-white p-10 rounded-3xl shadow-lg border border-gray-200">
+                <div class="grid lg:grid-cols-3 gap-8">
+
+                    <!-- LEFT SIDE: Inputs -->
+                    <div class="lg:col-span-2 space-y-6">
+
+                        <!-- Basic Inputs -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Total Land Area (sq ft)</label>
+                                <input id="area" type="number" placeholder="e.g., 1200"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Base Rate (₹/sq ft)</label>
+                                <input id="baseRate" type="number" placeholder="e.g., 1800"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Base Rate (₹/sq ft)</label>
-                            <input type="number" id="baseRate" placeholder="e.g. 1800" value="1800" oninput="calculate()">
+
+                        <!-- Brand Dropdowns -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Cement</label>
+                                <select id="cement"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="">Select Cement Brand</option>
+                                    <option value="1.05">UltraTech</option>
+                                    <option value="1.08">Ambuja</option>
+                                    <option value="1.07">ACC</option>
+                                    <option value="1.06">Dalmia</option>
+                                    <option value="1.00">Ramco</option>
+                                    <option value="1.00">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Steel</label>
+                                <select id="steel"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="">Select Steel Brand</option>
+                                    <option value="1.08">Tata Tiscon</option>
+                                    <option value="1.07">JSW</option>
+                                    <option value="1.06">SAIL</option>
+                                    <option value="1.05">Vizag Steel</option>
+                                    <option value="1.00">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Pipes</label>
+                                <select id="pipes"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="">Select Pipes Brand</option>
+                                    <option value="1.06">Astral</option>
+                                    <option value="1.07">Supreme</option>
+                                    <option value="1.05">Finolex</option>
+                                    <option value="1.00">Prince Pipes</option>
+                                    <option value="1.00">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Paint</label>
+                                <select id="paint"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="">Select Paint Brand</option>
+                                    <option value="1.06">Asian Paints</option>
+                                    <option value="1.05">Berger</option>
+                                    <option value="1.07">Nerolac</option>
+                                    <option value="1.00">Dulux</option>
+                                    <option value="1.07">JSW Paints</option>
+                                    <option value="1.00">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Electrical</label>
+                                <select id="electrical"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="">Select Electrical Brand</option>
+                                    <option value="1.06">Schneider</option>
+                                    <option value="1.05">Havells</option>
+                                    <option value="1.06">Anchor</option>
+                                    <option value="1.07">Polycab</option>
+                                    <option value="1.00">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Sanitary</label>
+                                <select id="sanitary"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="">Select Sanitary Brand</option>
+                                    <option value="1.06">Jaquar</option>
+                                    <option value="1.05">Hindware</option>
+                                    <option value="1.07">Cera</option>
+                                    <option value="1.04">Parryware</option>
+                                    <option value="1.00">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Water Tank</label>
+                                <select id="tank"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="">Select Water Tank Brand</option>
+                                    <option value="1.05">Sintex</option>
+                                    <option value="1.06">Vectus</option>
+                                    <option value="1.07">Plasto</option>
+                                    <option value="1.00">Supreme</option>
+                                    <option value="1.00">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Tiles</label>
+                                <select id="tiles"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="">Select Tiles Brand</option>
+                                    <option value="1.06">Kajaria</option>
+                                    <option value="1.07">Somany</option>
+                                    <option value="1.05">Johnson</option>
+                                    <option value="1.00">Nitco</option>
+                                    <option value="1.00">Varmora</option>
+                                    <option value="1.00">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="mt-8 flex gap-4">
+                            <button id="calculateBtn"
+                                class="bg-accent text-white px-8 py-3 rounded-button font-semibold hover:scale-[1.02] transition">
+                                Calculate Estimate
+                            </button>
+                            <a href="contact.html">
+                                <button
+                                    class="bg-secondary text-white px-8 py-3 rounded-button font-semibold hover:scale-[1.02] transition">
+                                    Contact Us
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT SIDE: Summary -->
+                    <div
+                        class="bg-gradient-to-br from-lightBlue to-snowWhite shadow-inner p-6 rounded-xl border border-gray-200 overflow-auto max-h-[550px]">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-semibold text-primary">Estimate Summary</h3>
+                            <p class="text-sm text-bodyGray">Review your selections</p>
+                        </div>
+
+                        <div id="summaryDisplay" class="space-y-3 text-sm text-bodyGray">
+                            <p><strong>Area:</strong> —</p>
+                            <p><strong>Base Rate:</strong> —</p>
+                            <hr>
+                            <p><strong>Cement:</strong> —</p>
+                            <p><strong>Steel:</strong> —</p>
+                            <p><strong>Pipes:</strong> —</p>
+                            <p><strong>Paint:</strong> —</p>
+                            <p><strong>Electrical:</strong> —</p>
+                            <p><strong>Sanitary:</strong> —</p>
+                            <p><strong>Water Tank:</strong> —</p>
+                            <p><strong>Tiles:</strong> —</p>
+                            <hr>
+                            <p><strong>Average Multiplier:</strong> —</p>
+                            <p class="text-lg font-bold text-secondary">Total: —</p>
+                        </div>
+                        
+                        <div style="margin-top: 2rem;">
+                            <button class="bg-primary text-white w-full py-3 rounded-xl font-semibold hover:opacity-90 transition"
+                                onclick="openQuoteModal()">
+                                Get Full Quotation <i class="fab fa-whatsapp ml-2"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Cement</label>
-                            <select id="cementBrand" onchange="calculate()">
-                                <option value="0">Select Cement Brand</option>
-                                <option value="0.02">Ultra Tech (+2%)</option>
-                                <option value="0.015">Ambuja (+1.5%)</option>
-                                <option value="0.015">ACC (+1.5%)</option>
-                                <option value="0.01">Dalmia (+1%)</option>
-                                <option value="0.01">Ramco (+1%)</option>
-                                <option value="0">Other (Standard)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Steel</label>
-                            <select id="steelBrand" onchange="calculate()">
-                                <option value="0">Select Steel Brand</option>
-                                <option value="0.04">Tata Tiscon (+4%)</option>
-                                <option value="0.03">JSW (+3%)</option>
-                                <option value="0.03">Sail (+3%)</option>
-                                <option value="0.02">Vizag Steel (+2%)</option>
-                                <option value="0">Others (Standard)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Pipes</label>
-                            <select id="pipesBrand" onchange="calculate()">
-                                <option value="0">Select Pipes Brand</option>
-                                <option value="0.015">Astral (+1.5%)</option>
-                                <option value="0.015">Supreme (+1.5%)</option>
-                                <option value="0.01">Finolex (+1%)</option>
-                                <option value="0.01">Prince Pipes (+1%)</option>
-                                <option value="0">Others (Standard)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Paint</label>
-                            <select id="paintBrand" onchange="calculate()">
-                                <option value="0">Select Paint Brand</option>
-                                <option value="0.02">Asian Paints (+2%)</option>
-                                <option value="0.015">Berger (+1.5%)</option>
-                                <option value="0.01">Nerolac (+1%)</option>
-                                <option value="0.01">Dulux (+1%)</option>
-                                <option value="0.01">JSW Paints (+1%)</option>
-                                <option value="0">Others (Standard)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Electrical</label>
-                            <select id="electricalBrand" onchange="calculate()">
-                                <option value="0">Select Electrical Brand</option>
-                                <option value="0.025">Schneider (+2.5%)</option>
-                                <option value="0.02">Havells (+2%)</option>
-                                <option value="0.015">Anchor (+1.5%)</option>
-                                <option value="0.015">Polycab (+1.5%)</option>
-                                <option value="0">Others (Standard)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Sanitary</label>
-                            <select id="sanitaryBrand" onchange="calculate()">
-                                <option value="0">Select Sanitary Brand</option>
-                                <option value="0.04">Jaquar (+4%)</option>
-                                <option value="0.025">Hindware (+2.5%)</option>
-                                <option value="0.025">Cera (+2.5%)</option>
-                                <option value="0.02">Parryware (+2%)</option>
-                                <option value="0">Other (Standard)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Water Tank</label>
-                            <select id="tankBrand" onchange="calculate()">
-                                <option value="0">Select Water Tank Brand</option>
-                                <option value="0.01">Sintex (+1%)</option>
-                                <option value="0.008">Ashirvad (+0.8%)</option>
-                                <option value="0.005">Plasto (+0.5%)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Tiles</label>
-                            <select id="tilesBrand" onchange="calculate()">
-                                <option value="0">Select Tiles Brand</option>
-                                <option value="0.05">Italian Marble (+5%)</option>
-                                <option value="0.03">Kajaria / Somany (+3%)</option>
-                                <option value="0.02">Nitco (+2%)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-                        <button class="btn btn-primary" onclick="calculate()" style="flex: 1;">Calculate Estimate</button>
-                        <a href="contact.html" class="btn" style="border: 1px solid var(--primary); color: var(--primary); flex: 1; text-align: center;">Contact Us</a>
-                    </div>
-                </div>
-
-                <!-- Summary Sidebar -->
-                <div class="result-card" data-aos="fade-up">
-                    <h3>Estimate Summary</h3>
-                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.9rem;">Review your selections</p>
-                    <div id="summary-items" style="margin-bottom: 1.5rem;">
-                        <div class="breakdown-item"><span>Area:</span> <span id="summary-area">—</span></div>
-                        <div class="breakdown-item"><span>Base Rate:</span> <span id="summary-base">—</span></div>
-                        <div class="breakdown-item"><span>Cement:</span> <span id="summary-cement">—</span></div>
-                        <div class="breakdown-item"><span>Steel:</span> <span id="summary-steel">—</span></div>
-                        <div class="breakdown-item"><span>Pipes:</span> <span id="summary-pipes">—</span></div>
-                        <div class="breakdown-item"><span>Paint:</span> <span id="summary-paint">—</span></div>
-                        <div class="breakdown-item"><span>Electrical:</span> <span id="summary-electrical">—</span></div>
-                        <div class="breakdown-item"><span>Sanitary:</span> <span id="summary-sanitary">—</span></div>
-                        <div class="breakdown-item"><span>Water Tank:</span> <span id="summary-tank">—</span></div>
-                        <div class="breakdown-item"><span>Tiles:</span> <span id="summary-tiles">—</span></div>
-                        <div class="breakdown-item" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1rem; padding-top: 1rem;">
-                            <span>Average Multiplier:</span> <span id="summary-multiplier">—</span>
-                        </div>
-                        <div class="breakdown-item" style="font-size: 1.4rem; color: var(--primary); margin-top: 0.5rem;">
-                            <strong>Total:</strong> <strong id="totalCostDisplay">₹ 0</strong>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 2rem;">
-                        <button class="btn btn-primary" style="width: 100%; border-radius: 12px; padding: 1rem;" onclick="openQuoteModal()">
-                            Get Full Quotation <i class="fab fa-whatsapp" style="margin-left: 0.5rem;"></i>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Lead Capture Modal (New) -->
-    <div id="quoteModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center;">
+    <div id="quoteModal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center;">
         <div style="background:white; padding:3rem; border-radius:30px; width:90%; max-width:450px; position:relative;">
-            <i class="fas fa-times" style="position:absolute; top:20px; right:20px; cursor:pointer; color:#999;" onclick="closeQuoteModal()"></i>
+            <i class="fas fa-times" style="position:absolute; top:20px; right:20px; cursor:pointer; color:#999;"
+                onclick="closeQuoteModal()"></i>
             <h2 style="margin-bottom:1rem; color:var(--light);">Get Official Quote</h2>
-            <p style="margin-bottom:2rem; color:var(--gray); font-size:0.9rem;">Send your estimate details to our experts for a final consultation.</p>
+            <p style="margin-bottom:2rem; color:var(--gray); font-size:0.9rem;">Send your estimate details to our
+                experts for a final consultation.</p>
             <form id="quoteForm">
                 <div class="form-group">
                     <label>Full Name</label>
@@ -760,13 +889,15 @@
                     <label>WhatsApp Number</label>
                     <input type="tel" id="userPhone" placeholder="e.g. +91 98765 43210" required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:1rem;">Send to WhatsApp</button>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:1rem;">Send to
+                    WhatsApp</button>
             </form>
         </div>
     </div>
 
     <!-- Hidden Form for Email via FormSubmit -->
-    <form id="hiddenEmailForm" action="https://formsubmit.co/info@aakarconstruction.in" method="POST" style="display:none;">
+    <form id="hiddenEmailForm" action="https://formsubmit.co/info@aakarconstruction.in" method="POST"
+        style="display:none;">
         <input type="hidden" name="name" id="h_name">
         <input type="hidden" name="phone" id="h_phone">
         <input type="hidden" name="estimate_details" id="h_details">
@@ -836,7 +967,8 @@
     <!-- Floating Action Buttons -->
     <div class="floating-btns">
         <a href="tel:8885774890" class="float-btn float-call" title="Call Us"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://wa.me/918885774890" target="_blank" class="float-btn float-whatsapp" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/918885774890" target="_blank" class="float-btn float-whatsapp" title="WhatsApp Us"><i
+                class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- Mobile Bottom Nav -->
@@ -851,49 +983,72 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        const packageRates = { basic: 1750, premium: 2200, luxury: 2700 };
+        const updateEstimate = () => {
+            const areaInput = document.getElementById('area');
+            const rateInput = document.getElementById('baseRate');
+            const area = parseFloat(areaInput.value);
+            const baseRate = parseFloat(rateInput.value);
 
-        function calculate() {
-            const area = parseFloat(document.getElementById('plotArea').value) || 0;
-            const baseRate = parseFloat(document.getElementById('baseRate').value) || 0;
-            
-            // Multiplier values from selects
-            const cementMult = parseFloat(document.getElementById('cementBrand').value) || 0;
-            const steelMult = parseFloat(document.getElementById('steelBrand').value) || 0;
-            const pipesMult = parseFloat(document.getElementById('pipesBrand').value) || 0;
-            const paintMult = parseFloat(document.getElementById('paintBrand').value) || 0;
-            const electMult = parseFloat(document.getElementById('electricalBrand').value) || 0;
-            const sanitMult = parseFloat(document.getElementById('sanitaryBrand').value) || 0;
-            const tankMult = parseFloat(document.getElementById('tankBrand').value) || 0;
-            const tilesMult = parseFloat(document.getElementById('tilesBrand').value) || 0;
+            if (!area || !baseRate) {
+                return;
+            }
 
-            const totalMultiplier = cementMult + steelMult + pipesMult + paintMult + electMult + sanitMult + tankMult + tilesMult;
-            const avgMultiplierDisplay = (1 + totalMultiplier).toFixed(3);
-            
-            const totalCost = area * baseRate * (1 + totalMultiplier);
+            const categories = [
+                'cement', 'steel', 'pipes', 'paint',
+                'electrical', 'sanitary', 'tank', 'tiles'
+            ];
 
-            // Update Summary Display
-            document.getElementById('summary-area').innerText = area > 0 ? area.toLocaleString() + ' sqft' : '—';
-            document.getElementById('summary-base').innerText = baseRate > 0 ? '₹ ' + baseRate.toLocaleString() : '—';
-            
-            const updateLabel = (id, summaryId) => {
-                const el = document.getElementById(id);
-                const text = el.options[el.selectedIndex].text;
-                document.getElementById(summaryId).innerText = el.value == "0" ? '—' : text.split(' (+')[0];
-            };
+            const selections = categories.map(cat => {
+                const select = document.getElementById(cat);
+                return {
+                    category: cat.charAt(0).toUpperCase() + cat.slice(1),
+                    brand: select.options[select.selectedIndex].text,
+                    mult: parseFloat(select.value) || 1.00
+                };
+            });
 
-            updateLabel('cementBrand', 'summary-cement');
-            updateLabel('steelBrand', 'summary-steel');
-            updateLabel('pipesBrand', 'summary-pipes');
-            updateLabel('paintBrand', 'summary-paint');
-            updateLabel('electricalBrand', 'summary-electrical');
-            updateLabel('sanitaryBrand', 'summary-sanitary');
-            updateLabel('tankBrand', 'summary-tank');
-            updateLabel('tilesBrand', 'summary-tiles');
+            const avgMultiplier = selections.reduce((a, b) => a + b.mult, 0) / selections.length;
+            const totalCost = Math.round(area * baseRate * avgMultiplier);
 
-            document.getElementById('summary-multiplier').innerText = totalMultiplier > 0 ? avgMultiplierDisplay + 'x' : '—';
-            document.getElementById('totalCostDisplay').innerText = area > 0 ? '₹ ' + Math.round(totalCost).toLocaleString('en-IN') : '₹ 0';
-        }
+            let summaryHTML = `
+                <p><strong>Area:</strong> ${area.toLocaleString()} sq ft</p>
+                <p><strong>Base Rate:</strong> ₹${baseRate.toLocaleString()} / sq ft</p>
+                <hr style="margin: 1rem 0; opacity: 0.1;">
+            `;
+
+            selections.forEach(s => {
+                summaryHTML += `<p><strong>${s.category}:</strong> ${s.brand}</p>`;
+            });
+
+            summaryHTML += `
+                <hr style="margin: 1rem 0; opacity: 0.1;">
+                <p><strong>Average Multiplier:</strong> ${avgMultiplier.toFixed(3)}x</p>
+                <p class="text-2xl font-bold text-primary mt-4" id="totalCostDisplay">
+                    Total: ₹${totalCost.toLocaleString('en-IN')}
+                </p>
+            `;
+
+            document.getElementById('summaryDisplay').innerHTML = summaryHTML;
+        };
+
+        // Add listeners for real-time updates
+        ['area', 'baseRate', 'cement', 'steel', 'pipes', 'paint', 'electrical', 'sanitary', 'tank', 'tiles'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('input', updateEstimate);
+                if (el.tagName === 'SELECT') el.addEventListener('change', updateEstimate);
+            }
+        });
+
+        document.getElementById('calculateBtn').addEventListener('click', () => {
+            const area = document.getElementById('area').value;
+            const rate = document.getElementById('baseRate').value;
+            if (!area || !rate) {
+                alert('Please enter both area and base rate to get an accurate estimate.');
+                return;
+            }
+            updateEstimate();
+        });
 
         function openQuoteModal() {
             document.getElementById('quoteModal').style.display = 'flex';
@@ -903,23 +1058,27 @@
             document.getElementById('quoteModal').style.display = 'none';
         }
 
-        // Close modal on click outside
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById('quoteModal');
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
 
-        // Handle Form Submission
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+        document.getElementById('quoteForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('userName').value;
             const phone = document.getElementById('userPhone').value;
-            const area = document.getElementById('plotArea').value;
+            const area = document.getElementById('area').value;
             const base = document.getElementById('baseRate').value;
-            const totalCost = document.getElementById('totalCostDisplay').innerText;
+            const totalElement = document.getElementById('totalCostDisplay');
+            const totalCost = totalElement ? totalElement.innerText.replace('Total: ', '') : 'Not calculated';
+
+            const getBrand = (id) => {
+                const el = document.getElementById(id);
+                return el.options[el.selectedIndex].text;
+            };
 
             const waMessage = `Hello AAKAR Constructions, I am ${name}. I just calculated an estimate for my project on your website:
             
@@ -929,45 +1088,42 @@
 💰 Total Estimate: ${totalCost}
 
 *Selected Brands:*
-- Cement: ${document.getElementById('summary-cement').innerText}
-- Steel: ${document.getElementById('summary-steel').innerText}
-- Pipes: ${document.getElementById('summary-pipes').innerText}
-- Paint: ${document.getElementById('summary-paint').innerText}
-- Electrical: ${document.getElementById('summary-electrical').innerText}
-- Sanitary: ${document.getElementById('summary-sanitary').innerText}
-- Water Tank: ${document.getElementById('summary-tank').innerText}
-- Tiles: ${document.getElementById('summary-tiles').innerText}
+- Cement: ${getBrand('cement')}
+- Steel: ${getBrand('steel')}
+- Pipes: ${getBrand('pipes')}
+- Paint: ${getBrand('paint')}
+- Electrical: ${getBrand('electrical')}
+- Sanitary: ${getBrand('sanitary')}
+- Water Tank: ${getBrand('tank')}
+- Tiles: ${getBrand('tiles')}
 
 I would like to discuss this project further. Please contact me.`;
-            
+
             const waUrl = `https://wa.me/918885774890?text=${encodeURIComponent(waMessage)}`;
-            
-            // Background Email Submission
+
             document.getElementById('h_name').value = name;
             document.getElementById('h_phone').value = phone;
             document.getElementById('h_details').value = waMessage;
-            
-            // Create a small delay to allow user to see it's working then redirect
+
             const submitForm = document.getElementById('hiddenEmailForm');
             const formData = new FormData(submitForm);
-            
+
             fetch(submitForm.action, {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors'
+                headers: { 'Accept': 'application/json' }
+            }).finally(() => {
+                window.open(waUrl, '_blank');
+                closeQuoteModal();
             });
-
-            window.open(waUrl, '_blank');
-            closeQuoteModal();
         });
 
-        calculate();
-
-        // Header Scroll
         window.addEventListener('scroll', () => {
             const h = document.getElementById('header');
-            if (window.scrollY > 50) h.classList.add('scrolled');
-            else h.classList.remove('scrolled');
+            if (h) {
+                if (window.scrollY > 50) h.classList.add('scrolled');
+                else h.classList.remove('scrolled');
+            }
         });
 
         // Mobile Menu
