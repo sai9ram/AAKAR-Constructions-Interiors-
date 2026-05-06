@@ -263,45 +263,16 @@
         .hero-btns {
             display: flex;
             gap: 1.5rem;
-            flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 0.9rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: #000;
-            border-color: var(--primary);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            border-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
+        .hero .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: #ffffff;
-            border-color: #ffffff;
         }
 
-        .btn-outline:hover {
-            background: #ffffff;
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        .hero .btn-outline:hover {
+            background-color: #ffffff;
+            color: var(--dark);
         }
 
         /* Categories / Projects Grid */
