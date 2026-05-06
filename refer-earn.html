@@ -97,10 +97,36 @@
             align-items: center;
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
         .logo img {
-            height: 85px;
+            height: 70px;
             width: auto;
             display: block;
+        }
+
+        .logo-text {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .footer-col .logo-text {
+            color: #111111;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 0.85rem;
+            }
         }
 
         .footer-col .logo img {
@@ -1077,7 +1103,10 @@
     <header id="header">
         <div class="container nav-wrapper">
             <nav>
-                <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo" decoding="async" fetchpriority="high"></a>
+                <a href="index.html" class="logo">
+                    <img src="Original Logo.jpeg" alt="AAKAR Logo" decoding="async" fetchpriority="high">
+                    <span class="logo-text">AAKAR Constructions</span>
+                </a>
                 <ul class="nav-links" id="navLinks">
                     <li class="mobile-close" id="closeMenu"><i class="fas fa-times"></i></li>
                     <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
@@ -1381,8 +1410,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg"
-                            alt="AAKAR Logo"></a>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                        <img src="Original Logo.jpeg" alt="AAKAR Logo">
+                        <span class="logo-text">AAKAR Constructions</span>
+                    </a>
                     <p style="color: var(--gray); font-size: 0.9rem;">Building high-quality residential and commercial
                         spaces across Andhra Pradesh and Telangana. Innovation, quality, and excellence in every brick.
                     </p>
