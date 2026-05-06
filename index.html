@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://unpkg.com">
-    
+
     <link rel="preload" as="image" href="assets/AAKAR Banner.jpeg" fetchpriority="high">
 
     <!-- Internal CSS -->
@@ -132,21 +132,21 @@
             width: 90%;
             max-width: 1100px;
             z-index: 1000;
-            padding: 0.6rem 1.5rem;
+            padding: 0.2rem 1.5rem;
             transition: var(--transition);
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.7), rgba(0, 0, 0, 0.85));
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 100px;
         }
 
         header.scrolled {
             top: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            border-color: rgba(212, 175, 55, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8));
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            padding: 0.1rem 1.5rem;
         }
 
         .nav-wrapper {
@@ -160,9 +160,41 @@
         }
 
         .logo img {
-            height: 60px;
+            height: 85px;
             width: auto;
             display: block;
+        }
+
+        .footer-col .logo img {
+            background: #000;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            padding: 10px;
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .footer-col .logo:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: #ffffff !important;
+            transition: var(--transition);
         }
 
         .logo span {
@@ -176,12 +208,19 @@
         }
 
         .nav-links a {
-            color: #111;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
             transition: var(--transition);
-            opacity: 0.7;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .nav-links a i {
+            display: none;
         }
 
         .nav-links a:hover {
@@ -196,7 +235,7 @@
             position: relative;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Projects_for_Builders_Developers…_202605051605.jpeg');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/herobg.jpeg');
             background-size: cover;
             background-position: center;
             overflow: hidden;
@@ -984,17 +1023,20 @@
         /* Mobile Bottom Navigation */
         .mobile-bottom-nav {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 450px;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(0, 0, 0, 0.95));
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             display: none;
             justify-content: space-around;
-            padding: 0.8rem 0;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
-            border-top: 1px solid var(--glass-border);
+            padding: 0.6rem 0.5rem;
+            border-radius: 100px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 2000;
         }
 
@@ -1002,21 +1044,35 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            font-size: 0.7rem;
-            font-weight: 600;
-            gap: 0.3rem;
-            transition: var(--transition);
-            flex: 1;
+            font-size: 0.65rem;
+            font-weight: 700;
+            gap: 0.2rem;
+            transition: 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            position: relative;
         }
 
         .mobile-bottom-nav .nav-item i {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .mobile-bottom-nav .nav-item.active {
             color: var(--primary);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .mobile-bottom-nav .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--primary);
         }
 
         @media (max-width: 768px) {
@@ -1030,10 +1086,91 @@
             }
 
             body {
-                padding-bottom: 70px;
+                padding-bottom: 100px;
             }
 
-            .nav-links,
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 260px;
+                height: 100vh;
+                background: linear-gradient(180deg, rgba(15, 15, 15, 0.98) 0%, rgba(0, 0, 0, 1) 100%);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                padding: 40px 1.5rem;
+                gap: 1.2rem;
+                z-index: 1001;
+                transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.8);
+                border-left: 1px solid rgba(212, 175, 55, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+                right: 0;
+            }
+
+            /* Close Button Style inside Sidebar */
+            .mobile-close {
+                align-self: flex-end;
+                color: #fff;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links li {
+                width: 100%;
+                opacity: 0;
+                transform: translateX(30px);
+                transition: 0.4s ease;
+            }
+
+            .nav-links a i {
+                display: block;
+            }
+
+            .nav-links.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .nav-links.active li:nth-child(1) { transition-delay: 0.2s; }
+            .nav-links.active li:nth-child(2) { transition-delay: 0.25s; }
+            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-links.active li:nth-child(4) { transition-delay: 0.35s; }
+            .nav-links.active li:nth-child(5) { transition-delay: 0.4s; }
+            .nav-links.active li:nth-child(6) { transition-delay: 0.45s; }
+
+            .nav-links a {
+                font-size: 1.1rem;
+                color: #fff !important;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 0.8rem 1.2rem;
+                border-radius: 12px;
+                transition: 0.3s;
+                background: rgba(255, 255, 255, 0.03);
+            }
+
+            .nav-links a:hover {
+                background: rgba(212, 175, 55, 0.15);
+                color: var(--primary) !important;
+                transform: translateX(5px);
+            }
+
             header .btn {
                 display: none;
             }
@@ -1660,15 +1797,16 @@
     <header id="header">
         <div class="container nav-wrapper">
             <nav>
-                <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo" decoding="async" fetchpriority="high"></a>
+                <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo" decoding="async"
+                        fetchpriority="high"></a>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift"
-                                style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
+                    <li class="mobile-close" id="closeMenu"><i class="fas fa-times"></i></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i>About</a></li>
+                    <li><a href="services.html"><i class="fas fa-tools"></i>Services</a></li>
+                    <li><a href="projects.html"><i class="fas fa-project-diagram"></i>Projects</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+                    <li><a href="refer-earn.html" style="color: #fff;"><i class="fas fa-gift"></i>Refer & Earn</a></li>
                 </ul>
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
                     <a href="get-a-quote.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
@@ -1708,32 +1846,31 @@
 
             <!-- B2C Services Accordion -->
             <h3 style="margin-bottom: 2rem; color: var(--light); text-align: center; font-size: 1.8rem;"
-                data-aos="fade-up">OUR B2C SOLUTIONS</h3>
+                data-aos="fade-up">OUR Home Construction Services</h3>
             <div class="service-accordion-card" data-aos="fade-up">
-                <div class="accordion-panel"
-                    style="background-image: url('assets/Indian_apartment_interiors_design_202605051622.jpeg');">
+                <div class="accordion-panel" style="background-image: url('assets/residential.png');">
                     <span>Individual Houses</span>
                     <div class="panel-content">
-                        <p>Custom homes built with precision.</p>
+
                     </div>
                 </div>
-                <div class="accordion-panel" style="background-image: url('assets/residential.png');">
+                <div class="accordion-panel" style="background-image: url('assets/Herobg.jpeg');">
                     <span>Luxury Villas</span>
                     <div class="panel-content">
-                        <p>Exclusive duplexes & high-end villas.</p>
+
                     </div>
                 </div>
                 <div class="accordion-panel" style="background-image: url('assets/interior.png');">
                     <span>Interior Design</span>
                     <div class="panel-content">
-                        <p>Premium execution & creative design.</p>
+
                     </div>
                 </div>
                 <div class="accordion-panel"
                     style="background-image: url('assets/Project_Planning_Architectural_D…_202605051615.jpeg');">
                     <span>Architectural Design</span>
                     <div class="panel-content">
-                        <p>Modern project planning & concepts.</p>
+
                     </div>
                 </div>
             </div>
@@ -1748,34 +1885,34 @@
 
             <!-- B2B Services Accordion -->
             <h3 style="margin-bottom: 2rem; color: var(--light); text-align: center; font-size: 1.8rem;"
-                data-aos="fade-up">OUR B2B SOLUTIONS</h3>
+                data-aos="fade-up">OUR Commercial Construction Services</h3>
             <div class="service-accordion-card" style="margin-bottom: 5rem;" data-aos="fade-up">
                 <div class="accordion-panel"
                     style="background-image: url('assets/Commercial_Projects_South_Indian…_202605051557.jpeg');">
                     <span>Commercial Projects</span>
                     <div class="panel-content">
-                        <p>High-end corporate complexes & malls.</p>
+
                     </div>
                 </div>
                 <div class="accordion-panel"
                     style="background-image: url('assets/Hospital_school_building_constru…_202605051603.jpeg');">
                     <span>Hospitals & Schools</span>
                     <div class="panel-content">
-                        <p>Specialized institutional infrastructures.</p>
+
                     </div>
                 </div>
                 <div class="accordion-panel"
                     style="background-image: url('assets/Office_buildings_factories_const…_202605051607.jpeg');">
                     <span>Offices & Factories</span>
                     <div class="panel-content">
-                        <p>Optimized industrial construction.</p>
+
                     </div>
                 </div>
                 <div class="accordion-panel"
                     style="background-image: url('assets/High-Rise_Apartment_Construction…_202605051608.jpeg');">
                     <span>High-Rise Apartments</span>
                     <div class="panel-content">
-                        <p>Modern residential landmarks.</p>
+
                     </div>
                 </div>
             </div>
@@ -1795,7 +1932,7 @@
             <div class="stats-banner-grid">
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-building"></i>
-                    <h3 id="count1">100</h3>
+                    <h3 id="count1">100+</h3>
                     <p>Projects Completed</p>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
@@ -1805,7 +1942,7 @@
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-ruler-combined"></i>
-                    <h3 id="count3">100+</h3>
+                    <h3 id="count3">150+</h3>
                     <p>Quality Checks</p>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
@@ -1848,7 +1985,8 @@
 
                 <!-- Project 2: Home Tree Project -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/Osman nagar.jpeg" alt="Home Tree Project Osman Nagar Residential" loading="lazy" decoding="async">
+                    <img src="assets/Osman nagar.jpeg" alt="Home Tree Project Osman Nagar Residential" loading="lazy"
+                        decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Home Tree Project</h3>
@@ -1861,7 +1999,8 @@
 
                 <!-- Project 3: Simhapuri Colony -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/Simhapuri colony.jpeg" alt="Simhapuri Colony Residential Project" loading="lazy" decoding="async">
+                    <img src="assets/Simhapuri colony.jpeg" alt="Simhapuri Colony Residential Project" loading="lazy"
+                        decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Simhapuri Colony</h3>
@@ -1874,7 +2013,8 @@
 
                 <!-- Project 4: Hitech City Commercial -->
                 <div class="cat-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/High-tech City.jpeg" alt="Hitech City Commercial Project" loading="lazy" decoding="async">
+                    <img src="assets/High-tech City.jpeg" alt="Hitech City Commercial Project" loading="lazy"
+                        decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Commercial</span>
                         <h3>Hitech City Commercial</h3>
@@ -1887,7 +2027,8 @@
 
                 <!-- Project 5: Rajahmundry Residential -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/Rajahmundry Residential Project.png" alt="Rajahmundry Residential Project" loading="lazy" decoding="async">
+                    <img src="assets/Rajahmundry Residential Project.png" alt="Rajahmundry Residential Project"
+                        loading="lazy" decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Residential</span>
                         <h3>Rajahmundry Residential</h3>
@@ -1900,7 +2041,8 @@
 
                 <!-- Project 6: Palakollu Project -->
                 <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Material Contract Project" loading="lazy" decoding="async">
+                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Material Contract Project"
+                        loading="lazy" decoding="async">
                     <div class="cat-info">
                         <span class="project-tag">Material Contract</span>
                         <h3>Palakollu Project</h3>
@@ -1919,14 +2061,15 @@
         <div class="container">
             <div class="about-section">
                 <div class="about-img-wrapper" data-aos="fade-right">
-                    <img src="assets/about.png" alt="Trusted Construction Experts in Andhra Pradesh" loading="lazy" decoding="async">
+                    <img src="assets/about.png" alt="Trusted Construction Experts in Andhra Pradesh" loading="lazy"
+                        decoding="async">
                     <div class="stats-grid">
                         <div class="stat-item">
                             <h4>20+</h4>
                             <p>Years of Experience</p>
                         </div>
                         <div class="stat-item">
-                            <h4>100</h4>
+                            <h4>100+</h4>
                             <p>Projects Completed</p>
                         </div>
                     </div>
@@ -1972,8 +2115,7 @@
                 <h2>Why Choose AAKAR?</h2>
                 <p>We redefine construction standards with excellence and transparency.</p>
             </div>
-            <div class="why-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+            <div class="why-grid" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem;">
                 <div class="why-item" data-aos="fade-up" data-aos-delay="100"
                     style="text-align: center; padding: 2rem; background: var(--glass); border-radius: 20px;">
                     <i class="fas fa-check-circle"
@@ -2000,6 +2142,20 @@
                         style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
                     <h4 style="margin-bottom: 0.5rem; color: var(--light);">Trusted Warranty</h4>
                     <p style="font-size: 0.9rem;">Industry-leading structural and material protection.</p>
+                </div>
+                <div class="why-item" data-aos="fade-up" data-aos-delay="500"
+                    style="text-align: center; padding: 2rem; background: var(--glass); border-radius: 20px;">
+                    <i class="fas fa-hand-holding-usd"
+                        style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--light);">Flexible Payment Options</h4>
+                    <p style="font-size: 0.9rem;">Stage-wise billing & EMI-friendly plans tailored to your budget.</p>
+                </div>
+                <div class="why-item" data-aos="fade-up" data-aos-delay="600"
+                    style="text-align: center; padding: 2rem; background: var(--glass); border-radius: 20px;">
+                    <i class="fas fa-hard-hat" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--light);">Dedicated Site Engineer</h4>
+                    <p style="font-size: 0.9rem;">A qualified engineer assigned exclusively to oversee your project
+                        on-site.</p>
                 </div>
             </div>
 
@@ -2535,14 +2691,12 @@
                 </div>
             </div>
 
-            <!-- Google Maps Placeholder -->
-            <div
-                style="width: 100%; height: 200px; background: #1a1a1a; border-radius: 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: center; color: var(--gray);">
-                <p><i class="fas fa-map-marked-alt"></i> Google Maps Embed for Hyderabad, AP</p>
-            </div>
+
 
             <div class="footer-bottom">
-                <p>&copy; 2026 AAKAR Constructions. All rights reserved. | Powered By <a href="http://www.theupliv.com" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">UPliv</a></p>
+                <p>&copy; 2026 AAKAR Constructions. All rights reserved. | Powered By <a href="http://www.theupliv.com"
+                        target="_blank"
+                        style="color: var(--primary); text-decoration: none; font-weight: 600;">UPliv</a></p>
                 <div class="socials">
                     <a href="#" style="color: var(--gray); margin-left: 1.5rem;"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" style="color: var(--gray); margin-left: 1.5rem;"><i class="fab fa-instagram"></i></a>
@@ -2636,17 +2790,22 @@
 
         // Mobile Menu Logic
         const mobileToggle = document.getElementById('mobileToggle');
+        const closeMenu = document.getElementById('closeMenu');
         const navLinks = document.getElementById('navLinks');
         const navItems = document.querySelectorAll('.nav-links a');
 
-        mobileToggle.addEventListener('click', () => {
+        const toggleMenu = () => {
             navLinks.classList.toggle('active');
             mobileToggle.classList.toggle('open');
-        });
+        };
+
+        mobileToggle.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
 
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                mobileToggle.classList.remove('open');
             });
         });
 

@@ -74,21 +74,21 @@
             width: 90%;
             max-width: 1100px;
             z-index: 1000;
-            padding: 0.6rem 1.5rem;
+            padding: 0.2rem 1.5rem;
             transition: var(--transition);
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.7), rgba(0, 0, 0, 0.85));
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 100px;
         }
 
         header.scrolled {
             top: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            border-color: rgba(212, 175, 55, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8));
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            padding: 0.1rem 1.5rem;
         }
 
         .nav-wrapper nav {
@@ -98,9 +98,41 @@
         }
 
         .logo img {
-            height: 60px;
+            height: 85px;
             width: auto;
             display: block;
+        }
+
+        .footer-col .logo img {
+            background: #000;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            padding: 10px;
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .footer-col .logo:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: #ffffff;
+            transition: var(--transition);
         }
 
         .logo span {
@@ -114,12 +146,19 @@
         }
 
         .nav-links a {
+            color: #ffffff;
             text-decoration: none;
-            color: #111;
             font-weight: 500;
             font-size: 0.95rem;
             transition: var(--transition);
-            opacity: 0.7;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .nav-links a i {
+            display: none;
         }
 
         .nav-links a:hover {
@@ -360,17 +399,20 @@
         /* Mobile Bottom Navigation */
         .mobile-bottom-nav {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 450px;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(0, 0, 0, 0.95));
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             display: none;
             justify-content: space-around;
-            padding: 0.8rem 0;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
-            border-top: 1px solid var(--glass-border);
+            padding: 0.6rem 0.5rem;
+            border-radius: 100px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 2000;
         }
 
@@ -378,21 +420,35 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            font-size: 0.7rem;
-            font-weight: 600;
-            gap: 0.3rem;
-            transition: var(--transition);
-            flex: 1;
+            font-size: 0.65rem;
+            font-weight: 700;
+            gap: 0.2rem;
+            transition: 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            position: relative;
         }
 
         .mobile-bottom-nav .nav-item i {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .mobile-bottom-nav .nav-item.active {
             color: var(--primary);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .mobile-bottom-nav .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--primary);
         }
 
         /* Floating Buttons */
@@ -448,18 +504,107 @@
             }
 
             body {
-                padding-bottom: 70px;
+                padding-bottom: 100px;
             }
 
-            .nav-links,
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 260px;
+                height: 100vh;
+                background: linear-gradient(180deg, rgba(15, 15, 15, 0.98) 0%, rgba(0, 0, 0, 1) 100%);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                padding: 40px 1.5rem;
+                gap: 1.2rem;
+                z-index: 1001;
+                transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.8);
+                border-left: 1px solid rgba(212, 175, 55, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+                right: 0;
+            }
+
+            /* Close Button Style inside Sidebar */
+            .mobile-close {
+                align-self: flex-end;
+                color: #fff;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links li {
+                width: 100%;
+                opacity: 0;
+                transform: translateX(30px);
+                transition: 0.4s ease;
+            }
+
+            .nav-links a i {
+                display: block;
+            }
+
+            .nav-links.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .nav-links.active li:nth-child(1) { transition-delay: 0.2s; }
+            .nav-links.active li:nth-child(2) { transition-delay: 0.25s; }
+            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-links.active li:nth-child(4) { transition-delay: 0.35s; }
+            .nav-links.active li:nth-child(5) { transition-delay: 0.4s; }
+            .nav-links.active li:nth-child(6) { transition-delay: 0.45s; }
+
+            .nav-links a {
+                font-size: 1.1rem;
+                color: #fff !important;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 0.8rem 1.2rem;
+                border-radius: 12px;
+                transition: 0.3s;
+                background: rgba(255, 255, 255, 0.03);
+            }
+
+            .nav-links a:hover {
+                background: rgba(212, 175, 55, 0.15);
+                color: var(--primary) !important;
+                transform: translateX(5px);
+            }
+
             header .btn {
                 display: none;
+            }
+
+            .nav-links.active {
+                right: 0;
             }
 
             header {
                 width: 92%;
                 top: 10px;
-                padding: 0.5rem 1rem;
+                padding: 0.1rem 1rem !important;
+            }
+
+            .mobile-toggle {
+                display: flex;
             }
 
             .section-padding {
@@ -537,16 +682,23 @@
         <div class="container nav-wrapper">
             <nav>
                 <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo" decoding="async" fetchpriority="high"></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift"
-                                style="font-size:0.8rem; margin-right: 4px;"></i>Refer & Earn</a></li>
+                <ul class="nav-links" id="navLinks">
+                    <li class="mobile-close" id="closeMenu"><i class="fas fa-times"></i></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i>About</a></li>
+                    <li><a href="services.html"><i class="fas fa-tools"></i>Services</a></li>
+                    <li><a href="projects.html"><i class="fas fa-project-diagram"></i>Projects</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+                    <li><a href="refer-earn.html" style="color: #fff;"><i class="fas fa-gift"></i>Refer & Earn</a></li>
                 </ul>
-                <a href="get-a-quote.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <a href="get-a-quote.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -844,6 +996,26 @@
             const header = document.getElementById('header');
             if (window.scrollY > 50) header.classList.add('scrolled');
             else header.classList.remove('scrolled');
+        });
+
+        // Mobile Menu
+        const mt = document.getElementById('mobileToggle');
+        const closeMenu = document.getElementById('closeMenu');
+        const nl = document.getElementById('navLinks');
+
+        const toggleMenu = () => {
+            nl.classList.toggle('active');
+            mt.classList.toggle('open');
+        }
+
+        mt.onclick = toggleMenu;
+        closeMenu.onclick = toggleMenu;
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.onclick = () => {
+                nl.classList.remove('active');
+                mt.classList.remove('open');
+            }
         });
 
         // Portfolio Filtering Logic

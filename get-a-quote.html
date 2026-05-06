@@ -54,19 +54,21 @@
             width: 90%;
             max-width: 1100px;
             z-index: 1000;
-            padding: 0.6rem 1.5rem;
+            padding: 0.2rem 1.5rem;
             transition: var(--transition);
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.7), rgba(0, 0, 0, 0.85));
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 100px;
         }
 
         header.scrolled {
             top: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            border-color: rgba(212, 175, 55, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8));
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            padding: 0.1rem 1.5rem;
         }
 
         .nav-wrapper nav {
@@ -76,9 +78,25 @@
         }
 
         .logo img {
-            height: 60px;
+            height: 85px;
             width: auto;
             display: block;
+        }
+
+        .footer-col .logo img {
+            background: #000;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            padding: 10px;
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .footer-col .logo:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
         .nav-links {
@@ -89,12 +107,19 @@
         }
 
         .nav-links a {
-            color: var(--light);
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
             transition: var(--transition);
-            opacity: 0.8;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .nav-links a i {
+            display: none;
         }
 
         .nav-links a:hover {
@@ -112,7 +137,7 @@
         .mobile-toggle span {
             width: 25px;
             height: 2px;
-            background: var(--light);
+            background: #ffffff;
             transition: var(--transition);
         }
 
@@ -161,51 +186,67 @@
 
         /* Estimator Section */
         .estimator-section {
-            padding: 100px 0;
-            background: var(--dark-accent);
+            padding: 80px 0;
+            background: #fdfdfd;
         }
 
         .estimator-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 380px;
+            gap: 3rem;
             align-items: start;
         }
 
         .estimator-card {
             background: white;
-            border: 1px solid var(--glass-border);
-            padding: 3.5rem;
-            border-radius: 40px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .estimator-card h3 {
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .estimator-card h3 i {
+            color: var(--primary);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
         }
 
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 0.8rem;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--light);
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         input[type="number"],
         input[type="text"],
         input[type="tel"],
-        input[type="email"],
         select {
             width: 100%;
-            padding: 1.2rem 1.5rem;
-            background: #fdfdfd;
+            padding: 1rem 1.2rem;
+            background: #fafafa;
             border: 1px solid #eeeeee;
-            border-radius: 15px;
+            border-radius: 12px;
             color: var(--light);
-            font-size: 1.1rem;
+            font-size: 1rem;
             outline: none;
             transition: var(--transition);
         }
@@ -217,53 +258,29 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
         }
 
-        .quality-options {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .quality-card {
-            background: #fdfdfd;
-            border: 1px solid #eeeeee;
-            padding: 1.5rem;
-            border-radius: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .quality-card i {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: block;
-            color: var(--gray);
-        }
-
-        .quality-card.active {
-            border-color: var(--primary);
-            background: rgba(212, 175, 55, 0.05);
-        }
-
-        .quality-card.active i {
-            color: var(--primary);
-        }
-
         /* Result Display */
         .result-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: #111;
+            padding: 2.5rem;
+            border-radius: 30px;
             position: sticky;
-            top: 120px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            top: 100px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            color: white;
+        }
+
+        .result-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .total-price {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            color: var(--primary);
+            color: #fff;
             margin: 0.5rem 0;
             display: flex;
             align-items: center;
@@ -288,44 +305,14 @@
         .breakdown-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             padding-bottom: 0.6rem;
         }
 
         .breakdown-item span:first-child {
-            color: var(--gray);
-        }
-
-        /* Live Pricing Ticker */
-        .live-pricing {
-            background: #111;
-            padding: 1rem 0;
-            overflow: hidden;
-            position: relative;
-            z-index: 1001;
-        }
-
-        .ticker-wrapper {
-            display: flex;
-            gap: 4rem;
-            animation: ticker 30s linear infinite;
-            white-space: nowrap;
-        }
-
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .ticker-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: white;
+            color: rgba(255,255,255,0.6);
         }
 
         /* Footer (Synced with Index) */
@@ -406,35 +393,69 @@
 
         .mobile-bottom-nav {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 450px;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(0, 0, 0, 0.95));
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             display: none;
             justify-content: space-around;
-            padding: 0.8rem 0;
-            z-index: 1000;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 0.6rem 0.5rem;
+            border-radius: 100px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 2000;
         }
 
-        .nav-item {
+        .mobile-bottom-nav .nav-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #666;
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            font-size: 0.7rem;
-            font-weight: 600;
-            gap: 0.3rem;
-            flex: 1;
+            font-size: 0.65rem;
+            font-weight: 700;
+            gap: 0.2rem;
+            transition: 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            position: relative;
         }
 
-        .nav-item.active { color: var(--primary); }
+        .mobile-bottom-nav .nav-item i {
+            font-size: 1.2rem;
+        }
+
+        .mobile-bottom-nav .nav-item.active {
+            color: var(--primary);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .mobile-bottom-nav .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--primary);
+        }
 
         @media (max-width: 992px) {
             .estimator-grid {
                 grid-template-columns: 1fr;
+            }
+            .result-card {
+                position: static;
+                margin-top: 2rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
             }
             .page-header h1 { font-size: 2.8rem; }
         }
@@ -443,22 +464,88 @@
             .mobile-bottom-nav { display: flex; }
             .mobile-toggle { display: flex; }
             .nav-links {
+                display: none;
+                flex-direction: column;
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 70%;
+                width: 260px;
                 height: 100vh;
-                background: white;
-                flex-direction: column;
-                justify-content: center;
-                padding: 2rem;
-                transition: 0.5s;
-                z-index: 999;
-                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+                background: linear-gradient(180deg, rgba(15, 15, 15, 0.98) 0%, rgba(0, 0, 0, 1) 100%);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                padding: 40px 1.5rem;
+                gap: 1.2rem;
+                z-index: 1001;
+                transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.8);
+                border-left: 1px solid rgba(212, 175, 55, 0.2);
             }
-            .nav-links.active { right: 0; }
+
+            .nav-links.active {
+                display: flex;
+                right: 0;
+            }
+
+            /* Close Button Style inside Sidebar */
+            .mobile-close {
+                align-self: flex-end;
+                color: #fff;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links li {
+                width: 100%;
+                opacity: 0;
+                transform: translateX(30px);
+                transition: 0.4s ease;
+            }
+
+            .nav-links a i {
+                display: block;
+            }
+
+            .nav-links.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .nav-links.active li:nth-child(1) { transition-delay: 0.2s; }
+            .nav-links.active li:nth-child(2) { transition-delay: 0.25s; }
+            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-links.active li:nth-child(4) { transition-delay: 0.35s; }
+            .nav-links.active li:nth-child(5) { transition-delay: 0.4s; }
+            .nav-links.active li:nth-child(6) { transition-delay: 0.45s; }
+
+            .nav-links a {
+                font-size: 1.1rem;
+                color: #fff !important;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 0.8rem 1.2rem;
+                border-radius: 12px;
+                transition: 0.3s;
+                background: rgba(255, 255, 255, 0.03);
+            }
+
+            .nav-links a:hover {
+                background: rgba(212, 175, 55, 0.15);
+                color: var(--primary) !important;
+                transform: translateX(5px);
+            }
             .floating-btns { bottom: 100px; }
-            body { padding-bottom: 70px; }
+            body { padding-bottom: 100px; }
             .quality-options { grid-template-columns: 1fr; }
             .estimator-card { padding: 2rem; }
             header { width: 92%; top: 15px; }
@@ -468,11 +555,6 @@
 
 <body>
 
-    <div class="live-pricing">
-        <div class="ticker-wrapper" id="ticker">
-            <!-- Ticker items will be populated by JS -->
-        </div>
-    </div>
 
     <!-- Header -->
     <header id="header">
@@ -480,12 +562,13 @@
             <nav>
                 <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="refer-earn.html" style="color: #000;"><i class="fas fa-gift" style="font-size:0.8rem; margin-right: 4px; color: var(--primary);"></i>Refer & Earn</a></li>
+                    <li class="mobile-close" id="closeMenu"><i class="fas fa-times"></i></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i>About</a></li>
+                    <li><a href="services.html"><i class="fas fa-tools"></i>Services</a></li>
+                    <li><a href="projects.html"><i class="fas fa-project-diagram"></i>Projects</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+                    <li><a href="refer-earn.html" style="color: #fff;"><i class="fas fa-gift"></i>Refer & Earn</a></li>
                 </ul>
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
                     <a href="get-a-quote.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; border-radius: 50px;">Get a Quote</a>
@@ -510,74 +593,177 @@
     <section class="estimator-section">
         <div class="container">
             <div class="estimator-grid">
+                <!-- Main Form Card -->
                 <div class="estimator-card" data-aos="fade-up">
-                    <div class="form-group">
-                        <label>Plot Area (Sq. Ft)</label>
-                        <input type="number" id="plotArea" placeholder="e.g. 1500" value="1000" oninput="calculate()">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Number of Floors</label>
-                        <input type="number" id="floors" placeholder="e.g. 1" value="1" oninput="calculate()">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Construction Quality / Package</label>
-                        <div class="quality-options">
-                            <div class="quality-card active" onclick="setQuality('basic', this)">
-                                <i class="fas fa-shield-alt"></i>
-                                <strong style="color: var(--light)">Basic</strong>
-                                <p style="font-size: 0.75rem; color: var(--gray); margin-top: 5px;">₹1,750 / sqft</p>
-                            </div>
-                            <div class="quality-card" onclick="setQuality('premium', this)">
-                                <i class="fas fa-crown"></i>
-                                <strong style="color: var(--light)">Premium</strong>
-                                <p style="font-size: 0.75rem; color: var(--gray); margin-top: 5px;">₹2,200 / sqft</p>
-                            </div>
-                            <div class="quality-card" onclick="setQuality('luxury', this)">
-                                <i class="fas fa-gem"></i>
-                                <strong style="color: var(--light)">Luxury</strong>
-                                <p style="font-size: 0.75rem; color: var(--gray); margin-top: 5px;">₹2,700 / sqft</p>
-                            </div>
+                    <h3><i class="fas fa-calculator"></i> Construction Cost Estimator</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Total Land Area (sq ft)</label>
+                            <input type="number" id="plotArea" placeholder="e.g. 1200" value="" oninput="calculate()">
+                        </div>
+                        <div class="form-group">
+                            <label>Base Rate (₹/sq ft)</label>
+                            <input type="number" id="baseRate" placeholder="e.g. 1800" value="1800" oninput="calculate()">
                         </div>
                     </div>
 
-                    <div style="margin-top: 3rem;">
-                        <h4 style="color: var(--light); margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">Market Rates (Indicative)</h4>
-                        <table style="width: 100%; border-collapse: collapse;">
-                            <tbody id="rates-body"></tbody>
-                        </table>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Cement</label>
+                            <select id="cementBrand" onchange="calculate()">
+                                <option value="0">Select Cement Brand</option>
+                                <option value="0.02">Ultra Tech (+2%)</option>
+                                <option value="0.015">Ambuja (+1.5%)</option>
+                                <option value="0.015">ACC (+1.5%)</option>
+                                <option value="0.01">Dalmia (+1%)</option>
+                                <option value="0.01">Ramco (+1%)</option>
+                                <option value="0">Other (Standard)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Steel</label>
+                            <select id="steelBrand" onchange="calculate()">
+                                <option value="0">Select Steel Brand</option>
+                                <option value="0.04">Tata Tiscon (+4%)</option>
+                                <option value="0.03">JSW (+3%)</option>
+                                <option value="0.03">Sail (+3%)</option>
+                                <option value="0.02">Vizag Steel (+2%)</option>
+                                <option value="0">Others (Standard)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Pipes</label>
+                            <select id="pipesBrand" onchange="calculate()">
+                                <option value="0">Select Pipes Brand</option>
+                                <option value="0.015">Astral (+1.5%)</option>
+                                <option value="0.015">Supreme (+1.5%)</option>
+                                <option value="0.01">Finolex (+1%)</option>
+                                <option value="0.01">Prince Pipes (+1%)</option>
+                                <option value="0">Others (Standard)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Paint</label>
+                            <select id="paintBrand" onchange="calculate()">
+                                <option value="0">Select Paint Brand</option>
+                                <option value="0.02">Asian Paints (+2%)</option>
+                                <option value="0.015">Berger (+1.5%)</option>
+                                <option value="0.01">Nerolac (+1%)</option>
+                                <option value="0.01">Dulux (+1%)</option>
+                                <option value="0.01">JSW Paints (+1%)</option>
+                                <option value="0">Others (Standard)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Electrical</label>
+                            <select id="electricalBrand" onchange="calculate()">
+                                <option value="0">Select Electrical Brand</option>
+                                <option value="0.025">Schneider (+2.5%)</option>
+                                <option value="0.02">Havells (+2%)</option>
+                                <option value="0.015">Anchor (+1.5%)</option>
+                                <option value="0.015">Polycab (+1.5%)</option>
+                                <option value="0">Others (Standard)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Sanitary</label>
+                            <select id="sanitaryBrand" onchange="calculate()">
+                                <option value="0">Select Sanitary Brand</option>
+                                <option value="0.04">Jaquar (+4%)</option>
+                                <option value="0.025">Hindware (+2.5%)</option>
+                                <option value="0.025">Cera (+2.5%)</option>
+                                <option value="0.02">Parryware (+2%)</option>
+                                <option value="0">Other (Standard)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Water Tank</label>
+                            <select id="tankBrand" onchange="calculate()">
+                                <option value="0">Select Water Tank Brand</option>
+                                <option value="0.01">Sintex (+1%)</option>
+                                <option value="0.008">Ashirvad (+0.8%)</option>
+                                <option value="0.005">Plasto (+0.5%)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tiles</label>
+                            <select id="tilesBrand" onchange="calculate()">
+                                <option value="0">Select Tiles Brand</option>
+                                <option value="0.05">Italian Marble (+5%)</option>
+                                <option value="0.03">Kajaria / Somany (+3%)</option>
+                                <option value="0.02">Nitco (+2%)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <button class="btn btn-primary" onclick="calculate()" style="flex: 1;">Calculate Estimate</button>
+                        <a href="contact.html" class="btn" style="border: 1px solid var(--primary); color: var(--primary); flex: 1; text-align: center;">Contact Us</a>
                     </div>
                 </div>
 
+                <!-- Summary Sidebar -->
                 <div class="result-card" data-aos="fade-up">
-                    <span style="color: var(--gray); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Estimated Total Cost</span>
-                    <div class="total-price" id="totalCost">₹ 0 <span class="live-dot"></span></div>
-                    <p id="areaDisplay" style="color: var(--gray); margin-bottom: 2rem; font-weight: 500;">1,000 Sq. Ft Built-up Area</p>
+                    <h3>Estimate Summary</h3>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.9rem;">Review your selections</p>
+                    <div id="summary-items" style="margin-bottom: 1.5rem;">
+                        <div class="breakdown-item"><span>Area:</span> <span id="summary-area">—</span></div>
+                        <div class="breakdown-item"><span>Base Rate:</span> <span id="summary-base">—</span></div>
+                        <div class="breakdown-item"><span>Cement:</span> <span id="summary-cement">—</span></div>
+                        <div class="breakdown-item"><span>Steel:</span> <span id="summary-steel">—</span></div>
+                        <div class="breakdown-item"><span>Pipes:</span> <span id="summary-pipes">—</span></div>
+                        <div class="breakdown-item"><span>Paint:</span> <span id="summary-paint">—</span></div>
+                        <div class="breakdown-item"><span>Electrical:</span> <span id="summary-electrical">—</span></div>
+                        <div class="breakdown-item"><span>Sanitary:</span> <span id="summary-sanitary">—</span></div>
+                        <div class="breakdown-item"><span>Water Tank:</span> <span id="summary-tank">—</span></div>
+                        <div class="breakdown-item"><span>Tiles:</span> <span id="summary-tiles">—</span></div>
+                        <div class="breakdown-item" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1rem; padding-top: 1rem;">
+                            <span>Average Multiplier:</span> <span id="summary-multiplier">—</span>
+                        </div>
+                        <div class="breakdown-item" style="font-size: 1.4rem; color: var(--primary); margin-top: 0.5rem;">
+                            <strong>Total:</strong> <strong id="totalCostDisplay">₹ 0</strong>
+                        </div>
+                    </div>
                     
-                    <div id="breakdown-list" style="color: var(--light); margin-bottom: 2rem;">
-                        <!-- Breakdown items -->
+                    <div style="margin-top: 2rem;">
+                        <button class="btn btn-primary" style="width: 100%; border-radius: 12px; padding: 1rem;" onclick="openQuoteModal()">
+                            Get Full Quotation <i class="fab fa-whatsapp" style="margin-left: 0.5rem;"></i>
+                        </button>
                     </div>
-
-                    <div style="border-top: 1px solid #f0f0f0; padding-top: 2rem;">
-                        <h4 style="margin-bottom: 1.5rem; color: var(--light);">Get Official Quote on WhatsApp</h4>
-                        <form id="quoteForm">
-                            <div class="form-group" style="margin-bottom: 1rem;">
-                                <input type="text" id="userName" placeholder="Your Name" required style="padding: 0.8rem 1.2rem; font-size: 1rem;">
-                            </div>
-                            <div class="form-group" style="margin-bottom: 1rem;">
-                                <input type="tel" id="userPhone" placeholder="WhatsApp Number" required style="padding: 0.8rem 1.2rem; font-size: 1rem;">
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 12px; padding: 1rem;">
-                                Confirm & Send Details <i class="fab fa-whatsapp" style="margin-left: 0.5rem;"></i>
-                            </button>
-                        </form>
-                    </div>
-                    <p style="text-align: center; font-size: 0.7rem; color: var(--gray); margin-top: 1rem;">* By clicking, you agree to receive a copy on your WhatsApp.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Lead Capture Modal (New) -->
+    <div id="quoteModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center;">
+        <div style="background:white; padding:3rem; border-radius:30px; width:90%; max-width:450px; position:relative;">
+            <i class="fas fa-times" style="position:absolute; top:20px; right:20px; cursor:pointer; color:#999;" onclick="closeQuoteModal()"></i>
+            <h2 style="margin-bottom:1rem; color:var(--light);">Get Official Quote</h2>
+            <p style="margin-bottom:2rem; color:var(--gray); font-size:0.9rem;">Send your estimate details to our experts for a final consultation.</p>
+            <form id="quoteForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="userName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" id="userPhone" placeholder="e.g. +91 98765 43210" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:1rem;">Send to WhatsApp</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Hidden Form for Email via FormSubmit -->
     <form id="hiddenEmailForm" action="https://formsubmit.co/info@aakarconstruction.in" method="POST" style="display:none;">
@@ -665,63 +851,65 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Ticker & Rates Data
-        const marketRates = [
-            { material: "Cement (OPC)", price: 420, unit: "Bag", change: "+2" },
-            { material: "Steel (TMT)", price: 68500, unit: "Ton", change: "-150" },
-            { material: "Bricks", price: 7800, unit: "1k Pcs", change: "+50" },
-            { material: "Sand", price: 4500, unit: "Unit", change: "0" },
-            { material: "Aggregate", price: 2800, unit: "Unit", change: "+20" }
-        ];
-
-        document.getElementById('ticker').innerHTML = marketRates.concat(marketRates).map(r => `
-            <div class="ticker-item">
-                <span>${r.material}</span>
-                <span style="color:${r.change.includes('+') ? '#00ff88' : '#ff4444'}">₹${r.price.toLocaleString()}</span>
-            </div>
-        `).join('');
-
-        document.getElementById('rates-body').innerHTML = marketRates.map(r => `
-            <tr style="border-bottom:1px solid #f0f0f0">
-                <td style="padding:1.2rem 0; font-weight:500; color: var(--light);">${r.material}</td>
-                <td style="text-align:right; color:var(--primary); font-weight:700">₹${r.price.toLocaleString()} / ${r.unit}</td>
-            </tr>
-        `).join('');
-
-        let currentQuality = 'basic';
-        const qualityRates = { basic: 1750, premium: 2200, luxury: 2700 };
-
-        function setQuality(q, el) {
-            currentQuality = q;
-            document.querySelectorAll('.quality-card').forEach(c => c.classList.remove('active'));
-            el.classList.add('active');
-            calculate();
-        }
+        const packageRates = { basic: 1750, premium: 2200, luxury: 2700 };
 
         function calculate() {
             const area = parseFloat(document.getElementById('plotArea').value) || 0;
-            const floors = parseFloat(document.getElementById('floors').value) || 1;
-            const totalArea = area * floors;
-            const total = totalArea * qualityRates[currentQuality];
+            const baseRate = parseFloat(document.getElementById('baseRate').value) || 0;
+            
+            // Multiplier values from selects
+            const cementMult = parseFloat(document.getElementById('cementBrand').value) || 0;
+            const steelMult = parseFloat(document.getElementById('steelBrand').value) || 0;
+            const pipesMult = parseFloat(document.getElementById('pipesBrand').value) || 0;
+            const paintMult = parseFloat(document.getElementById('paintBrand').value) || 0;
+            const electMult = parseFloat(document.getElementById('electricalBrand').value) || 0;
+            const sanitMult = parseFloat(document.getElementById('sanitaryBrand').value) || 0;
+            const tankMult = parseFloat(document.getElementById('tankBrand').value) || 0;
+            const tilesMult = parseFloat(document.getElementById('tilesBrand').value) || 0;
 
-            document.getElementById('totalCost').innerHTML = '₹ ' + total.toLocaleString('en-IN') + ' <span class="live-dot"></span>';
-            document.getElementById('areaDisplay').innerText = totalArea.toLocaleString() + ' Sq. Ft Built-up Area';
+            const totalMultiplier = cementMult + steelMult + pipesMult + paintMult + electMult + sanitMult + tankMult + tilesMult;
+            const avgMultiplierDisplay = (1 + totalMultiplier).toFixed(3);
+            
+            const totalCost = area * baseRate * (1 + totalMultiplier);
 
-            const breakdown = [
-                { name: "Civil Works (Cement/Steel/Bricks)", pct: 0.55 },
-                { name: "Finishing (Tiles/Paint/Electrical)", pct: 0.25 },
-                { name: "Labor & Supervision", pct: 0.20 }
-            ];
+            // Update Summary Display
+            document.getElementById('summary-area').innerText = area > 0 ? area.toLocaleString() + ' sqft' : '—';
+            document.getElementById('summary-base').innerText = baseRate > 0 ? '₹ ' + baseRate.toLocaleString() : '—';
+            
+            const updateLabel = (id, summaryId) => {
+                const el = document.getElementById(id);
+                const text = el.options[el.selectedIndex].text;
+                document.getElementById(summaryId).innerText = el.value == "0" ? '—' : text.split(' (+')[0];
+            };
 
-            document.getElementById('breakdown-list').innerHTML = breakdown.map(b => `
-                <div class="breakdown-item">
-                    <span>${b.name}</span>
-                    <span style="font-weight:700; color:var(--light)">₹${Math.round(total * b.pct).toLocaleString('en-IN')}</span>
-                </div>
-            `).join('');
+            updateLabel('cementBrand', 'summary-cement');
+            updateLabel('steelBrand', 'summary-steel');
+            updateLabel('pipesBrand', 'summary-pipes');
+            updateLabel('paintBrand', 'summary-paint');
+            updateLabel('electricalBrand', 'summary-electrical');
+            updateLabel('sanitaryBrand', 'summary-sanitary');
+            updateLabel('tankBrand', 'summary-tank');
+            updateLabel('tilesBrand', 'summary-tiles');
+
+            document.getElementById('summary-multiplier').innerText = totalMultiplier > 0 ? avgMultiplierDisplay + 'x' : '—';
+            document.getElementById('totalCostDisplay').innerText = area > 0 ? '₹ ' + Math.round(totalCost).toLocaleString('en-IN') : '₹ 0';
         }
 
-        calculate();
+        function openQuoteModal() {
+            document.getElementById('quoteModal').style.display = 'flex';
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quoteModal').style.display = 'none';
+        }
+
+        // Close modal on click outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('quoteModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 
         // Handle Form Submission
         document.getElementById('quoteForm').addEventListener('submit', function(e) {
@@ -730,40 +918,50 @@
             const name = document.getElementById('userName').value;
             const phone = document.getElementById('userPhone').value;
             const area = document.getElementById('plotArea').value;
-            const floors = document.getElementById('floors').value;
-            const totalCost = document.getElementById('totalCost').innerText;
-            const quality = currentQuality.charAt(0).toUpperCase() + currentQuality.slice(1);
+            const base = document.getElementById('baseRate').value;
+            const totalCost = document.getElementById('totalCostDisplay').innerText;
 
-            const details = `Project Details:
-- Name: ${name}
-- Phone: ${phone}
-- Area: ${area * floors} Sq. Ft
-- Quality: ${quality}
-- Estimated Total: ${totalCost}`;
-
-            // 1. Send to WhatsApp
             const waMessage = `Hello AAKAR Constructions, I am ${name}. I just calculated an estimate for my project on your website:
             
 *Project Summary:*
-📍 Total Area: ${area * floors} Sq. Ft
-🏗️ Quality: ${quality} Package
-💰 Estimated Cost: ${totalCost}
+📍 Area: ${area} Sq. Ft
+🏗️ Base Rate: ₹${base}/sqft
+💰 Total Estimate: ${totalCost}
+
+*Selected Brands:*
+- Cement: ${document.getElementById('summary-cement').innerText}
+- Steel: ${document.getElementById('summary-steel').innerText}
+- Pipes: ${document.getElementById('summary-pipes').innerText}
+- Paint: ${document.getElementById('summary-paint').innerText}
+- Electrical: ${document.getElementById('summary-electrical').innerText}
+- Sanitary: ${document.getElementById('summary-sanitary').innerText}
+- Water Tank: ${document.getElementById('summary-tank').innerText}
+- Tiles: ${document.getElementById('summary-tiles').innerText}
 
 I would like to discuss this project further. Please contact me.`;
             
             const waUrl = `https://wa.me/918885774890?text=${encodeURIComponent(waMessage)}`;
             
-            // 2. Prepare and send hidden email form (Background)
+            // Background Email Submission
             document.getElementById('h_name').value = name;
             document.getElementById('h_phone').value = phone;
-            document.getElementById('h_details').value = details;
+            document.getElementById('h_details').value = waMessage;
             
-            // Note: In a real static site, we'd submit the form in the background or use an API
-            // For now, we'll open WhatsApp in a new tab and submit the form in the current one
+            // Create a small delay to allow user to see it's working then redirect
+            const submitForm = document.getElementById('hiddenEmailForm');
+            const formData = new FormData(submitForm);
             
+            fetch(submitForm.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            });
+
             window.open(waUrl, '_blank');
-            document.getElementById('hiddenEmailForm').submit();
+            closeQuoteModal();
         });
+
+        calculate();
 
         // Header Scroll
         window.addEventListener('scroll', () => {
@@ -774,11 +972,23 @@ I would like to discuss this project further. Please contact me.`;
 
         // Mobile Menu
         const mt = document.getElementById('mobileToggle');
+        const closeMenu = document.getElementById('closeMenu');
         const nl = document.getElementById('navLinks');
-        mt.onclick = () => {
+
+        const toggleMenu = () => {
             nl.classList.toggle('active');
             mt.classList.toggle('open');
         }
+
+        mt.onclick = toggleMenu;
+        closeMenu.onclick = toggleMenu;
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.onclick = () => {
+                nl.classList.remove('active');
+                mt.classList.remove('open');
+            }
+        });
     </script>
 </body>
 
