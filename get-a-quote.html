@@ -58,12 +58,15 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.2rem;
+            width: 100%;
         }
 
         /* Header Styles */
@@ -500,6 +503,27 @@
             .page-header h1 {
                 font-size: 2.8rem;
             }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .footer-col .logo {
+                display: flex;
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-bottom .socials {
+                margin: 0;
+            }
         }
 
         @media (max-width: 768px) {
@@ -560,6 +584,15 @@
 
             .nav-links a i {
                 display: block;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
+            .footer-col .logo img {
+                width: 70px;
+                height: 70px;
             }
 
             .nav-links.active li {
@@ -627,8 +660,41 @@
             }
 
             header {
-                width: 92%;
-                top: 15px;
+                width: 94%;
+                top: 10px;
+                padding: 0.1rem 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 40px 0 !important;
+            }
+
+            .page-header {
+                height: auto;
+                min-height: 300px;
+                padding: 100px 0 60px;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .estimator-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .grid {
+                gap: 1.5rem !important;
+            }
+
+            input, select {
+                padding: 0.8rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -664,34 +730,34 @@
         </div>
     </header>
 
-    <section class="page-header">
+    <section class="page-header px-4">
         <div class="container" data-aos="fade-up">
             <span
-                style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">Instant
+                style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Instant
                 Estimation</span>
-            <h1 style="color: white; -webkit-text-fill-color: white;">Cost Estimator</h1>
-            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 700px; margin: 0.5rem auto;">Calculate
+            <h1 class="mt-2" style="color: white; -webkit-text-fill-color: white;">Cost Estimator</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1rem; max-width: 700px; margin: 0.5rem auto;">Calculate
                 your dream project cost with live market data.</p>
         </div>
     </section>
     <!-- Construction Packages Section -->
-    <section class="py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 1rem;">Choose Your Level</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Construction Packages</h2>
-                <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+    <section class="py-12 md:py-20 bg-white overflow-hidden">
+        <div class="container mx-auto">
+            <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
+                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.5rem; font-size: 0.8rem;">Choose Your Level</span>
+                <h2 class="text-2xl md:text-4xl font-bold text-secondary mb-3">Construction Packages</h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <!-- Standard -->
-                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-primary text-xl font-bold mb-2">Standard</div>
-                    <div class="text-3xl font-extrabold text-secondary mb-4">₹1999<span class="text-sm font-normal text-gray-500">/sft</span></div>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed h-12">Affordable & Essential Construction Package</p>
-                    <button onclick="selectPackage(1999)" class="w-full py-3 bg-white border border-gray-200 text-secondary font-bold rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 mb-6">Select Package</button>
-                    <div class="w-full h-px bg-gray-200 mb-6"></div>
-                    <ul class="space-y-3 text-xs text-gray-600">
+                <div class="bg-gray-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-100 hover:border-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-primary text-lg md:text-xl font-bold mb-1">Standard</div>
+                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹1999<span class="text-sm font-normal text-gray-500">/sft</span></div>
+                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">Affordable & Essential Construction Package</p>
+                    <button onclick="selectPackage(1999)" class="w-full py-3 bg-white border border-gray-200 text-secondary font-bold rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 mb-5">Select Package</button>
+                    <div class="w-full h-px bg-gray-200 mb-5"></div>
+                    <ul class="space-y-2 text-[11px] md:text-xs text-gray-600">
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Basic Quality Materials</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Standard Finishes</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Essential Engineering</li>
@@ -699,13 +765,13 @@
                 </div>
 
                 <!-- Classic -->
-                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-primary text-xl font-bold mb-2">Classic</div>
-                    <div class="text-3xl font-extrabold text-secondary mb-4">₹2299<span class="text-sm font-normal text-gray-500">/sft</span></div>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed h-12">Enhanced Quality & Better Finishes</p>
-                    <button onclick="selectPackage(2299)" class="w-full py-3 bg-white border border-gray-200 text-secondary font-bold rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 mb-6">Select Package</button>
-                    <div class="w-full h-px bg-gray-200 mb-6"></div>
-                    <ul class="space-y-3 text-xs text-gray-600">
+                <div class="bg-gray-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-100 hover:border-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-primary text-lg md:text-xl font-bold mb-1">Classic</div>
+                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹2299<span class="text-sm font-normal text-gray-500">/sft</span></div>
+                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">Enhanced Quality & Better Finishes</p>
+                    <button onclick="selectPackage(2299)" class="w-full py-3 bg-white border border-gray-200 text-secondary font-bold rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 mb-5">Select Package</button>
+                    <div class="w-full h-px bg-gray-200 mb-5"></div>
+                    <ul class="space-y-2 text-[11px] md:text-xs text-gray-600">
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Branded Materials</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Superior Finishes</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Architectural Consultation</li>
@@ -713,14 +779,14 @@
                 </div>
 
                 <!-- Premium -->
-                <div class="bg-secondary p-8 rounded-3xl border border-secondary hover:border-primary transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute top-4 right-4 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Most Popular</div>
-                    <div class="text-primary text-xl font-bold mb-2">Premium</div>
-                    <div class="text-3xl font-extrabold text-white mb-4">₹2599<span class="text-sm font-normal text-gray-400">/sft</span></div>
-                    <p class="text-gray-400 mb-6 text-sm leading-relaxed h-12">Premium Materials & Modern Features</p>
-                    <button onclick="selectPackage(2599)" class="w-full py-3 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-all duration-300 mb-6">Select Package</button>
-                    <div class="w-full h-px bg-gray-700 mb-6"></div>
-                    <ul class="space-y-3 text-xs text-gray-300">
+                <div class="bg-secondary p-6 md:p-8 rounded-2xl md:rounded-3xl border border-secondary hover:border-primary transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute top-3 right-3 bg-primary text-white text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider">Most Popular</div>
+                    <div class="text-primary text-lg md:text-xl font-bold mb-1">Premium</div>
+                    <div class="text-2xl md:text-3xl font-extrabold text-white mb-3">₹2599<span class="text-sm font-normal text-gray-400">/sft</span></div>
+                    <p class="text-gray-400 mb-5 text-sm leading-relaxed h-auto md:h-12">Premium Materials & Modern Features</p>
+                    <button onclick="selectPackage(2599)" class="w-full py-3 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-all duration-300 mb-5">Select Package</button>
+                    <div class="w-full h-px bg-gray-700 mb-5"></div>
+                    <ul class="space-y-2 text-[11px] md:text-xs text-gray-300">
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Premium Brand Selection</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Modern Interior Features</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Smart Home Ready</li>
@@ -728,13 +794,13 @@
                 </div>
 
                 <!-- Luxury -->
-                <div class="bg-white p-8 rounded-3xl border-2 border-primary hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-primary text-xl font-bold mb-2">Luxury</div>
-                    <div class="text-3xl font-extrabold text-secondary mb-4">₹2999<span class="text-sm font-normal text-gray-500">/sft</span></div>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed h-12">For Villas, Duplex & Luxury Homes.</p>
-                    <button onclick="selectPackage(2999)" class="w-full py-3 bg-secondary text-white font-bold rounded-xl hover:bg-primary transition-all duration-300 mb-6">Select Package</button>
-                    <div class="w-full h-px bg-gray-200 mb-6"></div>
-                    <ul class="space-y-3 text-xs text-gray-600">
+                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 border-primary hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-primary text-lg md:text-xl font-bold mb-1">Luxury</div>
+                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹2999<span class="text-sm font-normal text-gray-500">/sft</span></div>
+                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">For Villas, Duplex & Luxury Homes.</p>
+                    <button onclick="selectPackage(2999)" class="w-full py-3 bg-secondary text-white font-bold rounded-xl hover:bg-primary transition-all duration-300 mb-5">Select Package</button>
+                    <div class="w-full h-px bg-gray-200 mb-5"></div>
+                    <ul class="space-y-2 text-[11px] md:text-xs text-gray-600">
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> High-End Luxury Brands</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Customized Luxury Design</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Premium Landscaping</li>
@@ -954,8 +1020,8 @@
 
     <!-- Lead Capture Modal (New) -->
     <div id="quoteModal"
-        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center;">
-        <div style="background:white; padding:3rem; border-radius:30px; width:90%; max-width:450px; position:relative;">
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center; padding: 1rem;">
+        <div style="background:white; padding:2rem 1.5rem; border-radius:24px; width:100%; max-width:450px; position:relative;">
             <i class="fas fa-times" style="position:absolute; top:20px; right:20px; cursor:pointer; color:#999;"
                 onclick="closeQuoteModal()"></i>
             <h2 style="margin-bottom:1rem; color:var(--light);">Get Official Quote</h2>
