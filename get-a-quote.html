@@ -721,12 +721,12 @@
                                 <select id="cement"
                                     class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
                                     <option value="">Select Cement Brand</option>
-                                    <option value="1.05">UltraTech</option>
-                                    <option value="1.08">Ambuja</option>
-                                    <option value="1.07">ACC</option>
-                                    <option value="1.06">Dalmia</option>
-                                    <option value="1.00">Ramco</option>
-                                    <option value="1.00">Other</option>
+                                    <option value="1.06">UltraTech</option>
+                                    <option value="1.03">Ramco</option>
+                                    <option value="1.04">Kcp</option>
+                                    <option value="1.02">Nagrajuna</option>
+                                    <option value="1.01">Zuari</option>
+                                    <option value="1.05">Ambuja</option>
                                 </select>
                             </div>
                             <div>
@@ -734,11 +734,14 @@
                                 <select id="steel"
                                     class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
                                     <option value="">Select Steel Brand</option>
+                                    <option value="1.05">Vizag Steel</option>
                                     <option value="1.08">Tata Tiscon</option>
                                     <option value="1.07">JSW</option>
-                                    <option value="1.06">SAIL</option>
-                                    <option value="1.05">Vizag Steel</option>
-                                    <option value="1.00">Other</option>
+                                    <option value="1.06">SAIL TMT</option>
+                                    <option value="1.04">Sugna TMT</option>
+                                    <option value="1.03">Radha TMT</option>
+                                    <option value="1.02">Mangal TMT</option>
+                                    <option value="1.01">MS TMT</option>
                                 </select>
                             </div>
                             <div>
@@ -746,11 +749,12 @@
                                 <select id="pipes"
                                     class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
                                     <option value="">Select Pipes Brand</option>
-                                    <option value="1.06">Astral</option>
-                                    <option value="1.07">Supreme</option>
-                                    <option value="1.05">Finolex</option>
-                                    <option value="1.00">Prince Pipes</option>
-                                    <option value="1.00">Other</option>
+                                    <option value="1.07">Ashirvad Pipes</option>
+                                    <option value="1.06">Astral Pipes</option>
+                                    <option value="1.05">Supreme Pipes</option>
+                                    <option value="1.04">Finolex Pipes</option>
+                                    <option value="1.03">Prince Pipes</option>
+                                    <option value="1.02">Sudhakar Pipes</option>
                                 </select>
                             </div>
                             <div>
@@ -771,11 +775,15 @@
                                 <select id="electrical"
                                     class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
                                     <option value="">Select Electrical Brand</option>
-                                    <option value="1.06">Schneider</option>
-                                    <option value="1.05">Havells</option>
+                                    <option value="1.07">Havells</option>
                                     <option value="1.06">Anchor</option>
-                                    <option value="1.07">Polycab</option>
-                                    <option value="1.00">Other</option>
+                                    <option value="1.05">Legrand</option>
+                                    <option value="1.04">Finolex Cables</option>
+                                    <option value="1.03">GM Modular</option>
+                                    <option value="1.02">Bajaj Electricals</option>
+                                    <option value="1.01">Goldmedal cables</option>
+                                    <option value="1.00">Orient Electric</option>
+                                    <option value="1.00">Philips Lightings</option>
                                 </select>
                             </div>
                             <div>
@@ -795,11 +803,12 @@
                                 <select id="tank"
                                     class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
                                     <option value="">Select Water Tank Brand</option>
-                                    <option value="1.05">Sintex</option>
-                                    <option value="1.06">Vectus</option>
+                                    <option value="1.06">Sintex</option>
+                                    <option value="1.05">Supreme</option>
                                     <option value="1.07">Plasto</option>
-                                    <option value="1.00">Supreme</option>
-                                    <option value="1.00">Other</option>
+                                    <option value="1.04">Ashirvad</option>
+                                    <option value="1.03">Prince</option>
+                                    <option value="1.02">Nandi</option>
                                 </select>
                             </div>
                             <div>
@@ -807,12 +816,13 @@
                                 <select id="tiles"
                                     class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
                                     <option value="">Select Tiles Brand</option>
-                                    <option value="1.06">Kajaria</option>
-                                    <option value="1.07">Somany</option>
-                                    <option value="1.05">Johnson</option>
-                                    <option value="1.00">Nitco</option>
-                                    <option value="1.00">Varmora</option>
-                                    <option value="1.00">Other</option>
+                                    <option value="1.07">Kajaria Tiles</option>
+                                    <option value="1.06">Somany Ceramics</option>
+                                    <option value="1.05">Johnson Tiles</option>
+                                    <option value="1.04">Asian Granito</option>
+                                    <option value="1.03">Nitco Tiles</option>
+                                    <option value="1.02">Cera Tiles</option>
+                                    <option value="1.01">Rak Ceramics</option>
                                 </select>
                             </div>
                         </div>
@@ -1000,8 +1010,10 @@
 
             const selections = categories.map(cat => {
                 const select = document.getElementById(cat);
+                let label = cat.charAt(0).toUpperCase() + cat.slice(1);
+                if (cat === 'tank') label = 'Water Tank';
                 return {
-                    category: cat.charAt(0).toUpperCase() + cat.slice(1),
+                    category: label,
                     brand: select.options[select.selectedIndex].text,
                     mult: parseFloat(select.value) || 1.00
                 };
