@@ -228,41 +228,125 @@
             color: var(--primary);
         }
 
-        /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 80vh;
             width: 100%;
             position: relative;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Herobg.jpeg');
-            background-size: cover;
-            background-position: center;
+            justify-content: flex-start;
+            /* Changed from center */
             overflow: hidden;
+            background: #000;
+            padding: 120px 0 60px;
+            text-align: left;
+            /* Changed from center */
         }
 
-        .hero-content {
-            max-width: 800px;
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out, transform 10s linear;
+            transform: scale(1.1);
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hero .container {
+            position: relative;
             z-index: 2;
         }
 
+        .hero-content {
+            max-width: 100%;
+            z-index: 2;
+            padding: 0 1rem;
+        }
+
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             color: #ffffff;
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
             max-width: 600px;
+            margin-left: 0;
+            /* Changed from auto */
+            margin-right: 0;
+            /* Changed from auto */
             color: rgba(255, 255, 255, 0.9);
         }
 
         .hero-btns {
             display: flex;
-            gap: 1.5rem;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            max-width: 400px;
+            margin: 0;
+            /* Changed from 0 auto */
+        }
+
+        .hero-btns .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (min-width: 992px) {
+            .hero {
+                height: 100vh;
+                padding: 0;
+                text-align: left;
+                justify-content: flex-start;
+            }
+
+            .hero-content {
+                max-width: 800px;
+                padding: 0;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.5rem, 8vw, 5.5rem);
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .hero-btns {
+                flex-direction: row;
+                max-width: none;
+                margin: 0;
+            }
+
+            .hero-btns .btn {
+                width: auto;
+            }
         }
 
         .hero .btn-outline {
@@ -1224,32 +1308,7 @@
                 /* Prevent child overflow from breaking layout */
             }
 
-            .hero {
-                padding-top: 100px;
-                height: auto;
-                min-height: 85vh;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-                margin: 1rem 0 2rem;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            .hero-btns .btn {
-                width: 100%;
-                padding: 1rem;
-            }
+            /* Hero Optimized via Mobile-First */
 
             /* Fix Service Accordion for Mobile (Restored Horizontal Design) */
             .service-accordion-card {
@@ -1849,6 +1908,17 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Hero1.jpeg');">
+            </div>
+            <div class="hero-slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Hero2.jpeg');">
+            </div>
+            <div class="hero-slide"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Hero3.jpeg');">
+            </div>
+        </div>
         <div class="container">
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
                 <h1>Building Spaces That Define the Future</h1>
@@ -1881,13 +1951,14 @@
 
                     </div>
                 </div>
-                <div class="accordion-panel" style="background-image: url('assets/Herobg.jpeg');">
+                <div class="accordion-panel"
+                    style="background-image: url('assets/Luxury_Villa_Duplex_Construction…_202605051617.jpeg');">
                     <span>Luxury Villas</span>
                     <div class="panel-content">
 
                     </div>
                 </div>
-                <div class="accordion-panel" style="background-image: url('assets/interior.png');">
+                <div class="accordion-panel" style="background-image: url('assets/Herobg.jpeg');">
                     <span>Interior Design</span>
                     <div class="panel-content">
 
@@ -2804,6 +2875,20 @@
             duration: 800,
             once: true
         });
+
+        // Hero Background Slider
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        if (slides.length > 0) {
+            setInterval(nextSlide, 5000);
+        }
 
         // Header Scroll Effect
         window.addEventListener('scroll', () => {
