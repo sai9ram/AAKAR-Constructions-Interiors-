@@ -878,7 +878,7 @@
                     <div class="lg:col-span-2 space-y-6">
 
                         <!-- Basic Inputs -->
-                        <div class="grid md:grid-cols-2 gap-6">
+                        <div class="grid md:grid-cols-3 gap-6">
                             <div>
                                 <label class="block font-semibold mb-2 text-primary">Area per Floor (sq ft)</label>
                                 <input id="area" type="number" placeholder="e.g., 1200"
@@ -888,6 +888,17 @@
                                 <label class="block font-semibold mb-2 text-primary">Base Rate (₹/sq ft)</label>
                                 <input id="baseRate" type="number" placeholder="e.g., 1800"
                                     class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Number of Floors</label>
+                                <select id="floors"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="1">Ground Floor Only</option>
+                                    <option value="2">G + 1 Floor</option>
+                                    <option value="3">G + 2 Floors</option>
+                                    <option value="4">G + 3 Floors</option>
+                                    <option value="5">G + 4 Floors</option>
+                                </select>
                             </div>
                         </div>
 
@@ -1000,17 +1011,6 @@
                                     <option value="1.03">Nitco Tiles</option>
                                     <option value="1.02">Cera Tiles</option>
                                     <option value="1.01">Rak Ceramics</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block font-semibold mb-2 text-primary">Number of Floors</label>
-                                <select id="floors"
-                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
-                                    <option value="1">Ground Floor Only</option>
-                                    <option value="2">G + 1 Floor</option>
-                                    <option value="3">G + 2 Floors</option>
-                                    <option value="4">G + 3 Floors</option>
-                                    <option value="5">G + 4 Floors</option>
                                 </select>
                             </div>
                         </div>
