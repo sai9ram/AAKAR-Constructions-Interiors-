@@ -745,8 +745,7 @@
 
         /* CTA Banner */
         .cta-banner {
-            height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/project1.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('assets/interior.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -756,12 +755,25 @@
             align-items: center;
             text-align: center;
             border-radius: 40px;
-            margin: 0 1rem;
+            padding: 120px 2rem;
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
         }
 
         .cta-banner h2 {
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            max-width: 900px;
+        }
+
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            line-height: 1.6;
         }
 
         /* Contact Form Section */
@@ -1708,29 +1720,31 @@
 
             /* Final CTA Mobile Optimization */
             .cta-banner {
-                padding: 60px 1.5rem !important;
-                border-radius: 25px !important;
+                padding: 80px 1.5rem !important;
+                border-radius: 30px !important;
                 margin: 0 !important;
-                height: auto !important;
-                min-height: 400px;
+                min-height: auto !important;
+                background-attachment: scroll; /* Better performance on mobile */
             }
 
             .cta-banner h2 {
                 font-size: 1.8rem !important;
                 line-height: 1.2 !important;
-                margin-bottom: 1rem !important;
+                margin-bottom: 1.2rem !important;
             }
 
             .cta-banner p {
-                font-size: 0.95rem !important;
-                margin-bottom: 2rem !important;
+                font-size: 1rem !important;
+                margin-bottom: 2.5rem !important;
                 line-height: 1.5 !important;
+                padding: 0 10px;
             }
 
             .cta-banner .btn {
                 width: auto !important;
-                padding: 1rem 2rem !important;
-                font-size: 0.95rem !important;
+                min-width: 250px;
+                padding: 1.2rem 2rem !important;
+                font-size: 1rem !important;
             }
 
             /* Fix Contact Section for Mobile (Restored Side-by-Side) */
@@ -2063,7 +2077,8 @@
         </div>
         <div class="container">
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000" style="padding-top: 6rem;">
-                <h1><span style="color: var(--primary);">AAKAR CONSTRUCTIONS</span> – Strong Foundations, Better Futures.</h1>
+                <h1><span style="color: var(--primary);">AAKAR CONSTRUCTIONS</span> – Strong Foundations, Better
+                    Futures.</h1>
                 <p>End-to-end residential and commercial construction solutions across Andhra Pradesh & Telangana —
                     designed with precision, built with excellence.</p>
                 <div class="hero-btns">
@@ -3091,63 +3106,15 @@
         </div>
     </section>
 
-    <!-- 10. Farm Land Filling Section -->
-    <section id="farmland" class="section-padding" style="background: var(--dark-accent);">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
-                <span
-                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Specialized
-                    Services</span>
-                <h2 style="margin-top: 1rem; font-size: 3rem;">Farm Land Filling</h2>
-                <p>Transforming barren lands into productive assets with expert soil leveling and preparation.</p>
-            </div>
-            <div class="about-section"
-                style="align-items: center; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
-                <div class="about-content" data-aos="fade-right">
-                    <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;">Professional Land
-                        Development</h3>
-                    <p style="margin-bottom: 1.5rem;">At AAKAR Constructions, we specialize in large-scale farm land
-                        filling and leveling services. Whether you are preparing your land for agriculture, residential
-                        layouts, or commercial development, we provide the expertise and heavy machinery required for
-                        high-quality results.</p>
-                    <ul class="service-features" style="list-style: none; margin-bottom: 2rem;">
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;"><i
-                                class="fas fa-check-circle" style="color: var(--primary);"></i> Expert Soil Quality
-                            Assessment</li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;"><i
-                                class="fas fa-check-circle" style="color: var(--primary);"></i> Precision Leveling &
-                            Grading</li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;"><i
-                                class="fas fa-check-circle" style="color: var(--primary);"></i> Bulk Soil Excavation &
-                            Filling</li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;"><i
-                                class="fas fa-check-circle" style="color: var(--primary);"></i> Drainage Planning &
-                            Execution</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Inquire About Land Filling</a>
-                </div>
-                <div class="about-img-wrapper" data-aos="fade-left">
-                    <img src="assets/hospitals.jpeg" alt="Farm Land Filling Services"
-                        style="border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); width: 100%; height: 400px; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Final CTA Section -->
     <section class="section-padding">
         <div class="container">
-            <div class="cta-banner" data-aos="zoom-in"
-                style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('assets/interior.png'); background-size: cover; background-position: center; padding: 120px 20px; border-radius: 40px; overflow: hidden; color: #ffffff; text-align: center;">
-                <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; color: #ffffff;">Let’s Build
-                    Something Exceptional Together</h2>
-                <p
-                    style="color: rgba(255, 255, 255, 0.95); font-size: 1.25rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                    Ready to start your next construction journey? Our experts are here to guide you from concept to
-                    completion with precision and trust.</p>
-                <a href="get-a-quote.html" class="btn btn-primary"
-                    style="padding: 1.2rem 3rem; font-size: 1.1rem;">Request a Free Quote <i class="fas fa-arrow-right"
-                        style="margin-left: 0.8rem;"></i></a>
+            <div class="cta-banner" data-aos="zoom-in">
+                <h2>Let’s Build Something Exceptional Together</h2>
+                <p>Ready to start your next construction journey? Our experts are here to guide you from concept to completion with precision and trust.</p>
+                <a href="get-a-quote.html" class="btn btn-primary">Request a Free Quote <i class="fas fa-arrow-right" style="margin-left: 0.8rem;"></i></a>
             </div>
         </div>
     </section>
