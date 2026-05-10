@@ -950,6 +950,115 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            text-align: center;
+            padding-bottom: 2rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .team-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+
+        .team-info h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+            color: var(--light);
+        }
+
+        .team-info .role {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .team-info .qual {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .team-info .desc {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.5;
+            padding: 0 2rem;
+            margin-bottom: 1.5rem;
+            height: 80px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .team-social a:hover {
+            background: var(--primary);
+            color: white;
+            transform: rotate(360deg);
+        }
+
         /* Footer */
         footer {
             background-color: #f9f9f9;
@@ -2291,6 +2400,80 @@
                     class="view-all-link">
                     View All B2B Services <i class="fas fa-arrow-right-long"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section-padding" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Our
+                    Experts</span>
+                <h2 style="margin-top: 1rem; font-size: 3rem;">MEET OUR TEAM</h2>
+                <p style="max-width: 600px; margin: 1rem auto 0; color: var(--gray);">Our dedicated team of
+                    professionals brings together decades of expertise in architecture, engineering, and project
+                    management.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Member 1 -->
+                <div class="team-card" data-aos="fade-up">
+                    <div class="team-img">
+                        <img src="Team1.png" alt="Rama kishan komanduri">
+                    </div>
+                    <div class="team-info">
+                        <h4>Mr. Rama Kishan Komanduri</h4>
+                        <span class="role">Managing Director</span>
+                        <span class="qual">B.Tech & Construction Management</span>
+                        <p class="desc">Planning and supervising construction projects to ensure they are completed on
+                            time, within budget, and with proper quality and safety.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-img">
+                        <img src="Team2.jpeg" alt="Mallikharjun billa">
+                    </div>
+                    <div class="team-info">
+                        <h4>Mr. Mallikharjun Billa</h4>
+                        <span class="role">Executive Director</span>
+                        <span class="qual">B.Tech Civil</span>
+                        <p class="desc">Proven excellence in construction management with the ability to translate core
+                            skills into successful project execution, backed by 10+ years of experience.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-img">
+                        <img src="Team3.png" alt="Sanmukha Rao Kotturu">
+                    </div>
+                    <div class="team-info">
+                        <h4>Mr. Sanmukha Rao Kotturu</h4>
+                        <span class="role">Vastu Specialist & Civil Engineer</span>
+                        <span class="qual">B.Tech Civil</span>
+                        <p class="desc">Dedicated Civil Engineer and Vastu Specialist with 20+ years of experience in
+                            site management, manpower, and machinery coordination.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
