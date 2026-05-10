@@ -840,7 +840,7 @@
                         <!-- Basic Inputs -->
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block font-semibold mb-2 text-primary">Total Land Area (sq ft)</label>
+                                <label class="block font-semibold mb-2 text-primary">Area per Floor (sq ft)</label>
                                 <input id="area" type="number" placeholder="e.g., 1200"
                                     class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
                             </div>
@@ -960,6 +960,16 @@
                                     <option value="1.03">Nitco Tiles</option>
                                     <option value="1.02">Cera Tiles</option>
                                     <option value="1.01">Rak Ceramics</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-2 text-primary">Number of Floors</label>
+                                <select id="floors" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                    <option value="1">Ground Floor Only</option>
+                                    <option value="2">G + 1 Floor</option>
+                                    <option value="3">G + 2 Floors</option>
+                                    <option value="4">G + 3 Floors</option>
+                                    <option value="5">G + 4 Floors</option>
                                 </select>
                             </div>
                         </div>
@@ -1133,8 +1143,10 @@
         const updateEstimate = () => {
             const areaInput = document.getElementById('area');
             const rateInput = document.getElementById('baseRate');
+            const floorsInput = document.getElementById('floors');
             const area = parseFloat(areaInput.value);
             const baseRate = parseFloat(rateInput.value);
+            const floors = parseInt(floorsInput.value) || 1;
 
             if (!area || !baseRate) {
                 return;
@@ -1157,10 +1169,12 @@
             });
 
             const avgMultiplier = selections.reduce((a, b) => a + b.mult, 0) / selections.length;
-            const totalCost = Math.round(area * baseRate * avgMultiplier);
+            const totalCost = Math.round(area * floors * baseRate * avgMultiplier);
 
             let summaryHTML = `
-                <p><strong>Area:</strong> ${area.toLocaleString()} sq ft</p>
+                <p><strong>Area per Floor:</strong> ${area.toLocaleString()} sq ft</p>
+                <p><strong>Floors:</strong> ${floorsInput.options[floorsInput.selectedIndex].text}</p>
+                <p><strong>Total Built-up Area:</strong> ${(area * floors).toLocaleString()} sq ft</p>
                 <p><strong>Base Rate:</strong> ₹${baseRate.toLocaleString()} / sq ft</p>
                 <hr style="margin: 1rem 0; opacity: 0.1;">
             `;
@@ -1181,7 +1195,7 @@
         };
 
         // Add listeners for real-time updates
-        ['area', 'baseRate', 'cement', 'steel', 'pipes', 'paint', 'electrical', 'sanitary', 'tank', 'tiles'].forEach(id => {
+        ['area', 'baseRate', 'floors', 'cement', 'steel', 'pipes', 'paint', 'electrical', 'sanitary', 'tank', 'tiles'].forEach(id => {
             const el = document.getElementById(id);
             if (el) {
                 el.addEventListener('input', updateEstimate);
@@ -1220,6 +1234,7 @@
             const name = document.getElementById('userName').value;
             const phone = document.getElementById('userPhone').value;
             const area = document.getElementById('area').value;
+            const floors = document.getElementById('floors').options[document.getElementById('floors').selectedIndex].text;
             const base = document.getElementById('baseRate').value;
             const totalElement = document.getElementById('totalCostDisplay');
             const totalCost = totalElement ? totalElement.innerText.replace('Total: ', '') : 'Not calculated';
@@ -1232,7 +1247,8 @@
             const waMessage = `Hello AAKAR Constructions, I am ${name}. I just calculated an estimate for my project on your website:
             
 *Project Summary:*
-📍 Area: ${area} Sq. Ft
+📍 Area per Floor: ${area} Sq. Ft
+🏢 Floors: ${floors}
 🏗️ Base Rate: ₹${base}/sqft
 💰 Total Estimate: ${totalCost}
 

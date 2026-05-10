@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://unpkg.com">
-    
+
     <link rel="preload" as="image" href="assets/services-hero.jpeg" fetchpriority="high">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -416,7 +416,7 @@
             color: #333;
             cursor: pointer;
             z-index: 10;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
         }
 
@@ -492,10 +492,21 @@
         }
 
         @media (max-width: 768px) {
-            .modal-body-content { padding: 2rem; }
-            .modal-body-img { height: 250px; }
-            .modal-features-grid { grid-template-columns: 1fr; }
-            .modal-body-content h2 { font-size: 1.8rem; }
+            .modal-body-content {
+                padding: 2rem;
+            }
+
+            .modal-body-img {
+                height: 250px;
+            }
+
+            .modal-features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-body-content h2 {
+                font-size: 1.8rem;
+            }
         }
 
         /* Responsive */
@@ -608,6 +619,7 @@
                 height: 50px;
                 font-size: 1.2rem;
             }
+
             .mobile-bottom-nav {
                 display: flex;
             }
@@ -672,12 +684,29 @@
                 transform: translateX(0);
             }
 
-            .nav-links.active li:nth-child(1) { transition-delay: 0.2s; }
-            .nav-links.active li:nth-child(2) { transition-delay: 0.25s; }
-            .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
-            .nav-links.active li:nth-child(4) { transition-delay: 0.35s; }
-            .nav-links.active li:nth-child(5) { transition-delay: 0.4s; }
-            .nav-links.active li:nth-child(6) { transition-delay: 0.45s; }
+            .nav-links.active li:nth-child(1) {
+                transition-delay: 0.2s;
+            }
+
+            .nav-links.active li:nth-child(2) {
+                transition-delay: 0.25s;
+            }
+
+            .nav-links.active li:nth-child(3) {
+                transition-delay: 0.3s;
+            }
+
+            .nav-links.active li:nth-child(4) {
+                transition-delay: 0.35s;
+            }
+
+            .nav-links.active li:nth-child(5) {
+                transition-delay: 0.4s;
+            }
+
+            .nav-links.active li:nth-child(6) {
+                transition-delay: 0.45s;
+            }
 
             .nav-links a {
                 font-size: 1.1rem;
@@ -790,7 +819,8 @@
     <header id="header">
         <div class="container nav-wrapper">
             <nav>
-                <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo" decoding="async" fetchpriority="high"></a>
+                <a href="index.html" class="logo"><img src="Original Logo.jpeg" alt="AAKAR Logo" decoding="async"
+                        fetchpriority="high"></a>
                 <ul class="nav-links" id="navLinks">
                     <li class="mobile-close" id="closeMenu"><i class="fas fa-times"></i></li>
                     <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
@@ -824,140 +854,14 @@
         </div>
     </section>
 
-    <!-- B2B Services -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 4rem;" data-aos="fade-up">
-                <span
-                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2B
-                    Solutions</span>
-                <h2 style="margin-top: 1rem; font-size: 2.5rem;">CORPORATE & COMMERCIAL</h2>
-            </div>
-
-            <div class="services-detail-grid">
-                <!-- B2B Card 1 -->
-                <div class="service-card" data-aos="fade-up" onclick="openServiceModal('commercial-projects')">
-                    <div class="service-card-img">
-                        <img src="assets/Commercial_Projects_South_Indian…_202605051557.jpeg" alt="Commercial Projects">
-                    </div>
-                    <div class="service-card-content">
-                        <i class="fas fa city"></i>
-                        <h3>Commercial Projects</h3>
-                        <p>Specialized construction for retail spaces, shopping complexes, and modern corporate hubs.
-                        </p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle"></i> Shopping Complexes</li>
-                            <li><i class="fas fa-check-circle"></i> Retail Spaces</li>
-                            <li><i class="fas fa-check-circle"></i> Corporate Hubs</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- B2B Card 2 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100" onclick="openServiceModal('management-consultant')">
-                    <div class="service-card-img">
-                        <img src="assets/Construction_Management_Consulta…_202605051549.jpeg"
-                            alt="Management Consultant">
-                    </div>
-                    <div class="service-card-content">
-                        <i class="fas fa-clipboard-check"></i>
-                        <h3>Construction Management Consultant</h3>
-                        <p>Expert project management to ensure smooth execution, strict quality control, and timely
-                            delivery.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle"></i> Project Planning</li>
-                            <li><i class="fas fa-check-circle"></i> Quality Audits</li>
-                            <li><i class="fas fa-check-circle"></i> Cost Estimation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- B2B Card 3 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200" onclick="openServiceModal('hospital-school')">
-                    <div class="service-card-img">
-                        <img src="assets/Hospital_school_building_constru…_202605051603.jpeg" alt="Hospital and School">
-                    </div>
-                    <div class="service-card-content">
-                        <i class="fas fa-hospital"></i>
-                        <h3>Hospital & School Building Construction</h3>
-                        <p>Large-scale educational and healthcare infrastructure built with uncompromising safety and
-                            quality.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle"></i> Educational Institutions</li>
-                            <li><i class="fas fa-check-circle"></i> Healthcare Facilities</li>
-                            <li><i class="fas fa-check-circle"></i> Specialized Infrastructure</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- B2B Card 4 -->
-                <div class="service-card" data-aos="fade-up" onclick="openServiceModal('builders-developers')">
-                    <div class="service-card-img">
-                        <img src="assets/Projects_for_Builders_Developers…_202605051605.jpeg"
-                            alt="Projects for Builders">
-                    </div>
-                    <div class="service-card-content">
-                        <i class="fas fa-hard-hat"></i>
-                        <h3>Projects for Builders & Developers</h3>
-                        <p>Turnkey construction services tailored for large-scale real estate developers and property
-                            groups.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle"></i> Turnkey Solutions</li>
-                            <li><i class="fas fa-check-circle"></i> Fast-Track Execution</li>
-                            <li><i class="fas fa-check-circle"></i> Bulk Contracting</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- B2B Card 5 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100" onclick="openServiceModal('office-factories')">
-                    <div class="service-card-img">
-                        <img src="assets/Office_buildings_factories_const…_202605051607.jpeg"
-                            alt="Office Buildings and Factories">
-                    </div>
-                    <div class="service-card-content">
-                        <i class="fas fa-industry"></i>
-                        <h3>Office Buildings, Factories Construction</h3>
-                        <p>Heavy-duty industrial and modern corporate construction optimized for productivity and scale.
-                        </p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle"></i> Corporate Offices</li>
-                            <li><i class="fas fa-check-circle"></i> Industrial Units</li>
-                            <li><i class="fas fa-check-circle"></i> Manufacturing Plants</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- B2B Card 6 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200" onclick="openServiceModal('high-rise')">
-                    <div class="service-card-img">
-                        <img src="assets/High-Rise_Apartment_Construction…_202605051608.jpeg"
-                            alt="High-Rise Residential">
-                    </div>
-                    <div class="service-card-content">
-                        <i class="fas fa-building"></i>
-                        <h3>High-Rise Residential Apartment Construction</h3>
-                        <p>High-rise apartment complexes featuring premium amenities and robust structural engineering.
-                        </p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check-circle"></i> Luxury Apartments</li>
-                            <li><i class="fas fa-check-circle"></i> Structural Engineering</li>
-                            <li><i class="fas fa-check-circle"></i> Premium Amenities</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- B2C Services -->
-    <section class="section-padding" style="background-color: var(--dark-accent);">
+    <section class="section-padding">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 3rem;" data-aos="fade-up">
                 <span
                     style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2C
                     Solutions</span>
-                <h2 style="margin-top: 1rem; font-size: 2.2rem;">INDIVIDUAL & RESIDENTIAL</h2>
+                <h2 style="margin-top: 1rem; font-size: 2.2rem;">OUR HOME CONSTRUCTION SERVICES</h2>
             </div>
 
             <div class="services-detail-grid b2c-grid">
@@ -1001,7 +905,7 @@
                 <!-- B2C Card 3 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card-img">
-                        <img src="assets/Individual_Houses_202605041733.jpeg" alt="Individual House Construction">
+                        <img src="assets/individual house.jpg" alt="Individual House Construction">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-home"></i>
@@ -1019,8 +923,7 @@
                 <!-- B2C Card 4 -->
                 <div class="service-card" data-aos="fade-up">
                     <div class="service-card-img">
-                        <img src="assets/Luxury_Villa_Duplex_Construction…_202605051617.jpeg"
-                            alt="Luxury Villa Construction">
+                        <img src="assets/Luxury Villa & Duplex.jpg" alt="Luxury Villa Construction">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-gem"></i>
@@ -1038,7 +941,7 @@
                 <!-- B2C Card 5 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card-img">
-                        <img src="assets/Indian_apartment_interiors_design_202605051622.jpeg" alt="Interior Design">
+                        <img src="assets/Herobg.jpeg" alt="Interior Design">
                     </div>
                     <div class="service-card-content">
                         <i class="fas fa-couch"></i>
@@ -1056,12 +959,140 @@
         </div>
     </section>
 
+    <!-- B2B Services -->
+    <section class="section-padding" style="background-color: var(--dark-accent);">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 4rem;" data-aos="fade-up">
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">B2B
+                    Solutions</span>
+                <h2 style="margin-top: 1rem; font-size: 2.5rem;">OUR COMMERCIAL CONSTRUCTION SERVICES</h2>
+            </div>
+
+            <div class="services-detail-grid">
+                <!-- B2B Card 1 -->
+                <div class="service-card" data-aos="fade-up" onclick="openServiceModal('commercial-projects')">
+                    <div class="service-card-img">
+                        <img src="assets/Luxury_Villa_Duplex_Construction…_202605051617.jpeg" alt="Commercial Projects">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-city"></i>
+                        <h3>Commercial Projects</h3>
+                        <p>Specialized construction for retail spaces, shopping complexes, and modern corporate hubs.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Shopping Complexes</li>
+                            <li><i class="fas fa-check-circle"></i> Retail Spaces</li>
+                            <li><i class="fas fa-check-circle"></i> Corporate Hubs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2B Card 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100"
+                    onclick="openServiceModal('management-consultant')">
+                    <div class="service-card-img">
+                        <img src="assets/Construction_Management_Consulta…_202605051549.jpeg"
+                            alt="Management Consultant">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Construction Management Consultant</h3>
+                        <p>Expert project management to ensure smooth execution, strict quality control, and timely
+                            delivery.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Project Planning</li>
+                            <li><i class="fas fa-check-circle"></i> Quality Audits</li>
+                            <li><i class="fas fa-check-circle"></i> Cost Estimation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2B Card 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200"
+                    onclick="openServiceModal('hospital-school')">
+                    <div class="service-card-img">
+                        <img src="assets/hospitals.jpeg" alt="Hospital and School">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-hospital"></i>
+                        <h3>Hospital & School Building Construction</h3>
+                        <p>Large-scale educational and healthcare infrastructure built with uncompromising safety and
+                            quality.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Educational Institutions</li>
+                            <li><i class="fas fa-check-circle"></i> Healthcare Facilities</li>
+                            <li><i class="fas fa-check-circle"></i> Specialized Infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2B Card 4 -->
+                <div class="service-card" data-aos="fade-up" onclick="openServiceModal('builders-developers')">
+                    <div class="service-card-img">
+                        <img src="assets/Projects for Builders & Developers.avif" alt="Projects for Builders">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-hard-hat"></i>
+                        <h3>Projects for Builders & Developers</h3>
+                        <p>Turnkey construction services tailored for large-scale real estate developers and property
+                            groups.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Turnkey Solutions</li>
+                            <li><i class="fas fa-check-circle"></i> Fast-Track Execution</li>
+                            <li><i class="fas fa-check-circle"></i> Bulk Contracting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2B Card 5 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100"
+                    onclick="openServiceModal('office-factories')">
+                    <div class="service-card-img">
+                        <img src="assets/offices.jpeg" alt="Office Buildings and Factories">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-industry"></i>
+                        <h3>Office Buildings, Factories Construction</h3>
+                        <p>Heavy-duty industrial and modern corporate construction optimized for productivity and scale.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Corporate Offices</li>
+                            <li><i class="fas fa-check-circle"></i> Industrial Units</li>
+                            <li><i class="fas fa-check-circle"></i> Manufacturing Plants</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- B2B Card 6 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200"
+                    onclick="openServiceModal('high-rise')">
+                    <div class="service-card-img">
+                        <img src="assets/highrise.jpeg" alt="High-Rise Residential">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fas fa-building"></i>
+                        <h3>High-Rise Residential Apartment Construction</h3>
+                        <p>High-rise apartment complexes featuring premium amenities and robust structural engineering.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Luxury Apartments</li>
+                            <li><i class="fas fa-check-circle"></i> Structural Engineering</li>
+                            <li><i class="fas fa-check-circle"></i> Premium Amenities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg" alt="AAKAR Logo"></a>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;"><img src="Original Logo.jpeg"
+                            alt="AAKAR Logo"></a>
                     <p style="color: var(--gray); font-size: 0.9rem;">Building high-quality residential and commercial
                         spaces across Andhra Pradesh and Telangana. Innovation, quality, and excellence in every brick.
                     </p>
@@ -1089,18 +1120,33 @@
                 <div class="footer-col">
                     <h4>Contact Info</h4>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 0.5rem;"></i>
-                            9-1-34/1, Flat 506, Rank One Towers, Opposite Alankar Theatre, Langar House, Hyderabad -
-                            500008</li>
-                        <li><i class="fas fa-phone" style="color: var(--primary); margin-right: 0.5rem;"></i> +91 888
-                            577 4890</li>
-                        <li><i class="fas fa-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
-                            info@aakarconstructions.com</li>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--primary); margin-top: 5px; margin-right: 0.8rem;"></i>
+                            <span>9-1-34/1, Flat 506, Rank One Towers, Opposite Alankar Theatre, Langar House, Hyderabad - 500008</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="color: var(--primary); margin-right: 0.8rem;"></i>
+                            <a href="tel:8885774890" style="color: inherit; text-decoration: none;">+91 888 577 4890</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="color: var(--primary); margin-right: 0.8rem;"></i>
+                            <a href="tel:9959525105" style="color: inherit; text-decoration: none;">+91 995 952 5105</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="color: var(--primary); margin-right: 0.8rem;"></i>
+                            <a href="tel:9059120307" style="color: inherit; text-decoration: none;">+91 905 912 0307</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="color: var(--primary); margin-right: 0.8rem;"></i>
+                            <a href="mailto:info@aakarconstructions.com" style="color: inherit; text-decoration: none;">info@aakarconstructions.com</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 AAKAR Constructions. All rights reserved. | Powered By <a href="http://www.theupliv.com" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 700;">UPliv</a></p>
+                <p>&copy; 2026 AAKAR Constructions. All rights reserved. | Powered By <a href="http://www.theupliv.com"
+                        target="_blank"
+                        style="color: var(--primary); text-decoration: none; font-weight: 700;">UPliv</a></p>
                 <div style="display: flex; gap: 2rem;">
                     <a href="#" style="color: var(--gray); text-decoration: none;">Privacy Policy</a>
                     <a href="#" style="color: var(--gray); text-decoration: none;">Terms of Service</a>
@@ -1152,7 +1198,8 @@
                     <!-- Features populated by JS -->
                 </div>
                 <div style="margin-top: 3rem;">
-                    <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center; border-radius: 15px;">Inquire About This Service</a>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="width: 100%; text-align: center; border-radius: 15px;">Inquire About This Service</a>
                 </div>
             </div>
         </div>
@@ -1161,7 +1208,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
-        
+
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             if (window.scrollY > 50) header.classList.add('scrolled');
@@ -1238,7 +1285,7 @@
             document.getElementById('modalImg').src = data.img;
             document.getElementById('modalTitle').innerText = data.title;
             document.getElementById('modalDesc').innerText = data.desc;
-            
+
             const featuresContainer = document.getElementById('modalFeatures');
             featuresContainer.innerHTML = data.features.map(f => `
                 <div class="modal-feature-item">

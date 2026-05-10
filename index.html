@@ -281,8 +281,20 @@
             padding: 0 1rem;
         }
 
+        .hero-tagline {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary);
+            padding-left: 1rem;
+        }
+
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             color: #ffffff;
@@ -307,7 +319,6 @@
             width: 100%;
             max-width: 400px;
             margin: 0;
-            /* Changed from 0 auto */
         }
 
         .hero-btns .btn {
@@ -329,7 +340,7 @@
             }
 
             .hero h1 {
-                font-size: clamp(3.5rem, 8vw, 5.5rem);
+                font-size: clamp(2.5rem, 6vw, 4.5rem);
             }
 
             .hero p {
@@ -351,7 +362,7 @@
 
         .hero .btn-outline {
             border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #313131;
+            color: #ffffff;
         }
 
         .hero .btn-outline:hover {
@@ -359,12 +370,138 @@
             color: var(--dark);
         }
 
-        /* Categories / Projects Grid */
+        /* Responsive Fixes */
+        @media (max-width: 991px) {
+            .hero {
+                min-height: 100vh;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                background-color: #050505;
+                justify-content: flex-start;
+            }
+
+            .hero-slider {
+                position: relative;
+                height: 45vh;
+                width: 100%;
+                border-radius: 0 0 40px 40px;
+                overflow: hidden;
+                z-index: 1;
+            }
+
+            .hero-slide {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                transform: none !important;
+                background-color: #000;
+            }
+
+            .hero .container {
+                flex: 1;
+                display: flex;
+                align-items: flex-start;
+                padding: 0;
+                margin-top: -40px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .hero-content {
+                text-align: center;
+                padding: 3.5rem 1.5rem 5rem;
+                background: linear-gradient(180deg, #0f0f0f 0%, #050505 100%);
+                border-radius: 40px 40px 0 0;
+                border-top: 2px solid var(--primary);
+                width: 100%;
+                box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.6);
+            }
+
+            .hero-tagline {
+                margin: 0 auto 1.5rem;
+                border-left: none;
+                border-bottom: 2px solid var(--primary);
+                padding: 0 0 8px 0;
+                display: table;
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                line-height: 1.4;
+                max-width: 90%;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.2rem;
+                line-height: 1.2;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin: 0 auto 2.5rem;
+                max-width: 100%;
+                opacity: 0.9;
+            }
+
+            .hero-btns {
+                margin: 0 auto;
+                max-width: 320px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .about-section {
+                flex-direction: column;
+                display: flex !important;
+            }
+
+            #farmland .about-section {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            .vision-mission-cards {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 110vh;
+            }
+
+            .hero-content {
+                padding-top: 3rem;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             margin-top: 3rem;
+        }
+
+        @media (max-width: 1200px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .portfolio-filters {
@@ -404,10 +541,11 @@
 
         .cat-card {
             position: relative;
-            height: 500px;
-            border-radius: 24px;
+            height: 450px;
+            border-radius: 20px;
             overflow: hidden;
             cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .cat-card img {
@@ -686,6 +824,14 @@
             opacity: 0.15;
         }
 
+        .stars-rating {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            display: flex;
+            gap: 4px;
+        }
+
         .client-info {
             display: flex;
             align-items: center;
@@ -709,8 +855,9 @@
         }
 
         .client-details h5 {
-            color: var(--dark);
-            font-size: 1rem;
+            color: var(--light);
+            font-size: 1.1rem;
+            font-weight: 700;
             margin-bottom: 2px;
         }
 
@@ -725,10 +872,8 @@
             }
 
             100% {
-                transform: translateX(calc(-412px * 10));
+                transform: translateX(calc(-412px * 14));
             }
-
-            /* 380px width + 32px gap * 10 cards */
         }
 
         @media (max-width: 768px) {
@@ -743,7 +888,7 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-332px * 10));
+                    transform: translateX(calc(-332px * 14));
                 }
             }
         }
@@ -1906,14 +2051,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- 1. Home Section -->
     <section id="home" class="hero">
         <div class="hero-slider">
             <div class="hero-slide active"
                 style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Hero1.jpeg');">
-            </div>
-            <div class="hero-slide"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Hero2.jpeg');">
             </div>
             <div class="hero-slide"
                 style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Hero3.jpeg');">
@@ -1921,6 +2063,7 @@
         </div>
         <div class="container">
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <span class="hero-tagline">AAKAR CONSTRUCTIONS – Strong Foundations, Better Futures.</span>
                 <h1>Building Spaces That Define the Future</h1>
                 <p>End-to-end residential and commercial construction solutions across Andhra Pradesh & Telangana —
                     designed with precision, built with excellence.</p>
@@ -1932,229 +2075,7 @@
         </div>
     </section>
 
-    <!-- Detailed Services Overview -->
-    <section class="section-padding" style="background: #ffffff;">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
-                <span
-                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Expertise</span>
-                <h2 style="margin-top: 1rem; font-size: 3rem;">OUR CONSTRUCTION SERVICES</h2>
-            </div>
-
-            <!-- B2C Services Accordion -->
-            <h3 style="margin-bottom: 2rem; color: var(--light); text-align: center; font-size: 1.8rem;"
-                data-aos="fade-up">OUR Home Construction Services</h3>
-            <div class="service-accordion-card" data-aos="fade-up">
-                <div class="accordion-panel" style="background-image: url('assets/residential.png');">
-                    <span>Individual Houses</span>
-                    <div class="panel-content">
-
-                    </div>
-                </div>
-                <div class="accordion-panel"
-                    style="background-image: url('assets/Luxury_Villa_Duplex_Construction…_202605051617.jpeg');">
-                    <span>Luxury Villas</span>
-                    <div class="panel-content">
-
-                    </div>
-                </div>
-                <div class="accordion-panel" style="background-image: url('assets/Herobg.jpeg');">
-                    <span>Interior Design</span>
-                    <div class="panel-content">
-
-                    </div>
-                </div>
-                <div class="accordion-panel"
-                    style="background-image: url('assets/Project_Planning_Architectural_D…_202605051615.jpeg');">
-                    <span>Architectural Design</span>
-                    <div class="panel-content">
-
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: right; margin-top: 1.5rem;" data-aos="fade-up">
-                <a href="services.html"
-                    style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition); font-size: 1.1rem;"
-                    class="view-all-link">
-                    View All B2C Services <i class="fas fa-arrow-right-long"></i>
-                </a>
-            </div>
-
-
-            <!-- B2B Services Accordion -->
-            <h3 style="margin-bottom: 2rem; color: var(--light); text-align: center; font-size: 1.8rem;"
-                data-aos="fade-up">OUR Commercial Construction Services</h3>
-            <div class="service-accordion-card" style="margin-bottom: 5rem;" data-aos="fade-up">
-                <div class="accordion-panel"
-                    style="background-image: url('assets/Commercial_Projects_South_Indian…_202605051557.jpeg');">
-                    <span>Commercial Projects</span>
-                    <div class="panel-content">
-
-                    </div>
-                </div>
-                <div class="accordion-panel"
-                    style="background-image: url('assets/Hospital_school_building_constru…_202605051603.jpeg');">
-                    <span>Hospitals & Schools</span>
-                    <div class="panel-content">
-
-                    </div>
-                </div>
-                <div class="accordion-panel"
-                    style="background-image: url('assets/Office_buildings_factories_const…_202605051607.jpeg');">
-                    <span>Offices & Factories</span>
-                    <div class="panel-content">
-
-                    </div>
-                </div>
-                <div class="accordion-panel"
-                    style="background-image: url('assets/High-Rise_Apartment_Construction…_202605051608.jpeg');">
-                    <span>High-Rise Apartments</span>
-                    <div class="panel-content">
-
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: right; margin-top: 1.5rem; margin-bottom: 5rem;" data-aos="fade-up">
-                <a href="services.html"
-                    style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition); font-size: 1.1rem;"
-                    class="view-all-link">
-                    View All B2B Services <i class="fas fa-arrow-right-long"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-banner">
-        <div class="container">
-            <div class="stats-banner-grid">
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-building"></i>
-                    <h3 id="count1">100+</h3>
-                    <p>Projects Completed</p>
-                </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-users"></i>
-                    <h3 id="count2">100%</h3>
-                    <p>Happy Clients</p>
-                </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-ruler-combined"></i>
-                    <h3 id="count3">150+</h3>
-                    <p>Quality Checks</p>
-                </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-award"></i>
-                    <h3 id="count4">20</h3>
-                    <p>Years Experience</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects / Portfolio Section -->
-    <section id="projects" class="section-padding">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up" style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: 3.5rem;">Our Work Speaks for Itself</h2>
-                <p>Delivering architectural excellence across residential and commercial sectors.</p>
-            </div>
-
-            <!-- Portfolio Filters -->
-            <ul class="portfolio-filters" data-aos="fade-up">
-                <li><button class="filter-btn active" data-filter="all">All Projects</button></li>
-                <li><button class="filter-btn" data-filter="residential">Residential</button></li>
-                <li><button class="filter-btn" data-filter="commercial">Commercial</button></li>
-            </ul>
-
-            <div class="categories-grid">
-                <!-- Project 1: V-Banquets -->
-                <div class="cat-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/V Banquet Hall.jpeg" alt="V-Banquets Madhapur Commercial Project">
-                    <div class="cat-info">
-                        <span class="project-tag">Commercial</span>
-                        <h3>V-Banquets</h3>
-                        <p>Premium 29,400 SFT commercial banquet space at Madhapur Ayyappa society.</p>
-                        <div class="project-loc">
-                            <i class="fas fa-map-marker-alt"></i> Madhapur, Hyderabad | 95 Lakhs
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Home Tree Project -->
-                <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/Osman nagar.jpeg" alt="Home Tree Project Osman Nagar Residential" loading="lazy"
-                        decoding="async">
-                    <div class="cat-info">
-                        <span class="project-tag">Residential</span>
-                        <h3>Home Tree Project</h3>
-                        <p>Massive 1,00,000 SFT premium residential development project.</p>
-                        <div class="project-loc">
-                            <i class="fas fa-map-marker-alt"></i> Osman Nagar, Hyderabad | 3.20 Cr
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Simhapuri Colony -->
-                <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/Simhapuri colony.jpeg" alt="Simhapuri Colony Residential Project" loading="lazy"
-                        decoding="async">
-                    <div class="cat-info">
-                        <span class="project-tag">Residential</span>
-                        <h3>Simhapuri Colony</h3>
-                        <p>Extensive 70,200 SFT residential project with modern amenities.</p>
-                        <div class="project-loc">
-                            <i class="fas fa-map-marker-alt"></i> Simhapuri Colony | 2.50 Cr
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Hitech City Commercial -->
-                <div class="cat-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/High-tech City.jpeg" alt="Hitech City Commercial Project" loading="lazy"
-                        decoding="async">
-                    <div class="cat-info">
-                        <span class="project-tag">Commercial</span>
-                        <h3>Hitech City Commercial</h3>
-                        <p>Modern 22,400 SFT commercial office space in the heart of the IT hub.</p>
-                        <div class="project-loc">
-                            <i class="fas fa-map-marker-alt"></i> High-tech City | 80 Lakhs
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: Rajahmundry Residential -->
-                <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/Rajahmundry Residential Project.png" alt="Rajahmundry Residential Project"
-                        loading="lazy" decoding="async">
-                    <div class="cat-info">
-                        <span class="project-tag">Residential</span>
-                        <h3>Rajahmundry Residential</h3>
-                        <p>Well-planned 50,000 SFT residential development for modern families.</p>
-                        <div class="project-loc">
-                            <i class="fas fa-map-marker-alt"></i> Rajahmundry, AP | 75 Lakhs
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Palakollu Project -->
-                <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Material Contract Project"
-                        loading="lazy" decoding="async">
-                    <div class="cat-info">
-                        <span class="project-tag">Material Contract</span>
-                        <h3>Palakollu Project</h3>
-                        <p>High-quality material contract and construction management project.</p>
-                        <div class="project-loc">
-                            <i class="fas fa-map-marker-alt"></i> Palakollu, AP | 35 Lakhs
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
+    <!-- 2. About AAKAR Section -->
     <section id="about" class="section-padding">
         <div class="container">
             <div class="about-section">
@@ -2206,8 +2127,36 @@
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="section-padding" style="background: var(--dark-accent);">
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-banner-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-building"></i>
+                    <h3 id="count1">100+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-users"></i>
+                    <h3 id="count2">100%</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3 id="count3">150+</h3>
+                    <p>Quality Checks</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-award"></i>
+                    <h3 id="count4">20</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Why Choose AAKAR Section -->
+    <section id="why-choose" class="section-padding" style="background: var(--dark-accent);">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
                 <h2>Why Choose AAKAR?</h2>
@@ -2256,120 +2205,185 @@
                         on-site.</p>
                 </div>
             </div>
-
-            <!-- Warranty & Maintenance Info -->
-            <div style="margin-top: 4rem; background: linear-gradient(135deg, #111111 0%, #050505 100%); padding: 4rem 3rem; border-radius: 40px; border: 1px solid rgba(212, 175, 55, 0.2); text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.3); position: relative; overflow: hidden;"
-                data-aos="fade-up">
-
-                <!-- Animated SVG Background -->
-                <div
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.15; pointer-events: none;">
-                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"
-                        style="filter: blur(1px);">
-                        <defs>
-                            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.1" />
-                            </pattern>
-                        </defs>
-                        <rect width="100" height="100" fill="url(#grid)" />
-
-                        <!-- Floating Precision Elements -->
-                        <circle cx="20" cy="30" r="1" fill="var(--primary)">
-                            <animate attributeName="opacity" values="0;0.8;0" dur="4s" repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="80" cy="70" r="1" fill="var(--primary)">
-                            <animate attributeName="opacity" values="0;0.8;0" dur="5s" repeatCount="indefinite"
-                                begin="1s" />
-                        </circle>
-                        <circle cx="50" cy="20" r="0.5" fill="white">
-                            <animate attributeName="cy" values="20;80;20" dur="15s" repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="10" cy="90" r="0.5" fill="white">
-                            <animate attributeName="cx" values="10;90;10" dur="12s" repeatCount="indefinite" />
-                        </circle>
-                    </svg>
-                </div>
-
-                <div style="position: relative; z-index: 1;">
-                    <div
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                        <div>
-                            <h4 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem;">10 Years</h4>
-                            <p style="color: #ffffff; font-weight: 500;">Structural Warranty</p>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem;">2 Years</h4>
-                            <p style="color: #ffffff; font-weight: 500;">Plumbing & Electrical Warranty</p>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem;">6 Months</h4>
-                            <p style="color: #ffffff; font-weight: 500;">Service Maintenance</p>
-                        </div>
-                    </div>
-                    <p
-                        style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem;">
-                        We
-                        provide complete safety and trust for your project with our comprehensive warranty and
-                        maintenance
-                        packages.</p>
-                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem;">
-                        <h3 style="color: #ffffff; font-size: 1.4rem; margin-bottom: 1.5rem;">Why wait? Start your
-                            construction journey under our expert supervision today.</h3>
-                        <a href="get-a-quote.html" class="btn btn-primary">Start Your Journey</a>
-                    </div>
-                </div>
-            </div>
+        </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section-padding">
-        <div class="services-section container">
-            <div class="services-layout">
-                <div class="services-left">
-                    <h2 style="font-size: 3rem; margin-bottom: 1rem;">Comprehensive Construction Solutions</h2>
-                    <p style="margin-bottom: 3rem;">Tailored design and construction solutions for every space, from
-                        Hyderabad to Rajahmundry.</p>
+    <!-- 4. Our Services Section -->
+    <section id="services" class="section-padding" style="background: #ffffff;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
+                <span
+                    style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Expertise</span>
 
-                    <ul class="service-list">
-                        <li class="service-item"
-                            data-image="assets/Projects_for_Builders_Developers…_202605051605.jpeg">
-                            <h3>Residential Construction</h3>
-                            <i class="fas fa-chevron-right"></i>
-                        </li>
-                        <li class="service-item"
-                            data-image="assets/Commercial_Projects_South_Indian…_202605051557.jpeg">
-                            <h3>Commercial Construction</h3>
-                            <i class="fas fa-chevron-right"></i>
-                        </li>
-                        <li class="service-item" data-image="assets/interior.png">
-                            <h3>Interior Design & Execution</h3>
-                            <i class="fas fa-chevron-right"></i>
-                        </li>
+            </div>
 
-                        <li class="service-item"
-                            data-image="assets/Project_Planning_Architectural_D…_202605051615.jpeg">
-                            <h3>Architectural Planning</h3>
-                            <i class="fas fa-chevron-right"></i>
-                        </li>
-                        <li class="service-item"
-                            data-image="assets/Luxury_Villa_Duplex_Construction…_202605051617.jpeg">
-                            <h3>Renovation & Remodeling</h3>
-                            <i class="fas fa-chevron-right"></i>
-                        </li>
+            <!-- B2C Services Accordion -->
+            <h3 style="margin-bottom: 2rem; color: var(--light); text-align: center; font-size: 1.8rem;"
+                data-aos="fade-up">OUR HOME CONSTRUCTION SERVICES</h3>
+            <div class="service-accordion-card" data-aos="fade-up">
+                <div class="accordion-panel" style="background-image: url('assets/residential.png');">
+                    <span>Individual Houses</span>
+                    <div class="panel-content"></div>
+                </div>
+                <div class="accordion-panel" style="background-image: url('assets/Luxury\ Villa\ &\ Duplex.jpg');">
+                    <span>Luxury Villas</span>
+                    <div class="panel-content"></div>
+                </div>
+                <div class="accordion-panel" style="background-image: url('assets/Herobg.jpeg');">
+                    <span>Interior Design</span>
+                    <div class="panel-content"></div>
+                </div>
+                <div class="accordion-panel" style="background-image: url('assets/interior.png');">
+                    <span>Architectural Design</span>
+                    <div class="panel-content"></div>
+                </div>
+            </div>
+            <div style="text-align: right; margin-top: 1.5rem;" data-aos="fade-up">
+                <a href="services.html"
+                    style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition); font-size: 1.1rem;"
+                    class="view-all-link">
+                    View All B2C Services <i class="fas fa-arrow-right-long"></i>
+                </a>
+            </div>
+
+            <br><br><br><br>
+
+            <!-- B2B Services Accordion -->
+            <h3 style="margin-bottom: 2rem; color: var(--light); text-align: center; font-size: 1.8rem;"
+                data-aos="fade-up">OUR COMMERCIAL CONSTRUCTION SERVICES</h3>
+            <div class="service-accordion-card" style="margin-bottom: 5rem;" data-aos="fade-up">
+                <div class="accordion-panel"
+                    style="background-image: url('assets/Luxury_Villa_Duplex_Construction…_202605051617.jpeg');">
+                    <span>Commercial Projects</span>
+                    <div class="panel-content"></div>
+                </div>
+                <div class="accordion-panel" style="background-image: url('assets/hospitals.jpeg');">
+                    <span>Hospitals & Schools</span>
+                    <div class="panel-content"></div>
+                </div>
+                <div class="accordion-panel" style="background-image: url('assets/offices.jpeg');">
+                    <span>Offices & Factories</span>
+                    <div class="panel-content"></div>
+                </div>
+                <div class="accordion-panel" style="background-image: url('assets/highrise.jpeg');">
+                    <span>High-Rise Apartments</span>
+                    <div class="panel-content"></div>
+                </div>
+            </div>
+            <div style="text-align: right; margin-top: 1.5rem; margin-bottom: 5rem;" data-aos="fade-up">
+                <a href="services.html"
+                    style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition); font-size: 1.1rem;"
+                    class="view-all-link">
+                    View All B2B Services <i class="fas fa-arrow-right-long"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Construction Packages Section -->
+    <section id="packages" class="section-padding" style="background: #f9f9f9;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Choose
+                    Your Level</span>
+                <h2 style="margin-top: 1rem; font-size: 3rem;">Construction Packages</h2>
+                <p>Transparent pricing for every budget and lifestyle.</p>
+            </div>
+            <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                <!-- Standard -->
+                <div class="why-item" data-aos="fade-up" data-aos-delay="100"
+                    style="padding: 2.5rem; background: white; border-radius: 30px; border: 1px solid #eee; text-align: center;">
+                    <div style="color: var(--primary); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem;">
+                        Standard</div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 1rem;">₹1999<span
+                            style="font-size: 1rem; font-weight: 400; color: #666;">/sft</span></div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 2rem;">Affordable & Essential Construction
+                        Package</p>
+                    <a href="get-a-quote.html" class="btn btn-outline" style="width: 100%; margin-bottom: 2rem;">Select
+                        Package</a>
+                    <ul
+                        style="list-style: none; text-align: left; font-size: 0.85rem; color: #444; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> Basic Quality Materials</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> Standard Finishes</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            Essential Engineering</li>
                     </ul>
                 </div>
-                <div class="service-right">
-                    <div class="service-featured-img">
-                        <img src="assets/Projects_for_Builders_Developers…_202605051605.jpeg"
-                            alt="Best Construction services in Hyderabad">
-                    </div>
+                <!-- Classic -->
+                <div class="why-item" data-aos="fade-up" data-aos-delay="200"
+                    style="padding: 2.5rem; background: white; border-radius: 30px; border: 1px solid #eee; text-align: center;">
+                    <div style="color: var(--primary); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem;">
+                        Classic</div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 1rem;">₹2299<span
+                            style="font-size: 1rem; font-weight: 400; color: #666;">/sft</span></div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 2rem;">Enhanced Quality & Better Finishes
+                    </p>
+                    <a href="get-a-quote.html" class="btn btn-outline" style="width: 100%; margin-bottom: 2rem;">Select
+                        Package</a>
+                    <ul
+                        style="list-style: none; text-align: left; font-size: 0.85rem; color: #444; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> Branded Materials</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> Superior Finishes</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            Architectural Consultation</li>
+                    </ul>
+                </div>
+                <!-- Premium -->
+                <div class="why-item" data-aos="fade-up" data-aos-delay="300"
+                    style="padding: 2.5rem; background: var(--dark-accent); border-radius: 30px; border: 2px solid var(--primary); text-align: center; position: relative; transform: scale(1.05); z-index: 2;">
+                    <div
+                        style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+                        Most Popular</div>
+                    <div style="color: var(--primary); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem;">
+                        Premium</div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--light); margin-bottom: 1rem;">
+                        ₹2599<span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/sft</span></div>
+                    <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem;">Premium Materials & Modern
+                        Features</p>
+                    <a href="get-a-quote.html" class="btn btn-primary" style="width: 100%; margin-bottom: 2rem;">Select
+                        Package</a>
+                    <ul
+                        style="list-style: none; text-align: left; font-size: 0.85rem; color: var(--light); border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> Premium Brand Selection</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> Modern Interior Features</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            Smart Home Ready</li>
+                    </ul>
+                </div>
+                <!-- Luxury -->
+                <div class="why-item" data-aos="fade-up" data-aos-delay="400"
+                    style="padding: 2.5rem; background: white; border-radius: 30px; border: 1px solid #eee; text-align: center;">
+                    <div style="color: var(--primary); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem;">
+                        Luxury</div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 1rem;">₹2999<span
+                            style="font-size: 1rem; font-weight: 400; color: #666;">/sft</span></div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 2rem;">For Villas, Duplex & Luxury Homes.
+                    </p>
+                    <a href="get-a-quote.html" class="btn btn-outline" style="width: 100%; margin-bottom: 2rem;">Select
+                        Package</a>
+                    <ul
+                        style="list-style: none; text-align: left; font-size: 0.85rem; color: #444; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> High-End Luxury Brands</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                                style="color: var(--primary); margin-right: 0.5rem;"></i> Customized Luxury Design</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            Premium Landscaping</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Prime Locations Section -->
-    <section class="section-padding" style="background: var(--dark);">
+    <!-- 6. Prime Locations Section -->
+    <section id="locations" class="section-padding" style="background: var(--dark);">
         <div class="container">
             <div class="section-header" style="margin-bottom: 3rem;" data-aos="fade-up">
                 <span
@@ -2380,7 +2394,6 @@
 
             <div class="locations-scroll" data-aos="fade-up">
                 <div class="locations-track">
-                    <!-- Original 8 Cards (Reordered) -->
                     <div class="location-card" style="background-image: url('assets/Hyderabad.jpg');">
                         <i class="fas fa-mosque"></i>
                         <h4>Hyderabad</h4>
@@ -2423,8 +2436,7 @@
                         <h4>Visakhapatnam</h4>
                         <p>Coastal Hub</p>
                     </div>
-
-                    <!-- Duplicated Cards for Loop (Reordered) -->
+                    <!-- Duplicates for loop -->
                     <div class="location-card" style="background-image: url('assets/Hyderabad.jpg');">
                         <i class="fas fa-mosque"></i>
                         <h4>Hyderabad</h4>
@@ -2445,35 +2457,88 @@
                         <h4>Bhimavaram</h4>
                         <p>Coastal Center</p>
                     </div>
-                    <div class="location-card" style="background-image: url('assets/Amaravathi.jpeg');">
-                        <i class="fas fa-building"></i>
-                        <h4>Amaravati</h4>
-                        <p>The Future City</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Project Gallery Section -->
+    <section id="projects" class="section-padding" style="background: #fafafa;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3.5rem;">Our Work Speaks for Itself</h2>
+                <p>Delivering architectural excellence across residential and commercial sectors.</p>
+            </div>
+
+            <ul class="portfolio-filters" data-aos="fade-up">
+                <li><button class="filter-btn active" data-filter="all">All Projects</button></li>
+                <li><button class="filter-btn" data-filter="residential">Residential</button></li>
+                <li><button class="filter-btn" data-filter="commercial">Commercial</button></li>
+            </ul>
+
+            <div class="categories-grid">
+                <div class="cat-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/V Banquet Hall.jpeg" alt="V-Banquets Madhapur Commercial Project">
+                    <div class="cat-info">
+                        <span class="project-tag">Commercial</span>
+                        <h3>V-Banquets</h3>
+                        <p>Premium 29,400 SFT commercial banquet space at Madhapur Ayyappa society.</p>
+                        <div class="project-loc"><i class="fas fa-map-marker-alt"></i> Madhapur, Hyderabad | 95 Lakhs
+                        </div>
                     </div>
-                    <div class="location-card" style="background-image: url('assets/Kakinada.jpg');">
-                        <i class="fas fa-ship"></i>
-                        <h4>Kakinada</h4>
-                        <p>Port City</p>
+                </div>
+                <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/Osman nagar.jpeg" alt="Home Tree Project Osman Nagar Residential">
+                    <div class="cat-info">
+                        <span class="project-tag">Residential</span>
+                        <h3>Home Tree Project</h3>
+                        <p>Massive 1,00,000 SFT premium residential development project.</p>
+                        <div class="project-loc"><i class="fas fa-map-marker-alt"></i> Osman Nagar, Hyderabad | 3.20 Cr
+                        </div>
                     </div>
-                    <div class="location-card"
-                        style="background-image: url('assets/Vijayawada_image._202605041640.jpeg');">
-                        <i class="fas fa-landmark"></i>
-                        <h4>Vijayawada</h4>
-                        <p>Commercial Capital</p>
+                </div>
+                <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/Simhapuri colony.jpeg" alt="Simhapuri Colony Residential Project">
+                    <div class="cat-info">
+                        <span class="project-tag">Residential</span>
+                        <h3>Simhapuri Colony</h3>
+                        <p>Extensive 70,200 SFT residential project with modern amenities.</p>
+                        <div class="project-loc"><i class="fas fa-map-marker-alt"></i> Simhapuri Colony | 2.50 Cr</div>
                     </div>
-                    <div class="location-card"
-                        style="background-image: url('assets/Vishakapatnam_image_202605041636.jpeg');">
-                        <i class="fas fa-city"></i>
-                        <h4>Visakhapatnam</h4>
-                        <p>Coastal Hub</p>
+                </div>
+                <div class="cat-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/High-tech City.jpeg" alt="Hitech City Commercial Project">
+                    <div class="cat-info">
+                        <span class="project-tag">Commercial</span>
+                        <h3>Hitech City Commercial</h3>
+                        <p>Modern 22,400 SFT commercial office space in the heart of the IT hub.</p>
+                        <div class="project-loc"><i class="fas fa-map-marker-alt"></i> High-tech City | 80 Lakhs</div>
+                    </div>
+                </div>
+                <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/Rajahmundry Residential Project.png" alt="Rajahmundry Residential Project">
+                    <div class="cat-info">
+                        <span class="project-tag">Residential</span>
+                        <h3>Rajahmundry Residential</h3>
+                        <p>Well-planned 50,000 SFT residential development for modern families.</p>
+                        <div class="project-loc"><i class="fas fa-map-marker-alt"></i> Rajahmundry, AP | 75 Lakhs</div>
+                    </div>
+                </div>
+                <div class="cat-card" data-category="residential" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/PalakolluResidentialhouse.png" alt="Palakollu Material Contract Project">
+                    <div class="cat-info">
+                        <span class="project-tag">Material Contract</span>
+                        <h3>Palakollu Project</h3>
+                        <p>High-quality material contract and construction management project.</p>
+                        <div class="project-loc"><i class="fas fa-map-marker-alt"></i> Palakollu, AP | 35 Lakhs</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section-padding" style="background: var(--dark);">
+    <!-- 8. Client Testimonials Section -->
+    <section id="testimonials" class="section-padding" style="background: var(--dark);">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 5rem;" data-aos="fade-up">
                 <span
@@ -2487,183 +2552,478 @@
                     <!-- Review 1 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of
-                            schedule. Their <strong>residential construction</strong> quality is simply the best in the
-                            industry."
+                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of schedule. Their construction quality is simply the best."
                         </p>
                         <div class="client-info">
                             <div class="client-img">RV</div>
-                            <div class="client-details">
-                                <h5>Rajesh Verma</h5>
-                                <span>Homeowner, Hyderabad</span>
-                            </div>
+                            <div class="client-details"><h5>Rajesh Verma</h5><span>Homeowner, Hyderabad</span></div>
                         </div>
                     </div>
-
                     <!-- Review 2 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "I highly recommend <strong>AAKAR</strong> for <strong>interior design services</strong>.
-                            They transformed our space with premium materials and smart <strong>turnkey
-                                solutions</strong>."
+                            "I highly recommend <strong>AAKAR</strong> for <strong>interior design</strong>. They transformed our space with premium materials."
                         </p>
                         <div class="client-info">
                             <div class="client-img">SS</div>
-                            <div class="client-details">
-                                <h5>Sowmya Sharma</h5>
-                                <span>Villa Owner, Vizag</span>
-                            </div>
+                            <div class="client-details"><h5>Sowmya Sharma</h5><span>Villa Owner, Vizag</span></div>
                         </div>
                     </div>
-
                     <!-- Review 3 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Expert team at <strong>AAKAR</strong> handled our <strong>commercial project</strong> with
-                            absolute professionalism. Their <strong>modern architecture</strong> expertise is evident in
-                            the final result."
+                            "Expert team at <strong>AAKAR</strong> handled our <strong>commercial project</strong> with absolute professionalism and modern architecture."
                         </p>
                         <div class="client-info">
                             <div class="client-img">VR</div>
-                            <div class="client-details">
-                                <h5>Vikram Reddy</h5>
-                                <span>Business Head, Amaravati</span>
-                            </div>
+                            <div class="client-details"><h5>Vikram Reddy</h5><span>Business Head, Amaravati</span></div>
                         </div>
                     </div>
-
                     <!-- Review 4 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "The transparency shown by <strong>AAKAR</strong> during our <strong>residential
-                                construction</strong> journey was refreshing. Truly the most reliable
-                            <strong>construction company</strong>."
+                            "Exceptional industrial construction quality and timely execution for our warehouse project in Kakinada."
                         </p>
                         <div class="client-info">
-                            <div class="client-img">AR</div>
-                            <div class="client-details">
-                                <h5>Anjali Rao</h5>
-                                <span>Client, Vijayawada</span>
-                            </div>
+                            <div class="client-img">SK</div>
+                            <div class="client-details"><h5>Suresh Kumar</h5><span>Industrialist, Kakinada</span></div>
                         </div>
                     </div>
-
                     <!-- Review 5 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Strongly recommend <strong>AAKAR</strong> for their <strong>turnkey construction</strong>.
-                            They managed everything from planning to execution with zero hassles."
+                            "The transparency shown by <strong>AAKAR</strong> during our home construction was refreshing. Highly reliable."
                         </p>
                         <div class="client-info">
-                            <div class="client-img">KI</div>
-                            <div class="client-details">
-                                <h5>Karthik Iyer</h5>
-                                <span>Industrialist, Kakinada</span>
-                            </div>
+                            <div class="client-img">PR</div>
+                            <div class="client-details"><h5>Priya Reddy</h5><span>Villa Owner, Guntur</span></div>
                         </div>
                     </div>
-
                     <!-- Review 6 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Working with <strong>AAKAR</strong> was a delight. Their <strong>luxury interior
-                                design</strong> team has a great eye for detail and aesthetics."
+                            "Best construction company in Tirupati. Their architectural design for my duplex was beyond expectations."
                         </p>
                         <div class="client-info">
-                            <div class="client-img">MN</div>
-                            <div class="client-details">
-                                <h5>Meera Nair</h5>
-                                <span>Boutique Owner, Rajahmundry</span>
-                            </div>
+                            <div class="client-img">LD</div>
+                            <div class="client-details"><h5>Lakshmi Devi</h5><span>Homeowner, Tirupati</span></div>
                         </div>
                     </div>
-
                     <!-- Review 7 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Precision and trust are what <strong>AAKAR</strong> stands for. Their <strong>commercial
-                                construction</strong> services helped us scale our factory operations quickly."
+                            "Their turnkey solutions for our office saved us months of coordination. Top-notch professionalism."
                         </p>
                         <div class="client-info">
-                            <div class="client-img">SG</div>
-                            <div class="client-details">
-                                <h5>Suresh Goud</h5>
-                                <span>Entrepreneur, Bhimavaram</span>
-                            </div>
+                            <div class="client-img">KK</div>
+                            <div class="client-details"><h5>Kiran Kumar</h5><span>Business Owner, Vizag</span></div>
                         </div>
                     </div>
-
                     <!-- Review 8 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "The smart home features integrated by <strong>AAKAR</strong> in our new <strong>luxury
-                                apartment</strong> are top-notch. Best in class technology."
+                            "High-rise construction expertise at its best. Our apartment project was delivered with zero compromises."
                         </p>
                         <div class="client-info">
-                            <div class="client-img">PD</div>
-                            <div class="client-details">
-                                <h5>Pooja Deshmukh</h5>
-                                <span>IT Professional, Hyderabad</span>
-                            </div>
+                            <div class="client-img">ST</div>
+                            <div class="client-details"><h5>Santhosh T.</h5><span>Apartment Owner, Vijayawada</span></div>
                         </div>
                     </div>
-
                     <!-- Review 9 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "I am impressed by the structural integrity and finish of <strong>AAKAR's</strong>
-                            <strong>residential projects</strong>. Definitely the gold standard."
+                            "Durable and cost-effective construction for our factory. Aakar is the most trusted name in the state."
                         </p>
                         <div class="client-info">
-                            <div class="client-img">AM</div>
-                            <div class="client-details">
-                                <h5>Arjun Malhotra</h5>
-                                <span>Real Estate Expert, Vizag</span>
-                            </div>
+                            <div class="client-img">RK</div>
+                            <div class="client-details"><h5>Rajesh K.</h5><span>Factory Owner, Nellore</span></div>
                         </div>
                     </div>
-
                     <!-- Review 10 -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "Reliable, honest, and professional—that's <strong>AAKAR</strong>. Their <strong>modern
-                                architecture</strong> planning made our dream home possible."
+                            "Very happy with their interior work. It's modern, chic, and functional. Excellent team."
                         </p>
                         <div class="client-info">
-                            <div class="client-img">DR</div>
-                            <div class="client-details">
-                                <h5>Divya Reddy</h5>
-                                <span>Client, Amaravati</span>
-                            </div>
+                            <div class="client-img">SG</div>
+                            <div class="client-details"><h5>Sneha G.</h5><span>Duplex Owner, Kurnool</span></div>
+                        </div>
+                    </div>
+                    <!-- Review 11 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Professional team with great focus on timelines. They built our commercial complex perfectly."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">AV</div>
+                            <div class="client-details"><h5>Arjun V.</h5><span>Commercial Client, Ongole</span></div>
+                        </div>
+                    </div>
+                    <!-- Review 12 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Top construction company for luxury projects. Their attention to detail is remarkable."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">MR</div>
+                            <div class="client-details"><h5>Mohan Rao</h5><span>Builder, Rajahmundry</span></div>
+                        </div>
+                    </div>
+                    <!-- Review 13 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Reliable, honest, and high-quality work. We are extremely satisfied with our new office."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">DP</div>
+                            <div class="client-details"><h5>Deepika P.</h5><span>Business Owner, Kadapa</span></div>
+                        </div>
+                    </div>
+                    <!-- Review 14 -->
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Great experience working with AAKAR. They are the best construction company in Andhra Pradesh."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">AR</div>
+                            <div class="client-details"><h5>Anjali Rao</h5><span>Homeowner, Vijayawada</span></div>
                         </div>
                     </div>
 
-                    <!-- Duplicate for infinite loop -->
+                    <!-- REPEAT FOR LOOP -->
                     <div class="testimonial-card">
                         <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
-                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of
-                            schedule. Their <strong>residential construction</strong> quality is simply the best in the
-                            industry."
+                            "<strong>AAKAR</strong> delivered our <strong>luxury villa</strong> in Hyderabad ahead of schedule. Their construction quality is simply the best."
                         </p>
                         <div class="client-info">
                             <div class="client-img">RV</div>
-                            <div class="client-details">
-                                <h5>Rajesh Verma</h5>
-                                <span>Homeowner, Hyderabad</span>
-                            </div>
+                            <div class="client-details"><h5>Rajesh Verma</h5><span>Homeowner, Hyderabad</span></div>
                         </div>
                     </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "I highly recommend <strong>AAKAR</strong> for <strong>interior design</strong>. They transformed our space with premium materials."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">SS</div>
+                            <div class="client-details"><h5>Sowmya Sharma</h5><span>Villa Owner, Vizag</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Expert team at <strong>AAKAR</strong> handled our <strong>commercial project</strong> with absolute professionalism and modern architecture."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">VR</div>
+                            <div class="client-details"><h5>Vikram Reddy</h5><span>Business Head, Amaravati</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Exceptional industrial construction quality and timely execution for our warehouse project in Kakinada."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">SK</div>
+                            <div class="client-details"><h5>Suresh Kumar</h5><span>Industrialist, Kakinada</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "The transparency shown by <strong>AAKAR</strong> during our home construction was refreshing. Highly reliable."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">PR</div>
+                            <div class="client-details"><h5>Priya Reddy</h5><span>Villa Owner, Guntur</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Best construction company in Tirupati. Their architectural design for my duplex was beyond expectations."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">LD</div>
+                            <div class="client-details"><h5>Lakshmi Devi</h5><span>Homeowner, Tirupati</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Their turnkey solutions for our office saved us months of coordination. Top-notch professionalism."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">KK</div>
+                            <div class="client-details"><h5>Kiran Kumar</h5><span>Business Owner, Vizag</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "High-rise construction expertise at its best. Our apartment project was delivered with zero compromises."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">ST</div>
+                            <div class="client-details"><h5>Santhosh T.</h5><span>Apartment Owner, Vijayawada</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Durable and cost-effective construction for our factory. Aakar is the most trusted name in the state."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">RK</div>
+                            <div class="client-details"><h5>Rajesh K.</h5><span>Factory Owner, Nellore</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Very happy with their interior work. It's modern, chic, and functional. Excellent team."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">SG</div>
+                            <div class="client-details"><h5>Sneha G.</h5><span>Duplex Owner, Kurnool</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Professional team with great focus on timelines. They built our commercial complex perfectly."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">AV</div>
+                            <div class="client-details"><h5>Arjun V.</h5><span>Commercial Client, Ongole</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Top construction company for luxury projects. Their attention to detail is remarkable."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">MR</div>
+                            <div class="client-details"><h5>Mohan Rao</h5><span>Builder, Rajahmundry</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Reliable, honest, and high-quality work. We are extremely satisfied with our new office."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">DP</div>
+                            <div class="client-details"><h5>Deepika P.</h5><span>Business Owner, Kadapa</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="stars-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #444;">
+                            "Great experience working with AAKAR. They are the best construction company in Andhra Pradesh."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-img">AR</div>
+                            <div class="client-details"><h5>Anjali Rao</h5><span>Homeowner, Vijayawada</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Warranty Details Section -->
+    <section id="warranty" class="section-padding">
+        <div class="container">
+            <div style="background: linear-gradient(135deg, #111111 0%, #050505 100%); padding: 4rem 3rem; border-radius: 40px; border: 1px solid rgba(212, 175, 55, 0.2); text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.3); position: relative; overflow: hidden;"
+                data-aos="fade-up">
+                <div
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.15; pointer-events: none;">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <defs>
+                            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.1" />
+                            </pattern>
+                        </defs>
+                        <rect width="100" height="100" fill="url(#grid)" />
+                    </svg>
+                </div>
+                <div style="position: relative; z-index: 1;">
+                    <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                        <span
+                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Peace
+                            of Mind</span>
+                        <h2 style="margin-top: 1rem; color: white;">AAKAR Warranty Details</h2>
+                    </div>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                        <div>
+                            <h4 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem;">10 Years</h4>
+                            <p style="color: #ffffff; font-weight: 500;">Structural Warranty</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem;">2 Years</h4>
+                            <p style="color: #ffffff; font-weight: 500;">Plumbing & Electrical Warranty</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem;">6 Months</h4>
+                            <p style="color: #ffffff; font-weight: 500;">Service Maintenance</p>
+                        </div>
+                    </div>
+                    <p
+                        style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem;">
+                        We provide complete safety and trust for your project with our comprehensive warranty and
+                        maintenance packages.</p>
+                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem;">
+                        <h3 style="color: #ffffff; font-size: 1.4rem; margin-bottom: 1.5rem;">Reliability in every
+                            square foot. Build with confidence.</h3>
+                        <a href="get-a-quote.html" class="btn btn-primary">Download Warranty Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Farm Land Filling Section -->
+    <section id="farmland" class="section-padding" style="background: var(--dark-accent);">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Specialized
+                    Services</span>
+                <h2 style="margin-top: 1rem; font-size: 3rem;">Farm Land Filling</h2>
+                <p>Transforming barren lands into productive assets with expert soil leveling and preparation.</p>
+            </div>
+            <div class="about-section"
+                style="align-items: center; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+                <div class="about-content" data-aos="fade-right">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;">Professional Land
+                        Development</h3>
+                    <p style="margin-bottom: 1.5rem;">At AAKAR Constructions, we specialize in large-scale farm land
+                        filling and leveling services. Whether you are preparing your land for agriculture, residential
+                        layouts, or commercial development, we provide the expertise and heavy machinery required for
+                        high-quality results.</p>
+                    <ul class="service-features" style="list-style: none; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;"><i
+                                class="fas fa-check-circle" style="color: var(--primary);"></i> Expert Soil Quality
+                            Assessment</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;"><i
+                                class="fas fa-check-circle" style="color: var(--primary);"></i> Precision Leveling &
+                            Grading</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;"><i
+                                class="fas fa-check-circle" style="color: var(--primary);"></i> Bulk Soil Excavation &
+                            Filling</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;"><i
+                                class="fas fa-check-circle" style="color: var(--primary);"></i> Drainage Planning &
+                            Execution</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Inquire About Land Filling</a>
+                </div>
+                <div class="about-img-wrapper" data-aos="fade-left">
+                    <img src="assets/hospitals.jpeg" alt="Farm Land Filling Services"
+                        style="border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); width: 100%; height: 400px; object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -2673,7 +3033,7 @@
     <section class="section-padding">
         <div class="container">
             <div class="cta-banner" data-aos="zoom-in"
-                style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('assets/project1.png'); background-size: cover; background-position: center; padding: 120px 20px; border-radius: 40px; overflow: hidden; color: #ffffff;">
+                style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('assets/interior.png'); background-size: cover; background-position: center; padding: 120px 20px; border-radius: 40px; overflow: hidden; color: #ffffff; text-align: center;">
                 <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; color: #ffffff;">Let’s Build
                     Something Exceptional Together</h2>
                 <p
@@ -2681,13 +3041,13 @@
                     Ready to start your next construction journey? Our experts are here to guide you from concept to
                     completion with precision and trust.</p>
                 <a href="get-a-quote.html" class="btn btn-primary"
-                    style="padding: 1.2rem 3rem; font-size: 1.1rem;">Request a
-                    Free Quote <i class="fas fa-arrow-right" style="margin-left: 0.8rem;"></i></a>
+                    style="padding: 1.2rem 3rem; font-size: 1.1rem;">Request a Free Quote <i class="fas fa-arrow-right"
+                        style="margin-left: 0.8rem;"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- 11. Contact Us Section -->
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="contact-grid" data-aos="fade-up">
@@ -2698,25 +3058,17 @@
                     <h2>Your dream space is one message away</h2>
                     <p style="margin-bottom: 2rem;">Fill out the form below and our team will get back to you shortly.
                     </p>
-
                     <form action="https://formsubmit.co/your-email@example.com" method="POST">
                         <div class="form-row">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" name="name" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" name="email" placeholder="john@example.com" required>
-                            </div>
+                            <div class="form-group"><label>Full Name</label><input type="text" name="name"
+                                    placeholder="John Doe" required></div>
+                            <div class="form-group"><label>Email Address</label><input type="email" name="email"
+                                    placeholder="john@example.com" required></div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" name="phone" placeholder="+91 88857 74890" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Project Type</label>
+                            <div class="form-group"><label>Phone Number</label><input type="tel" name="phone"
+                                    placeholder="+91 88857 74890" required></div>
+                            <div class="form-group"><label>Project Type</label>
                                 <select name="project_type">
                                     <option value="residential">Residential Construction</option>
                                     <option value="commercial">Commercial Construction</option>
@@ -2725,16 +3077,16 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>Your Message</label>
-                            <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
-                        </div>
+                        <div class="form-group"><label>Your Message</label><textarea name="message" rows="4"
+                                placeholder="Tell us about your project..."></textarea></div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message <i
                                 class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i></button>
                     </form>
                 </div>
             </div>
         </div>
+    </section>v>
+    </div>
     </section>
 
     <!-- Footer -->
