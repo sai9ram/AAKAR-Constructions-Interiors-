@@ -3427,12 +3427,12 @@
         const closeLeadModal = document.getElementById('closeLeadModal');
         const leadCaptureForm = document.getElementById('leadCaptureForm');
 
-        // Show modal after 5 seconds
+        // Show modal after 3 seconds
         setTimeout(() => {
             if (!localStorage.getItem('leadCaptured')) {
                 leadModal.classList.add('active');
             }
-        }, 5000);
+        }, 3000);
 
         closeLeadModal.onclick = () => {
             leadModal.classList.remove('active');
