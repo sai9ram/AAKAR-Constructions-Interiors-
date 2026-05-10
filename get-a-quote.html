@@ -692,7 +692,8 @@
                 gap: 1.5rem !important;
             }
 
-            input, select {
+            input,
+            select {
                 padding: 0.8rem;
                 font-size: 0.95rem;
             }
@@ -744,66 +745,105 @@
     <section class="py-12 md:py-20 bg-white overflow-hidden">
         <div class="container mx-auto">
             <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.5rem; font-size: 0.8rem;">Choose Your Level</span>
+                <span
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.5rem; font-size: 0.8rem;">Choose
+                    Your Level</span>
                 <h2 class="text-2xl md:text-4xl font-bold text-secondary mb-3">Construction Packages</h2>
                 <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <!-- Standard -->
-                <div class="bg-gray-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-100 hover:border-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-gray-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-100 hover:border-primary transition-all duration-300 group"
+                    data-aos="fade-up" data-aos-delay="100">
                     <div class="text-primary text-lg md:text-xl font-bold mb-1">Standard</div>
-                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹1999<span class="text-sm font-normal text-gray-500">/sft</span></div>
-                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">Affordable & Essential Construction Package</p>
-                    <button onclick="selectPackage(1999)" class="w-full py-3 bg-white border border-gray-200 text-secondary font-bold rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 mb-5">Select Package</button>
+                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹1999<span
+                            class="text-sm font-normal text-gray-500">/sft</span></div>
+                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">Affordable & Essential
+                        Construction Package</p>
+                    <button onclick="selectPackage(1999)"
+                        class="w-full py-3 bg-white border border-gray-200 text-secondary font-bold rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 mb-5">Select
+                        Package</button>
                     <div class="w-full h-px bg-gray-200 mb-5"></div>
                     <ul class="space-y-2 text-[11px] md:text-xs text-gray-600">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Basic Quality Materials</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Standard Finishes</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Essential Engineering</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Basic
+                            Quality Materials</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Standard
+                            Finishes</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Essential
+                            Engineering</li>
                     </ul>
                 </div>
 
                 <!-- Classic -->
-                <div class="bg-gray-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-100 hover:border-primary transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-gray-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-100 hover:border-primary transition-all duration-300 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="absolute top-3 right-3 bg-primary text-white text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider">
+                        Most Popular</div>
                     <div class="text-primary text-lg md:text-xl font-bold mb-1">Classic</div>
-                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹2299<span class="text-sm font-normal text-gray-500">/sft</span></div>
-                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">Enhanced Quality & Better Finishes</p>
-                    <button onclick="selectPackage(2299)" class="w-full py-3 bg-white border border-gray-200 text-secondary font-bold rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 mb-5">Select Package</button>
+                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹2299<span
+                            class="text-sm font-normal text-gray-500">/sft</span></div>
+                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">Enhanced Quality & Better
+                        Finishes</p>
+                    <button onclick="selectPackage(2299)"
+                        class="w-full py-3 bg-white border border-gray-200 text-secondary font-bold rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 mb-5">Select
+                        Package</button>
                     <div class="w-full h-px bg-gray-200 mb-5"></div>
                     <ul class="space-y-2 text-[11px] md:text-xs text-gray-600">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Branded Materials</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Superior Finishes</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Architectural Consultation</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Branded
+                            Materials</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Superior
+                            Finishes</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i>
+                            Architectural Consultation</li>
                     </ul>
                 </div>
 
                 <!-- Premium -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-primary hover:shadow-xl transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute top-3 right-3 bg-primary text-white text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider">Most Popular</div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-primary hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="absolute top-3 right-3 bg-primary text-white text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider">
+                        Most Popular</div>
                     <div class="text-primary text-lg md:text-xl font-bold mb-1">Premium</div>
-                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹2599<span class="text-sm font-normal text-gray-500">/sft</span></div>
-                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">Premium Materials & Modern Features</p>
-                    <button onclick="selectPackage(2599)" class="w-full py-3 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-all duration-300 mb-5">Select Package</button>
+                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹2599<span
+                            class="text-sm font-normal text-gray-500">/sft</span></div>
+                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">Premium Materials & Modern
+                        Features</p>
+                    <button onclick="selectPackage(2599)"
+                        class="w-full py-3 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-all duration-300 mb-5">Select
+                        Package</button>
                     <div class="w-full h-px bg-gray-200 mb-5"></div>
                     <ul class="space-y-2 text-[11px] md:text-xs text-gray-600">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Premium Brand Selection</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Modern Interior Features</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Smart Home Ready</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Premium
+                            Brand Selection</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Modern
+                            Interior Features</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Smart Home
+                            Ready</li>
                     </ul>
                 </div>
 
                 <!-- Luxury -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 border-primary hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 border-primary hover:shadow-2xl transition-all duration-300 group"
+                    data-aos="fade-up" data-aos-delay="400">
                     <div class="text-primary text-lg md:text-xl font-bold mb-1">Luxury</div>
-                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹2999<span class="text-sm font-normal text-gray-500">/sft</span></div>
-                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">For Villas, Duplex & Luxury Homes.</p>
-                    <button onclick="selectPackage(2999)" class="w-full py-3 bg-secondary text-white font-bold rounded-xl hover:bg-primary transition-all duration-300 mb-5">Select Package</button>
+                    <div class="text-2xl md:text-3xl font-extrabold text-secondary mb-3">₹2999<span
+                            class="text-sm font-normal text-gray-500">/sft</span></div>
+                    <p class="text-gray-600 mb-5 text-sm leading-relaxed h-auto md:h-12">For Villas, Duplex & Luxury
+                        Homes.</p>
+                    <button onclick="selectPackage(2999)"
+                        class="w-full py-3 bg-secondary text-white font-bold rounded-xl hover:bg-primary transition-all duration-300 mb-5">Select
+                        Package</button>
                     <div class="w-full h-px bg-gray-200 mb-5"></div>
                     <ul class="space-y-2 text-[11px] md:text-xs text-gray-600">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> High-End Luxury Brands</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Customized Luxury Design</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Premium Landscaping</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> High-End
+                            Luxury Brands</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Customized
+                            Luxury Design</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Premium
+                            Landscaping</li>
                     </ul>
                 </div>
             </div>
@@ -964,7 +1004,8 @@
                             </div>
                             <div>
                                 <label class="block font-semibold mb-2 text-primary">Number of Floors</label>
-                                <select id="floors" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
+                                <select id="floors"
+                                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-accent outline-none">
                                     <option value="1">Ground Floor Only</option>
                                     <option value="2">G + 1 Floor</option>
                                     <option value="3">G + 2 Floors</option>
@@ -1014,9 +1055,10 @@
                             <p><strong>Average Multiplier:</strong> —</p>
                             <p class="text-lg font-bold text-secondary">Total: —</p>
                         </div>
-                        
+
                         <div style="margin-top: 2rem;">
-                            <button class="bg-primary text-white w-full py-3 rounded-xl font-semibold hover:opacity-90 transition"
+                            <button
+                                class="bg-primary text-white w-full py-3 rounded-xl font-semibold hover:opacity-90 transition"
                                 onclick="openQuoteModal()">
                                 Get Full Quotation <i class="fab fa-whatsapp ml-2"></i>
                             </button>
@@ -1031,7 +1073,8 @@
     <!-- Lead Capture Modal (New) -->
     <div id="quoteModal"
         style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center; padding: 1rem;">
-        <div style="background:white; padding:2rem 1.5rem; border-radius:24px; width:100%; max-width:450px; position:relative;">
+        <div
+            style="background:white; padding:2rem 1.5rem; border-radius:24px; width:100%; max-width:450px; position:relative;">
             <i class="fas fa-times" style="position:absolute; top:20px; right:20px; cursor:pointer; color:#999;"
                 onclick="closeQuoteModal()"></i>
             <h2 style="margin-bottom:1rem; color:var(--light);">Get Official Quote</h2>
@@ -1317,7 +1360,7 @@ I would like to discuss this project further. Please contact me.`;
                 baseRateInput.value = rate;
                 updateEstimate();
                 document.getElementById('estimator-heading').scrollIntoView({ behavior: 'smooth' });
-                
+
                 // Add a small highlight effect
                 baseRateInput.classList.add('ring-4', 'ring-primary', 'ring-opacity-50');
                 setTimeout(() => {
