@@ -3334,12 +3334,11 @@
         const navItems = document.querySelectorAll('.nav-links a');
 
         const toggleMenu = () => {
-            navLinks.classList.toggle('active');
-            mobileToggle.classList.toggle('open');
+            if (navLinks) navLinks.classList.toggle('active');
+            if (mobileToggle) mobileToggle.classList.toggle('open');
         };
 
-        mobileToggle.addEventListener('click', toggleMenu);
-        closeMenu.addEventListener('click', toggleMenu);
+        if (mobileToggle) mobileToggle.addEventListener('click', toggleMenu);
 
         navItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -3400,27 +3399,29 @@
         let startX;
         let scrollLeft;
 
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.style.cursor = 'grabbing';
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.style.cursor = 'grab';
-        });
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.style.cursor = 'grab';
-        });
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
+        if (slider) {
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.style.cursor = 'grabbing';
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
 
         // Lead Capture Modal Logic
         const leadModal = document.getElementById('leadModal');
