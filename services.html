@@ -166,6 +166,10 @@
             opacity: 1;
         }
 
+        .mobile-quote-item {
+            display: none;
+        }
+
         /* Hero Styling */
         .page-header {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero_bg.png');
@@ -708,6 +712,16 @@
                 transition-delay: 0.45s;
             }
 
+            .nav-links.active li:nth-child(7) {
+                transition-delay: 0.5s;
+            }
+
+            .mobile-quote-item {
+                display: block;
+                width: 100%;
+                padding: 0 1.2rem;
+            }
+
             .nav-links a {
                 font-size: 1.1rem;
                 color: #fff !important;
@@ -806,6 +820,7 @@
                     <li><a href="projects.html"><i class="fas fa-project-diagram"></i>Projects</a></li>
                     <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
                     <li><a href="refer-earn.html" style="color: #fff;"><i class="fas fa-gift"></i>Refer & Earn</a></li>
+                    <li class="mobile-quote-item"><a href="get-a-quote.html" class="btn btn-primary" style="margin-top: 0.5rem; text-align: center; justify-content: center; color: #fff !important; width: 100%;">Get a Quote</a></li>
                 </ul>
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
                     <a href="get-a-quote.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get a Quote</a>
